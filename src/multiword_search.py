@@ -21,7 +21,16 @@ class MultiwordSearch:
         Raises:
             ValueError: If search is None or not built
         """
-        raise NotImplementedError
+        if search is None:
+            raise ValueError("Search instance cannot be None")
+        
+        # Verify search has indexer and it's built
+        if not hasattr(search, "indexer"):
+            raise RuntimeError("Search must have indexer attribute")
+        if not search.indexer or not search.indexer.index:
+            raise RuntimeError("Search indexer must be built before MultiwordSearch")
+        
+        self.search = search
 
     def search_and(self, query):
         """
