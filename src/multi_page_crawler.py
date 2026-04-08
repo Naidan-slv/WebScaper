@@ -47,7 +47,14 @@ class MultiPageCrawler:
         Raises:
             ValueError: If current_page invalid
         """
-        raise NotImplementedError
+        if current_page <= 0:
+            raise ValueError("Page number must be greater than 0")
+        
+        # Page 1 is the base URL, pages 2+ use /page/N/ path
+        if current_page == 1:
+            return self.base_url + "/"
+        else:
+            return self.base_url + f"/page/{current_page}/"
 
     def fetch_all_pages(self):
         """
