@@ -26,7 +26,14 @@ class TfIdf:
         Raises:
             ValueError: If indexer is None or not built.
         """
-        raise NotImplementedError
+        if indexer is None:
+            raise ValueError("Indexer cannot be None")
+        if not indexer.index:
+            raise ValueError("Indexer must have a built index")
+        if not indexer.documents:
+            raise ValueError("Indexer must have documents")
+
+        self.indexer = indexer
 
     def calculate_tf(self, word, doc_id):
         """
