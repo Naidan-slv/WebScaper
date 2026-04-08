@@ -156,4 +156,16 @@ class TfIdf:
         Raises:
             ValueError: If query is None or empty.
         """
-        raise NotImplementedError
+        if query is None:
+            raise ValueError("Query cannot be None")
+
+        ranked = self.rank_documents(query)
+        results = []
+        for r in ranked[:limit]:
+            snippet = self.indexer.documents.get(r["doc_id"], "")[:100]
+            results.append({
+                "doc_id": r["doc_id"],
+                "score": r["score"],
+                "snippet": snippet,
+            })
+        return results
