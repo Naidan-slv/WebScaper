@@ -23,7 +23,16 @@ class MultiPageCrawler:
         Raises:
             ValueError: If crawler is None or max_pages invalid
         """
-        raise NotImplementedError
+        if crawler is None:
+            raise ValueError("Crawler instance cannot be None")
+        
+        if max_pages <= 0:
+            raise ValueError("max_pages must be greater than 0")
+        
+        self.crawler = crawler
+        self.max_pages = max_pages
+        self.base_url = base_url
+        self.pages_fetched = 0
 
     def get_next_page_url(self, current_page):
         """
