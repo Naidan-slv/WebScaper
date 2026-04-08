@@ -55,10 +55,8 @@ class MultiwordSearch:
         # Search for each word and collect results
         result_sets = []
         for word in words:
-            # search_query returns list of dicts with 'doc_id' key
-            results = self.search.search_query(word)
-            # Extract just the doc_ids
-            doc_ids = [result["doc_id"] for result in results]
+            # search() returns list of doc_ids (ints)
+            doc_ids = self.search.search(word)
             result_sets.append(doc_ids)
         
         # Get intersection of all result sets (AND logic)
@@ -138,10 +136,8 @@ class MultiwordSearch:
         # Search for each word and collect results
         result_sets = []
         for word in words:
-            # search_query returns list of dicts with 'doc_id' key
-            results = self.search.search_query(word)
-            # Extract just the doc_ids
-            doc_ids = [result["doc_id"] for result in results]
+            # search() returns list of doc_ids (ints)
+            doc_ids = self.search.search(word)
             result_sets.append(doc_ids)
         
         # Get union of all result sets (OR logic)
