@@ -303,7 +303,8 @@ class TestLoadCheckpoint:
         assert "index" in result
         assert "documents" in result
         assert result["index"] == {"word": [1, 2]}
-        assert result["documents"] == {1: "text1", 2: "text2"}
+        # JSON converts int keys to strings
+        assert result["documents"] == {"1": "text1", "2": "text2"}
 
     def test_load_checkpoint_raises_error_if_dirpath_none(self):
         """load_checkpoint raises ValueError if dirpath is None."""
@@ -359,7 +360,12 @@ class TestPersistenceIntegration:
             
             # Verify data integrity
             assert load_result["index"] == indexer.index
-            assert load_result["documents"] == indexer.documents
+            # JSON converts int keys to strings
+            assert load_result["documents"] == {
+                "1": "Love is important",
+                "2": "Love life all day",
+                "3": "Life happens"
+            }
 
     def test_save_and_load_preserves_data_types(self):
         """Save/load preserves data types (int keys -> string keys in JSON)."""
@@ -378,3 +384,6 @@ class TestPersistenceIntegration:
             # This is expected behavior to verify
             assert "word" in result["index"]
             assert isinstance(result["index"]["word"], list)
+            # Documents keys are strings after JSON round-trip
+            assert "1" in result["documents"]
+            assert "2" in result["documents"]

@@ -268,4 +268,41 @@ class Persistence:
             FileNotFoundError: If checkpoint files missing
             json.JSONDecodeError: If JSON malformed
         """
-        raise NotImplementedError
+        try:
+            if dirpath is None:
+                raise ValueError("Directory path cannot be None")
+            if not isinstance(dirpath, str):
+                raise ValueError(f"Directory path must be string, got {type(dirpath).__name__}")
+            if not dirpath.strip():
+                raise ValueError("Directory path cannot be empty string")
+            
+            checkpoint_dir = Path(dirpath)
+            
+            # Check if directory exists
+            if not checkpoint_dir.exists():
+                raise FileNotFoundError(f"Checkpoint directory not found: {dirpath}")
+            
+            index_file = checkpoint_dir / "index.json"
+            docs_file = checkpoint_dir / "documents.json"
+            
+            # Check if required files exist
+            if not index_file.exists():
+                raise FileNotFoundError(f"Index file not found in checkpoint: {index_file}")
+            if not docs_file.exists():
+                raise FileNotFoundError(f"Documents file not found in checkpoint: {docs_file}")
+            
+            # Load index
+            index_data = self.load_index(str(index_file))
+            
+            # Load documents
+            docs_data = self.load_documents(str(docs_file))
+            
+            return {
+                "index": index_data,
+                "documents": docs_data
+            }
+            
+        except (ValueError, FileNotFoundError, json.JSONDecodeError) as e:
+            raise e
+        except Exception as e:
+            raise Exception(f"Error loading checkpoint: {type(e).__name__}: {e}")
