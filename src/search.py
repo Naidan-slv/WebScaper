@@ -66,7 +66,26 @@ class Search:
             ValueError: If query is empty or None
             TypeError: If query is not a string
         """
-        raise NotImplementedError("search not implemented")
+        try:
+            # Value validation for None first (before type check)
+            if query is None:
+                raise ValueError("Query cannot be None")
+            
+            # Type validation
+            if not isinstance(query, str):
+                raise TypeError(f"Query must be string, not {type(query).__name__}")
+            
+            # Value validation for empty string
+            if query.strip() == "":
+                raise ValueError("Query cannot be empty")
+            
+            # Search using indexer
+            return self.indexer.search(query)
+        
+        except (ValueError, TypeError) as e:
+            raise
+        except Exception as e:
+            raise RuntimeError(f"Search failed for query '{query}': {str(e)}")
     
     def get_document_text(self, doc_id: int) -> str:
         """
