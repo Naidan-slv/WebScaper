@@ -142,7 +142,19 @@ class CLI:
         Returns:
             dict or None: Index entry for the word, or None if not found
         """
-        raise NotImplementedError
+        if not self.is_built:
+            print("No index loaded. Run 'build' or 'load' first.")
+            return None
+
+        word_lower = word.lower()
+        if word_lower in self.indexer.index:
+            entry = self.indexer.index[word_lower]
+            print(f"\nIndex entry for '{word_lower}':")
+            print(f"  {entry}")
+            return {"word": word_lower, "doc_ids": entry}
+
+        print(f"\n  '{word_lower}' not found in index.")
+        return None
 
     def find(self, query):
         """
