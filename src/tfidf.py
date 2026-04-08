@@ -67,7 +67,10 @@ class TfIdf:
         """
         Calculate inverse document frequency of a word.
 
-        IDF = log(total documents / documents containing word)
+        Uses smoothed IDF: log(1 + N / df) to ensure words appearing in all
+        documents still receive a small positive score. This is important for
+        small corpora where many words appear in every document.
+
         Returns 0.0 if word not in index.
 
         Args:
@@ -82,7 +85,7 @@ class TfIdf:
 
         docs_containing = len(self.indexer.index[word_lower])
         total_docs = self.indexer.document_count
-        return math.log(total_docs / docs_containing)
+        return math.log(1 + total_docs / docs_containing)
 
     def calculate_tfidf(self, word, doc_id):
         """
