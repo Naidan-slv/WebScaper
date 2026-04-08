@@ -1,0 +1,6 @@
+[project]
+name = "webscaper"
+version = "1.0.0"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
