@@ -129,4 +129,11 @@ class WordFrequency:
         Raises:
             KeyError: If document not found
         """
-        raise NotImplementedError
+        if doc_id not in self.frequencies:
+            raise KeyError(f"Document {doc_id} not found")
+        
+        # Sum all word frequencies
+        word_freq = self.frequencies[doc_id]
+        total_words = sum(word_freq.values())
+        
+        return total_words
