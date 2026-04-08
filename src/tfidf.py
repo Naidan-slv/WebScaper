@@ -117,7 +117,29 @@ class TfIdf:
         Raises:
             ValueError: If query is None or empty.
         """
-        raise NotImplementedError
+        if query is None:
+            raise ValueError("Query cannot be None")
+        if not query.strip():
+            raise ValueError("Query cannot be empty")
+
+        words = tokenize(query)
+        scores = {}
+
+        for word in words:
+            if word not in self.indexer.index:
+                continue
+            for doc_id in self.indexer.index[word]:
+                if doc_id not in scores:
+                    scores[doc_id] = 0.0
+                scores[doc_id] += self.calculate_tfidf(word, doc_id)
+
+        results = [
+            {"doc_id": doc_id, "score": score}
+            for doc_id, score in scores.items()
+            if score > 0.0
+        ]
+        results.sort(key=lambda r: r["score"], reverse=True)
+        return results
 
     def search(self, query, limit=10):
         """
