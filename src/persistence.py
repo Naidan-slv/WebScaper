@@ -25,7 +25,10 @@ class Persistence:
         Raises:
             ValueError: If indexer is None
         """
-        raise NotImplementedError
+        if indexer is None:
+            raise ValueError("Indexer cannot be None")
+        
+        self.indexer = indexer
 
     def save_index(self, filepath):
         """
