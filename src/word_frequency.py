@@ -71,7 +71,15 @@ class WordFrequency:
             ValueError: If word or doc_id invalid
             KeyError: If document not found
         """
-        raise NotImplementedError
+        if word is None:
+            raise ValueError("Word cannot be None")
+        
+        if doc_id not in self.frequencies:
+            raise KeyError(f"Document {doc_id} not found")
+        
+        # Case-insensitive lookup
+        word_lower = word.lower().strip()
+        return self.frequencies[doc_id].get(word_lower, 0)
 
     def get_top_words(self, doc_id, limit=10):
         """
