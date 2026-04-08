@@ -108,7 +108,20 @@ class CLI:
         Returns:
             str: Formatted output string
         """
-        raise NotImplementedError
+        if not results:
+            return f"No results found for '{query}'"
+        
+        output_lines = [f"Found {len(results)} result(s) for '{query}':", ""]
+        
+        for i, result in enumerate(results, 1):
+            doc_id = result.get("doc_id", "?")
+            snippet = result.get("snippet", "")
+            
+            output_lines.append(f"{i}. Document ID: {doc_id}")
+            output_lines.append(f"   Snippet: {snippet}")
+            output_lines.append("")
+        
+        return "\n".join(output_lines)
 
     def run(self):
         """
