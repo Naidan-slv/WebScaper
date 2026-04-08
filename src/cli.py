@@ -30,7 +30,13 @@ class CLI:
 
     def __init__(self):
         """Initialize CLI with no components loaded yet."""
-        raise NotImplementedError
+        self.crawler = Crawler(timeout=15, politeness_delay=6)
+        self.indexer = Indexer()
+        self.search = None
+        self.multiword_search = None
+        self.word_freq = None
+        self.persistence = None
+        self.is_built = False
 
     def build(self, max_pages=10):
         """
