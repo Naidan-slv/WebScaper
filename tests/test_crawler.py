@@ -1,5 +1,5 @@
 """
-Tests for the Crawler class - Step 1: Basic fetching, parsing, and error handling.
+Tests for the Crawler class - Step 1 & 2: Fetching, parsing, error handling, and politeness window.
 
 Tests:
 - test_fetch_page_returns_html: Can fetch and return HTML?
@@ -10,6 +10,9 @@ Tests:
 - test_fetch_page_handles_http_errors: Catches HTTP 4xx/5xx errors?
 - test_fetch_page_handles_connection_error: Catches connection errors?
 - test_extract_text_handles_invalid_input: Rejects invalid input?
+- test_fetch_page_enforces_politeness_window: 6s delay enforced? (Step 2)
+- test_fetch_page_respects_custom_politeness_delay: Custom delay works? (Step 2)
+- test_fetch_page_can_disable_politeness_delay: Disable delay for testing? (Step 2)
 """
 
 import pytest
@@ -223,3 +226,51 @@ class TestCrawler:
         
         except Exception as e:
             pytest.skip(f"Could not reach website: {str(e)}")
+    
+    # ========== POLITENESS WINDOW TESTS (Step 2) ==========
+    
+    def test_fetch_page_enforces_default_politeness_window(self, mock_html_response):
+        """
+        Test that fetch_page enforces 6-second politeness window.
+        
+        Should sleep 6 seconds before each fetch to avoid hammering the server.
+        This is a requirement: be respectful to target website.
+        """
+        crawler = Crawler()
+        
+        with patch('src.crawler.requests.get', return_value=mock_html_response):
+            with patch('src.crawler.time.sleep') as mock_sleep:
+                crawler.fetch_page("https://quotes.toscrape.com/")
+                
+                # Verify that sleep was called with 6 seconds
+                mock_sleep.assert_called_once_with(6)
+    
+    def test_fetch_page_respects_custom_politeness_delay(self, mock_html_response):
+        """
+        Test that fetch_page respects custom politeness delay.
+        
+        Should allow user to set custom delay (e.g., 3s for testing).
+        """
+        crawler = Crawler(politeness_delay=3)
+        
+        with patch('src.crawler.requests.get', return_value=mock_html_response):
+            with patch('src.crawler.time.sleep') as mock_sleep:
+                crawler.fetch_page("https://quotes.toscrape.com/")
+                
+                # Verify that sleep was called with custom delay
+                mock_sleep.assert_called_once_with(3)
+    
+    def test_fetch_page_can_disable_politeness_delay(self, mock_html_response):
+        """
+        Test that fetch_page can disable politeness delay.
+        
+        Should allow politeness_delay=0 for testing (no sleep).
+        """
+        crawler = Crawler(politeness_delay=0)
+        
+        with patch('src.crawler.requests.get', return_value=mock_html_response):
+            with patch('src.crawler.time.sleep') as mock_sleep:
+                crawler.fetch_page("https://quotes.toscrape.com/")
+                
+                # Verify that sleep was called with 0 (no delay)
+                mock_sleep.assert_called_once_with(0)
