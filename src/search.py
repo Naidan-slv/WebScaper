@@ -29,7 +29,28 @@ class Search:
             ValueError: If indexer is None or invalid type
             RuntimeError: If index has not been built
         """
-        raise NotImplementedError("__init__ not implemented")
+        try:
+            # Validate indexer parameter
+            if indexer is None:
+                raise ValueError("Indexer cannot be None")
+            
+            if not isinstance(indexer, Indexer):
+                raise ValueError(f"Expected Indexer, got {type(indexer).__name__}")
+            
+            # Check if index has been built (index should be non-empty dict)
+            if not hasattr(indexer, 'index') or indexer.index is None:
+                raise RuntimeError("Indexer has not been initialized properly")
+            
+            # For basic check: if documents were added but index is empty, it wasn't built
+            if indexer.document_count > 0 and len(indexer.index) == 0:
+                raise RuntimeError("Indexer must have build_index() called before Search initialization")
+            
+            self.indexer = indexer
+        
+        except (ValueError, RuntimeError) as e:
+            raise
+        except Exception as e:
+            raise RuntimeError(f"Failed to initialize Search: {str(e)}")
     
     def search(self, query: str) -> list:
         """
