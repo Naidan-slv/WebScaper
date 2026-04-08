@@ -24,7 +24,22 @@ class CLI:
             ValueError: If any component is None
             RuntimeError: If indexer is not built
         """
-        raise NotImplementedError
+        if crawler is None:
+            raise ValueError("Crawler cannot be None")
+        if indexer is None:
+            raise ValueError("Indexer cannot be None")
+        if search is None:
+            raise ValueError("Search cannot be None")
+        
+        # Check if indexer has been built
+        if not hasattr(indexer, "index"):
+            raise RuntimeError("Indexer must have index attribute")
+        if not indexer.index:
+            raise RuntimeError("Indexer must be built before initializing CLI")
+        
+        self.crawler = crawler
+        self.indexer = indexer
+        self.search = search
 
     def build_index(self, url):
         """
