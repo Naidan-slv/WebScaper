@@ -114,4 +114,4 @@ class MultiPageCrawler:
         Returns:
             int: Number of pages fetched
         """
-        raise NotImplementedError
+        return self.pages_fetched
