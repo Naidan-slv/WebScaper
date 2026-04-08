@@ -50,7 +50,39 @@ class CLI:
         Returns:
             dict: Summary with pages_crawled, words_indexed, docs_stored
         """
-        raise NotImplementedError
+        print(f"\nCrawling {BASE_URL} (up to {max_pages} pages)...")
+        print("Respecting 6-second politeness window between requests.\n")
+
+        # 1. Crawl all pages
+        mpc = MultiPageCrawler(self.crawler, max_pages=max_pages, base_url=BASE_URL)
+        pages = mpc.fetch_and_parse_all()
+        print(f"  Fetched {len(pages)} pages.")
+
+        # 2. Index all pages
+        self.indexer = Indexer()  # Fresh indexer
+        for page in pages:
+            self.indexer.add_document(page["text"])
+        self.indexer.build_index()
+        print(f"  Indexed {self.indexer.document_count} documents, {len(self.indexer.index)} unique words.")
+
+        # 3. Save to file system
+        os.makedirs(DEFAULT_INDEX_DIR, exist_ok=True)
+        self.persistence = Persistence(self.indexer)
+        self.persistence.save_index(DEFAULT_INDEX_FILE)
+        self.persistence.save_documents(DEFAULT_DOCS_FILE)
+        print(f"  Index saved to {DEFAULT_INDEX_FILE}")
+        print(f"  Documents saved to {DEFAULT_DOCS_FILE}")
+
+        # 4. Wire up search components
+        self._wire_search_components()
+
+        summary = {
+            "pages_crawled": len(pages),
+            "words_indexed": len(self.indexer.index),
+            "docs_stored": self.indexer.document_count,
+        }
+        print(f"\n  Build complete.")
+        return summary
 
     def load(self):
         """
