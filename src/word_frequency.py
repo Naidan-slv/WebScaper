@@ -96,7 +96,25 @@ class WordFrequency:
             ValueError: If doc_id invalid
             KeyError: If document not found
         """
-        raise NotImplementedError
+        if doc_id not in self.frequencies:
+            raise KeyError(f"Document {doc_id} not found")
+        
+        # Get frequencies dict for this document
+        word_freqs = self.frequencies[doc_id]
+        
+        # Sort by frequency (descending), then by word name (ascending) for consistency
+        sorted_words = sorted(
+            word_freqs.items(),
+            key=lambda x: (-x[1], x[0])
+        )
+        
+        # Return top N as list of dicts
+        result = [
+            {"word": word, "frequency": freq}
+            for word, freq in sorted_words[:limit]
+        ]
+        
+        return result
 
     def get_document_length(self, doc_id):
         """
