@@ -91,7 +91,16 @@ class MultiwordSearch:
         Returns:
             set: Document IDs in all sets
         """
-        raise NotImplementedError
+        if not result_sets:
+            return set()
+        
+        # Start with first set, find intersection with all others
+        intersection = set(result_sets[0])
+        
+        for result_set in result_sets[1:]:
+            intersection = intersection.intersection(set(result_set))
+        
+        return intersection
 
     def get_union(self, result_sets):
         """
