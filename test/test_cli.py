@@ -1,391 +1,360 @@
 """
-Comprehensive tests for CLI class.
+Tests for CLI class - matching COMP3011 coursework brief commands.
 
-Tests cover:
-- Initialization with validation
-- Index building from website
-- Query execution with results
-- Result formatting
-- Interactive REPL workflow
+Tests cover the 4 required commands:
+  > build   - Crawl website, build index, save to file
+  > load    - Load previously saved index from file
+  > print   - Print inverted index for a word
+  > find    - Find pages containing search terms
+
+Plus: initialization, REPL loop, help, error handling.
 """
 
+import os
+import json
 import pytest
-from unittest.mock import Mock, MagicMock, patch, call
+from unittest.mock import Mock, MagicMock, patch, PropertyMock
 from src.cli import CLI
 
 
+# ============================================================
+# Test Class 1: Initialization
+# ============================================================
+
 class TestCLIInit:
-    """Tests for CLI initialization and validation."""
+    """Tests for CLI initialization."""
 
-    def test_init_with_valid_components(self):
-        """CLI initializes successfully with valid crawler, indexer, search."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {"word": [1, 2, 3]}  # Built index
-        search = Mock()
-        
-        cli = CLI(crawler, indexer, search)
-        
-        assert cli.crawler == crawler
-        assert cli.indexer == indexer
-        assert cli.search == search
+    def test_init_creates_crawler(self):
+        """CLI creates a Crawler on init."""
+        cli = CLI()
+        assert cli.crawler is not None
 
-    def test_init_raises_error_if_crawler_none(self):
-        """CLI raises ValueError if crawler is None."""
-        indexer = Mock()
-        indexer.index = {"word": [1]}
-        search = Mock()
-        
-        with pytest.raises(ValueError):
-            CLI(None, indexer, search)
+    def test_init_creates_indexer(self):
+        """CLI creates an Indexer on init."""
+        cli = CLI()
+        assert cli.indexer is not None
 
-    def test_init_raises_error_if_indexer_none(self):
-        """CLI raises ValueError if indexer is None."""
-        crawler = Mock()
-        search = Mock()
-        
-        with pytest.raises(ValueError):
-            CLI(crawler, None, search)
+    def test_init_not_built(self):
+        """CLI starts with is_built = False."""
+        cli = CLI()
+        assert cli.is_built is False
 
-    def test_init_raises_error_if_search_none(self):
-        """CLI raises ValueError if search is None."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {"word": [1]}
-        
-        with pytest.raises(ValueError):
-            CLI(crawler, indexer, None)
-
-    def test_init_raises_error_if_indexer_not_built(self):
-        """CLI raises RuntimeError if indexer.index is empty (not built)."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {}  # Empty - not built
-        search = Mock()
-        
-        with pytest.raises(RuntimeError):
-            CLI(crawler, indexer, search)
-
-    def test_init_raises_error_if_indexer_missing_index_attribute(self):
-        """CLI raises RuntimeError if indexer lacks index attribute."""
-        crawler = Mock()
-        indexer = Mock(spec=[])  # No index attribute
-        search = Mock()
-        
-        with pytest.raises(RuntimeError):
-            CLI(crawler, indexer, search)
+    def test_init_search_is_none(self):
+        """CLI starts with search = None (no index loaded)."""
+        cli = CLI()
+        assert cli.search is None
 
 
-class TestBuildIndex:
-    """Tests for index building from website."""
+# ============================================================
+# Test Class 2: Build Command
+# ============================================================
 
-    @pytest.fixture
-    def cli_setup(self):
-        """Provide mock components for CLI."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {"word": [1]}  # Pre-built for init
-        search = Mock()
-        return CLI(crawler, indexer, search)
+class TestBuildCommand:
+    """Tests for the 'build' command."""
 
-    def test_build_index_fetches_page_and_builds_index(self, cli_setup):
-        """build_index fetches URL and builds search index."""
-        cli_setup.crawler.fetch_page.return_value = (
-            "<html><body>Hello world</body></html>"
-        )
-        cli_setup.indexer.add_document.return_value = None
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc1"}
-        
-        doc_count = cli_setup.build_index("https://example.com")
-        
-        cli_setup.crawler.fetch_page.assert_called_once_with("https://example.com")
-        cli_setup.indexer.add_document.assert_called_once()
-        cli_setup.indexer.build_index.assert_called_once()
-        assert doc_count >= 1
+    @patch("src.cli.MultiPageCrawler")
+    @patch("src.cli.Persistence")
+    @patch("src.cli.WordFrequency")
+    @patch("src.cli.MultiwordSearch")
+    @patch("src.cli.Search")
+    @patch("os.makedirs")
+    def test_build_crawls_and_indexes(self, mock_makedirs, mock_search_cls,
+                                       mock_mws_cls, mock_wf_cls,
+                                       mock_persist_cls, mock_mpc_cls):
+        """build() crawls pages and builds index."""
+        cli = CLI()
 
-    def test_build_index_raises_error_if_url_invalid(self, cli_setup):
-        """build_index raises ValueError if URL is invalid."""
-        with pytest.raises(ValueError):
-            cli_setup.build_index(None)
-
-    def test_build_index_raises_error_if_crawler_fails(self, cli_setup):
-        """build_index raises exception if crawler fails."""
-        cli_setup.crawler.fetch_page.side_effect = Exception("Network error")
-        
-        with pytest.raises(Exception):
-            cli_setup.build_index("https://example.com")
-
-    def test_build_index_raises_error_if_indexer_fails(self, cli_setup):
-        """build_index raises exception if indexer fails to build."""
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.build_index.side_effect = Exception("Index error")
-        
-        with pytest.raises(Exception):
-            cli_setup.build_index("https://example.com")
-
-    def test_build_index_returns_document_count(self, cli_setup):
-        """build_index returns number of documents indexed."""
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.add_document.return_value = None
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc1", 2: "doc2", 3: "doc3"}
-        
-        doc_count = cli_setup.build_index("https://example.com")
-        
-        assert doc_count == 3
-
-
-class TestSearchQuery:
-    """Tests for search query execution."""
-
-    @pytest.fixture
-    def cli_setup(self):
-        """Provide mock components for CLI."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {"word": [1]}
-        search = Mock()
-        return CLI(crawler, indexer, search)
-
-    def test_search_query_executes_search_and_returns_results(self, cli_setup):
-        """search_query executes search and returns formatted results."""
-        cli_setup.search.search_with_snippets.return_value = [
-            {"doc_id": 1, "snippet": "Hello world", "text": "Full text here"}
+        # Mock multi-page crawler
+        mock_mpc = Mock()
+        mock_mpc.fetch_and_parse_all.return_value = [
+            {"page": 1, "text": "hello world", "url": "http://test.com/"},
         ]
-        
-        results = cli_setup.search_query("hello")
-        
-        cli_setup.search.search_with_snippets.assert_called_once_with("hello")
-        assert len(results) == 1
-        assert results[0]["doc_id"] == 1
+        mock_mpc_cls.return_value = mock_mpc
 
-    def test_search_query_returns_empty_list_if_no_results(self, cli_setup):
-        """search_query returns empty list if search finds nothing."""
-        cli_setup.search.search_with_snippets.return_value = []
-        
-        results = cli_setup.search_query("nonexistent")
-        
+        # Mock persistence
+        mock_persist = Mock()
+        mock_persist_cls.return_value = mock_persist
+
+        # Mock search components
+        mock_wf = Mock()
+        mock_wf_cls.return_value = mock_wf
+
+        result = cli.build(max_pages=1)
+
+        assert result["pages_crawled"] == 1
+        assert result["docs_stored"] == 1
+        assert cli.is_built is True
+
+    @patch("src.cli.MultiPageCrawler")
+    @patch("src.cli.Persistence")
+    @patch("src.cli.WordFrequency")
+    @patch("src.cli.MultiwordSearch")
+    @patch("src.cli.Search")
+    @patch("os.makedirs")
+    def test_build_saves_index_to_file(self, mock_makedirs, mock_search_cls,
+                                        mock_mws_cls, mock_wf_cls,
+                                        mock_persist_cls, mock_mpc_cls):
+        """build() saves index and documents to file system."""
+        cli = CLI()
+
+        mock_mpc = Mock()
+        mock_mpc.fetch_and_parse_all.return_value = [
+            {"page": 1, "text": "hello world", "url": "http://test.com/"},
+        ]
+        mock_mpc_cls.return_value = mock_mpc
+
+        mock_persist = Mock()
+        mock_persist_cls.return_value = mock_persist
+
+        mock_wf = Mock()
+        mock_wf_cls.return_value = mock_wf
+
+        cli.build(max_pages=1)
+
+        mock_persist.save_index.assert_called_once()
+        mock_persist.save_documents.assert_called_once()
+
+    @patch("src.cli.MultiPageCrawler")
+    @patch("src.cli.Persistence")
+    @patch("src.cli.WordFrequency")
+    @patch("src.cli.MultiwordSearch")
+    @patch("src.cli.Search")
+    @patch("os.makedirs")
+    def test_build_wires_search_components(self, mock_makedirs, mock_search_cls,
+                                            mock_mws_cls, mock_wf_cls,
+                                            mock_persist_cls, mock_mpc_cls):
+        """build() wires up search, multiword search, and word frequency."""
+        cli = CLI()
+
+        mock_mpc = Mock()
+        mock_mpc.fetch_and_parse_all.return_value = [
+            {"page": 1, "text": "hello world", "url": "http://test.com/"},
+        ]
+        mock_mpc_cls.return_value = mock_mpc
+
+        mock_persist = Mock()
+        mock_persist_cls.return_value = mock_persist
+
+        mock_wf = Mock()
+        mock_wf_cls.return_value = mock_wf
+
+        cli.build(max_pages=1)
+
+        assert cli.search is not None
+        assert cli.multiword_search is not None
+        assert cli.word_freq is not None
+
+
+# ============================================================
+# Test Class 3: Load Command
+# ============================================================
+
+class TestLoadCommand:
+    """Tests for the 'load' command."""
+
+    def test_load_raises_if_no_index_file(self, tmp_path):
+        """load() raises FileNotFoundError if index file doesn't exist."""
+        cli = CLI()
+        with patch("src.cli.DEFAULT_INDEX_FILE", str(tmp_path / "missing.json")):
+            with pytest.raises(FileNotFoundError):
+                cli.load()
+
+    def test_load_raises_if_no_docs_file(self, tmp_path):
+        """load() raises FileNotFoundError if documents file doesn't exist."""
+        cli = CLI()
+        # Create index file but not docs file
+        index_file = tmp_path / "index.json"
+        index_file.write_text('{"hello": [0]}')
+
+        with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
+            with patch("src.cli.DEFAULT_DOCS_FILE", str(tmp_path / "missing.json")):
+                with pytest.raises(FileNotFoundError):
+                    cli.load()
+
+    def test_load_restores_index(self, tmp_path):
+        """load() restores the inverted index from file."""
+        cli = CLI()
+
+        # Create test files
+        index_file = tmp_path / "index.json"
+        docs_file = tmp_path / "documents.json"
+        index_file.write_text('{"hello": [0], "world": [0]}')
+        docs_file.write_text('{"0": "hello world"}')
+
+        with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
+            with patch("src.cli.DEFAULT_DOCS_FILE", str(docs_file)):
+                result = cli.load()
+
+        assert result["words_loaded"] == 2
+        assert result["docs_loaded"] == 1
+        assert cli.is_built is True
+
+    def test_load_wires_search(self, tmp_path):
+        """load() creates search components after loading index."""
+        cli = CLI()
+
+        index_file = tmp_path / "index.json"
+        docs_file = tmp_path / "documents.json"
+        index_file.write_text('{"hello": [0], "world": [0]}')
+        docs_file.write_text('{"0": "hello world"}')
+
+        with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
+            with patch("src.cli.DEFAULT_DOCS_FILE", str(docs_file)):
+                cli.load()
+
+        assert cli.search is not None
+        assert cli.multiword_search is not None
+
+
+# ============================================================
+# Test Class 4: Print Command
+# ============================================================
+
+class TestPrintCommand:
+    """Tests for the 'print' command."""
+
+    def _build_cli(self):
+        """Create a CLI with a built index for testing."""
+        cli = CLI()
+        cli.indexer.add_document("hello world hello")
+        cli.indexer.build_index()
+        cli._wire_search_components()
+        return cli
+
+    def test_print_found_word(self):
+        """print_index returns entry for word in index."""
+        cli = self._build_cli()
+        result = cli.print_index("hello")
+        assert result is not None
+        assert result["word"] == "hello"
+        assert 0 in result["doc_ids"]
+
+    def test_print_not_found(self):
+        """print_index returns None for word not in index."""
+        cli = self._build_cli()
+        result = cli.print_index("xyzzy")
+        assert result is None
+
+    def test_print_case_insensitive(self):
+        """print_index is case-insensitive."""
+        cli = self._build_cli()
+        result = cli.print_index("HELLO")
+        assert result is not None
+        assert result["word"] == "hello"
+
+    def test_print_before_build(self):
+        """print_index shows error if no index loaded."""
+        cli = CLI()
+        result = cli.print_index("hello")
+        assert result is None
+
+
+# ============================================================
+# Test Class 5: Find Command
+# ============================================================
+
+class TestFindCommand:
+    """Tests for the 'find' command."""
+
+    def _build_cli(self):
+        """Create a CLI with a built index for testing."""
+        cli = CLI()
+        cli.indexer.add_document("the world is full of good friends")
+        cli.indexer.add_document("good things come to those who wait")
+        cli.indexer.build_index()
+        cli._wire_search_components()
+        return cli
+
+    def test_find_single_word(self):
+        """find returns results for single word query."""
+        cli = self._build_cli()
+        results = cli.find("good")
+        assert len(results) > 0
+
+    def test_find_multi_word(self):
+        """find returns AND results for multi-word query."""
+        cli = self._build_cli()
+        results = cli.find("good friends")
+        # "good friends" both in doc 0 only
+        assert len(results) >= 1
+
+    def test_find_no_results(self):
+        """find returns empty for non-existent word."""
+        cli = self._build_cli()
+        results = cli.find("xyzzyplugh")
         assert results == []
 
-    def test_search_query_raises_error_if_query_none(self, cli_setup):
-        """search_query raises ValueError if query is None."""
-        with pytest.raises(ValueError):
-            cli_setup.search_query(None)
+    def test_find_before_build(self):
+        """find returns empty if no index loaded."""
+        cli = CLI()
+        results = cli.find("hello")
+        assert results == []
 
-    def test_search_query_raises_error_if_query_empty(self, cli_setup):
-        """search_query raises ValueError if query is empty string."""
-        with pytest.raises(ValueError):
-            cli_setup.search_query("")
-
-    def test_search_query_handles_search_exceptions(self, cli_setup):
-        """search_query propagates exceptions from search component."""
-        cli_setup.search.search_with_snippets.side_effect = RuntimeError("Search failed")
-        
-        with pytest.raises(RuntimeError):
-            cli_setup.search_query("test")
-
-    def test_search_query_normalizes_query_input(self, cli_setup):
-        """search_query normalizes query before searching."""
-        cli_setup.search.search_with_snippets.return_value = []
-        
-        cli_setup.search_query("HELLO WORLD")
-        
-        # Should lowercase the query
-        cli_setup.search.search_with_snippets.assert_called_once()
-        call_args = cli_setup.search.search_with_snippets.call_args[0][0]
-        assert call_args == call_args.lower()
+    def test_find_returns_snippets(self):
+        """find results contain doc_id and snippet."""
+        cli = self._build_cli()
+        results = cli.find("good")
+        assert len(results) > 0
+        assert "doc_id" in results[0]
+        assert "snippet" in results[0]
 
 
-class TestDisplayResults:
-    """Tests for result formatting and display."""
+# ============================================================
+# Test Class 6: REPL (run) Tests
+# ============================================================
 
-    @pytest.fixture
-    def cli_setup(self):
-        """Provide mock components for CLI."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {"word": [1]}
-        search = Mock()
-        return CLI(crawler, indexer, search)
-
-    def test_display_results_formats_single_result(self, cli_setup):
-        """display_results formats single search result."""
-        results = [{"doc_id": 1, "snippet": "Hello world", "text": "Full text"}]
-        
-        output = cli_setup.display_results("hello", results)
-        
-        assert "hello" in output.lower()
-        assert "1" in output
-        assert "Hello world" in output
-
-    def test_display_results_formats_multiple_results(self, cli_setup):
-        """display_results formats multiple search results."""
-        results = [
-            {"doc_id": 1, "snippet": "First result", "text": "Text 1"},
-            {"doc_id": 2, "snippet": "Second result", "text": "Text 2"},
-        ]
-        
-        output = cli_setup.display_results("query", results)
-        
-        assert "First result" in output
-        assert "Second result" in output
-
-    def test_display_results_handles_no_results(self, cli_setup):
-        """display_results handles empty result list gracefully."""
-        output = cli_setup.display_results("notfound", [])
-        
-        assert isinstance(output, str)
-        assert len(output) > 0
-
-    def test_display_results_includes_doc_id(self, cli_setup):
-        """display_results includes document ID in output."""
-        results = [{"doc_id": 42, "snippet": "test", "text": "full"}]
-        
-        output = cli_setup.display_results("test", results)
-        
-        assert "42" in output
-
-    def test_display_results_includes_snippet(self, cli_setup):
-        """display_results includes snippet text in output."""
-        results = [{"doc_id": 1, "snippet": "Custom snippet text", "text": "full"}]
-        
-        output = cli_setup.display_results("test", results)
-        
-        assert "Custom snippet text" in output
-
-
-class TestRun:
-    """Tests for interactive REPL workflow."""
-
-    @pytest.fixture
-    def cli_setup(self):
-        """Provide mock components for CLI."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {"word": [1]}
-        search = Mock()
-        return CLI(crawler, indexer, search)
+class TestRunREPL:
+    """Tests for the interactive REPL loop."""
 
     @patch("builtins.input")
-    def test_run_prompts_for_url_then_builds_index(self, mock_input, cli_setup):
-        """run prompts for URL, builds index, enters search loop."""
-        mock_input.side_effect = ["https://example.com", "quit"]
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.add_document.return_value = None
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc"}
-        
-        cli_setup.run()
-        
-        cli_setup.crawler.fetch_page.assert_called_once()
-        assert mock_input.call_count >= 1
+    def test_run_quit(self, mock_input):
+        """run exits on 'quit' command."""
+        mock_input.side_effect = ["quit"]
+        cli = CLI()
+        cli.run()  # Should not raise
 
     @patch("builtins.input")
-    def test_run_accepts_search_queries(self, mock_input, cli_setup):
-        """run accepts and executes search queries from user."""
-        mock_input.side_effect = [
-            "https://example.com",
-            "hello",
-            "quit",
-        ]
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc"}
-        cli_setup.search.search_with_snippets.return_value = [
-            {"doc_id": 1, "snippet": "hello world", "text": "full"}
-        ]
-        
-        cli_setup.run()
-        
-        cli_setup.search.search_with_snippets.assert_called()
-
-    @patch("builtins.input")
-    def test_run_exits_on_quit_command(self, mock_input, cli_setup):
-        """run exits when user enters 'quit'."""
-        mock_input.side_effect = ["https://example.com", "quit"]
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc"}
-        
-        # Should not raise exception
-        cli_setup.run()
-
-    @patch("builtins.input", side_effect=EOFError)
-    def test_run_exits_on_eof(self, mock_input, cli_setup):
-        """run exits gracefully on EOF (Ctrl+D)."""
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc"}
-        mock_input.side_effect = ["https://example.com", EOFError()]
-        
-        cli_setup.run()
-
-    @patch("builtins.input")
-    @patch("builtins.print")
-    def test_run_displays_search_results(self, mock_print, mock_input, cli_setup):
-        """run displays search results to user."""
-        mock_input.side_effect = [
-            "https://example.com",
-            "search term",
-            "quit",
-        ]
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc"}
-        cli_setup.search.search_with_snippets.return_value = [
-            {"doc_id": 1, "snippet": "result", "text": "full"}
-        ]
-        
-        cli_setup.run()
-        
-        # Should have printed results
-        assert mock_print.called
-
-    @patch("builtins.input")
-    def test_run_handles_empty_queries(self, mock_input, cli_setup):
-        """run handles empty query strings gracefully."""
-        mock_input.side_effect = [
-            "https://example.com",
-            "",  # Empty query
-            "quit",
-        ]
-        cli_setup.crawler.fetch_page.return_value = "<html>test</html>"
-        cli_setup.indexer.build_index.return_value = None
-        cli_setup.indexer.documents = {1: "doc"}
-        
-        # Should not raise exception
-        cli_setup.run()
-
-
-class TestCLIIntegration:
-    """Integration tests for full CLI workflow."""
-
-    @patch("builtins.input")
-    def test_full_workflow_build_and_search(self, mock_input):
-        """Full workflow: initialize → build index → search → display."""
-        crawler = Mock()
-        indexer = Mock()
-        indexer.index = {"word": [1]}
-        indexer.documents = {1: "test document"}
-        search = Mock()
-        
-        cli = CLI(crawler, indexer, search)
-        
-        mock_input.side_effect = [
-            "https://example.com",
-            "search",
-            "quit",
-        ]
-        crawler.fetch_page.return_value = "<html>test document</html>"
-        indexer.build_index.return_value = None
-        search.search_with_snippets.return_value = [
-            {"doc_id": 1, "snippet": "test", "text": "test document"}
-        ]
-        
-        # Should execute without errors
+    def test_run_exit(self, mock_input):
+        """run exits on 'exit' command."""
+        mock_input.side_effect = ["exit"]
+        cli = CLI()
         cli.run()
-        
-        crawler.fetch_page.assert_called_once()
-        indexer.build_index.assert_called_once()
-        search.search_with_snippets.assert_called_once()
+
+    @patch("builtins.input")
+    def test_run_help(self, mock_input, capsys):
+        """run shows help on 'help' command."""
+        mock_input.side_effect = ["help", "quit"]
+        cli = CLI()
+        cli.run()
+        captured = capsys.readouterr()
+        assert "build" in captured.out
+        assert "load" in captured.out
+        assert "print" in captured.out
+        assert "find" in captured.out
+
+    @patch("builtins.input")
+    def test_run_unknown_command(self, mock_input, capsys):
+        """run handles unknown commands gracefully."""
+        mock_input.side_effect = ["foobar", "quit"]
+        cli = CLI()
+        cli.run()
+        captured = capsys.readouterr()
+        assert "Unknown command" in captured.out
+
+    @patch("builtins.input")
+    def test_run_keyboard_interrupt(self, mock_input, capsys):
+        """run handles KeyboardInterrupt gracefully."""
+        mock_input.side_effect = KeyboardInterrupt()
+        cli = CLI()
+        cli.run()
+        captured = capsys.readouterr()
+        assert "Goodbye" in captured.out
+
+    @patch("builtins.input")
+    def test_run_eof(self, mock_input, capsys):
+        """run handles EOF gracefully."""
+        mock_input.side_effect = EOFError()
+        cli = CLI()
+        cli.run()
+        captured = capsys.readouterr()
+        assert "Goodbye" in captured.out
