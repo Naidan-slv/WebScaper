@@ -66,7 +66,18 @@ class MultiPageCrawler:
         Raises:
             RuntimeError: If fetch fails
         """
-        raise NotImplementedError
+        pages = []
+        
+        try:
+            for page_num in range(1, self.max_pages + 1):
+                url = self.get_next_page_url(page_num)
+                html = self.crawler.fetch_page(url)
+                pages.append(html)
+                self.pages_fetched += 1
+        except Exception as e:
+            raise RuntimeError(f"Failed to fetch pages: {str(e)}")
+        
+        return pages
 
     def fetch_and_parse_all(self):
         """
