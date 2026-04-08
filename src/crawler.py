@@ -1,12 +1,12 @@
 """
 Web crawler for fetching and parsing website content.
 
-Step 1: Basic crawler to fetch a single page and extract text with error handling.
-"""
+Step 1: Basic crawler to fetch a single page and extract text with error handling.Step 2: Add politeness window to respect target website (6-second delay between requests)."""
 
 import requests
 from bs4 import BeautifulSoup
 import logging
+import time
 
 # Configure logging for error tracking
 logger = logging.getLogger(__name__)
@@ -15,22 +15,27 @@ logger = logging.getLogger(__name__)
 class Crawler:
     """
     Simple web crawler that fetches pages and extracts text with proper error handling.
+    Includes politeness window to respect target website.
     """
     
-    def __init__(self, timeout: int = 10):
+    def __init__(self, timeout: int = 10, politeness_delay: int = 6):
         """
-        Initialize crawler with timeout setting.
+        Initialize crawler with timeout and politeness delay settings.
         
         Args:
             timeout: Request timeout in seconds (default: 10)
+            politeness_delay: Seconds to sleep before each fetch (default: 6)
+                             Set to 0 to disable politeness window
         """
         self.timeout = timeout
+        self.politeness_delay = politeness_delay
     
     def fetch_page(self, url: str) -> str:
         """
-        Fetch a single page from a URL with error handling.
+        Fetch a single page from a URL with error handling and politeness window.
         
         Makes HTTP GET request to the URL and returns raw HTML.
+        Sleeps before each request to respect target website (politeness window).
         Handles network timeouts, connection errors, and HTTP errors.
         
         Args:
@@ -43,7 +48,14 @@ class Crawler:
             requests.Timeout: If request exceeds timeout
             requests.HTTPError: If server returns 4xx/5xx status
             requests.RequestException: If other network errors occur
+        
+        Note:
+            Sleeps for politeness_delay seconds before fetching to avoid
+            overwhelming the target server. This is respectful web scraping practice.
         """
+        # Enforce politeness window: sleep before fetch to avoid hammering server
+        time.sleep(self.politeness_delay)
+        
         try:
             response = requests.get(url, timeout=self.timeout)
             response.raise_for_status()  # Raise exception for 4xx/5xx status codes
