@@ -79,6 +79,12 @@ pip install -r requirements.txt
 
 ## Usage
 
+**All commands must be run from the project root directory** (`WebScaper/`):
+
+```bash
+cd WebScaper
+```
+
 Launch the interactive shell:
 
 ```bash
@@ -159,6 +165,8 @@ Found 2 result(s) for 'good friends' (ranked by relevance):
 ## Testing
 
 The project has **267 tests** across 10 test files.
+
+**All test commands must be run from the project root directory** (`WebScaper/`).
 
 ### Run all unit tests
 
