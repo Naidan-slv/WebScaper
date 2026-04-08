@@ -51,7 +51,17 @@ class TfIdf:
         Raises:
             KeyError: If doc_id not found.
         """
-        raise NotImplementedError
+        if doc_id not in self.indexer.documents:
+            raise KeyError(f"Document {doc_id} not found")
+
+        text = self.indexer.documents[doc_id]
+        tokens = tokenize(text)
+        if not tokens:
+            return 0.0
+
+        word_lower = word.lower().strip()
+        count = tokens.count(word_lower)
+        return count / len(tokens)
 
     def calculate_idf(self, word):
         """
