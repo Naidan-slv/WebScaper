@@ -161,8 +161,9 @@ class TestSaveDocuments:
             
             with open(filepath) as f:
                 data = json.load(f)
-            assert 1 in data
-            assert 2 in data
+            # JSON converts int keys to strings
+            assert "1" in data
+            assert "2" in data
 
     def test_save_documents_raises_error_if_documents_empty(self):
         """save_documents raises ValueError if documents empty."""

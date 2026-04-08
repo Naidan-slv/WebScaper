@@ -132,7 +132,37 @@ class Persistence:
             ValueError: If filepath invalid or documents empty
             OSError: If file write fails
         """
-        raise NotImplementedError
+        try:
+            if filepath is None:
+                raise ValueError("Filepath cannot be None")
+            if not isinstance(filepath, str):
+                raise ValueError(f"Filepath must be string, got {type(filepath).__name__}")
+            if not filepath.strip():
+                raise ValueError("Filepath cannot be empty string")
+            
+            if not self.indexer.documents:
+                raise ValueError("Documents are empty, nothing to save")
+            
+            # Convert documents to JSON-serializable format
+            # Convert int keys to strings for JSON compatibility
+            data = {str(k): v for k, v in self.indexer.documents.items()}
+            
+            # Write to file
+            with open(filepath, "w") as f:
+                json.dump(data, f, indent=2)
+            
+            # Return bytes written
+            with open(filepath, "rb") as f:
+                byte_count = len(f.read())
+            
+            return byte_count
+            
+        except ValueError as e:
+            raise e
+        except (OSError, IOError) as e:
+            raise OSError(f"Failed to write documents to {filepath}: {e}")
+        except Exception as e:
+            raise OSError(f"Unexpected error saving documents: {type(e).__name__}: {e}")
 
     def load_documents(self, filepath):
         """
