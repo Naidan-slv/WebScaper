@@ -141,7 +141,59 @@ class Search:
             ValueError: If doc_id invalid, query not found, or context_words negative
             TypeError: If parameters are wrong type
         """
-        raise NotImplementedError("get_snippet not implemented")
+        try:
+            # Type validation
+            if not isinstance(context_words, int):
+                raise TypeError(f"context_words must be integer, not {type(context_words).__name__}")
+            
+            # Value validation - negative context
+            if context_words < 0:
+                raise ValueError(f"context_words must be non-negative, got {context_words}")
+            
+            # Validate query parameter
+            if not isinstance(query, str) or query.strip() == "":
+                raise ValueError("Query must be non-empty string")
+            
+            # Get document text
+            try:
+                text = self.get_document_text(doc_id)
+            except (ValueError, TypeError) as e:
+                raise  # Re-raise to caller
+            
+            # Tokenize document
+            tokens = tokenize(text)
+            query_normalized = query.lower().strip()
+            
+            # Find query word in tokens (case-insensitive)
+            query_index = None
+            for i, token in enumerate(tokens):
+                if token == query_normalized:
+                    query_index = i
+                    break
+            
+            # If query word not found, raise error
+            if query_index is None:
+                raise ValueError(f"Word '{query}' not found in document {doc_id}")
+            
+            # Extract context
+            start_index = max(0, query_index - context_words)
+            end_index = min(len(tokens), query_index + context_words + 1)
+            
+            # Build snippet
+            snippet_tokens = tokens[start_index:end_index]
+            
+            # Add ellipsis if needed
+            if start_index > 0:
+                snippet_tokens.insert(0, "...")
+            if end_index < len(tokens):
+                snippet_tokens.append("...")
+            
+            return " ".join(snippet_tokens)
+        
+        except (ValueError, TypeError) as e:
+            raise
+        except Exception as e:
+            raise RuntimeError(f"Failed to generate snippet for doc {doc_id}: {str(e)}")
     
     def search_with_snippets(self, query: str, snippet_context: int = 2) -> list:
         """
