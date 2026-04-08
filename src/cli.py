@@ -215,4 +215,10 @@ class CLI:
 
     def _print_help(self):
         """Print available commands."""
-        raise NotImplementedError
+        print("\nAvailable commands:")
+        print("  build         - Crawl website and build index")
+        print("  load          - Load saved index from file")
+        print("  print <word>  - Print inverted index for word")
+        print("  find <query>  - Find pages with search terms")
+        print("  help          - Show this help message")
+        print("  quit / exit   - Exit the program\n")
