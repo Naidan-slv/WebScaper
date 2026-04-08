@@ -96,7 +96,11 @@ class CLI:
 
     def _wire_search_components(self):
         """Set up search, multiword search, and word frequency after indexing."""
-        raise NotImplementedError
+        self.search = Search(self.indexer)
+        self.multiword_search = MultiwordSearch(self.search)
+        self.word_freq = WordFrequency(self.indexer)
+        self.word_freq.calculate_frequencies()
+        self.is_built = True
 
     def run(self):
         """
