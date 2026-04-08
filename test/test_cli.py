@@ -44,6 +44,11 @@ class TestCLIInit:
         cli = CLI()
         assert cli.search is None
 
+    def test_init_tfidf_is_none(self):
+        """CLI starts with tfidf = None (no index loaded)."""
+        cli = CLI()
+        assert cli.tfidf is None
+
 
 # ============================================================
 # Test Class 2: Build Command
@@ -268,14 +273,14 @@ class TestFindCommand:
     def test_find_single_word(self):
         """find returns results for single word query."""
         cli = self._build_cli()
-        results = cli.find("good")
+        results = cli.find("friends")
         assert len(results) > 0
 
     def test_find_multi_word(self):
-        """find returns AND results for multi-word query."""
+        """find returns results for multi-word query."""
         cli = self._build_cli()
-        results = cli.find("good friends")
-        # "good friends" both in doc 0 only
+        results = cli.find("world friends")
+        # both words in doc 0 only
         assert len(results) >= 1
 
     def test_find_no_results(self):
@@ -291,12 +296,21 @@ class TestFindCommand:
         assert results == []
 
     def test_find_returns_snippets(self):
-        """find results contain doc_id and snippet."""
+        """find results contain doc_id, score, and snippet."""
         cli = self._build_cli()
-        results = cli.find("good")
+        results = cli.find("friends")
         assert len(results) > 0
         assert "doc_id" in results[0]
         assert "snippet" in results[0]
+        assert "score" in results[0]
+
+    def test_find_results_ranked_by_score(self):
+        """find returns results sorted by TF-IDF score descending."""
+        cli = self._build_cli()
+        results = cli.find("friends")
+        if len(results) > 1:
+            scores = [r["score"] for r in results]
+            assert scores == sorted(scores, reverse=True)
 
 
 # ============================================================

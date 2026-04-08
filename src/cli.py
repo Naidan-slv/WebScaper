@@ -16,6 +16,7 @@ from src.multi_page_crawler import MultiPageCrawler
 from src.multiword_search import MultiwordSearch
 from src.word_frequency import WordFrequency
 from src.persistence import Persistence
+from src.tfidf import TfIdf
 
 
 # Default paths for index storage
@@ -35,6 +36,7 @@ class CLI:
         self.search = None
         self.multiword_search = None
         self.word_freq = None
+        self.tfidf = None
         self.persistence = None
         self.is_built = False
 
@@ -158,7 +160,7 @@ class CLI:
 
     def find(self, query):
         """
-        Find pages containing the given search terms.
+        Find pages containing the given search terms, ranked by TF-IDF.
 
         Implements: > find <query>
 
@@ -166,37 +168,30 @@ class CLI:
             query: Search query (single or multiple words)
 
         Returns:
-            list: Search results with doc_ids and snippets
+            list: Search results ranked by TF-IDF score, each with
+                  doc_id, score, and snippet.
         """
         if not self.is_built:
             print("No index loaded. Run 'build' or 'load' first.")
             return []
 
-        words = query.lower().split()
-        if len(words) == 1:
-            doc_ids = self.search.search(words[0])
-        else:
-            doc_ids = self.multiword_search.search_and(query)
-
-        results = []
-        for doc_id in doc_ids:
-            snippet = self.indexer.documents.get(doc_id, "")[:100]
-            results.append({"doc_id": doc_id, "snippet": snippet})
+        results = self.tfidf.search(query)
 
         if results:
-            print(f"\nFound {len(results)} result(s) for '{query}':")
-            for r in results:
-                print(f"  Doc {r['doc_id']}: {r['snippet']}...")
+            print(f"\nFound {len(results)} result(s) for '{query}' (ranked by relevance):")
+            for i, r in enumerate(results, 1):
+                print(f"  {i}. [score: {r['score']:.4f}] Doc {r['doc_id']}: {r['snippet']}...")
         else:
             print(f"\n  No results for '{query}'.")
         return results
 
     def _wire_search_components(self):
-        """Set up search, multiword search, and word frequency after indexing."""
+        """Set up search, multiword search, word frequency, and TF-IDF after indexing."""
         self.search = Search(self.indexer)
         self.multiword_search = MultiwordSearch(self.search)
         self.word_freq = WordFrequency(self.indexer)
         self.word_freq.calculate_frequencies()
+        self.tfidf = TfIdf(self.indexer)
         self.is_built = True
 
     def run(self):
