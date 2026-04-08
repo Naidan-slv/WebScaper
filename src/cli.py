@@ -168,7 +168,28 @@ class CLI:
         Returns:
             list: Search results with doc_ids and snippets
         """
-        raise NotImplementedError
+        if not self.is_built:
+            print("No index loaded. Run 'build' or 'load' first.")
+            return []
+
+        words = query.lower().split()
+        if len(words) == 1:
+            doc_ids = self.search.search(words[0])
+        else:
+            doc_ids = self.multiword_search.search_and(query)
+
+        results = []
+        for doc_id in doc_ids:
+            snippet = self.indexer.documents.get(doc_id, "")[:100]
+            results.append({"doc_id": doc_id, "snippet": snippet})
+
+        if results:
+            print(f"\nFound {len(results)} result(s) for '{query}':")
+            for r in results:
+                print(f"  Doc {r['doc_id']}: {r['snippet']}...")
+        else:
+            print(f"\n  No results for '{query}'.")
+        return results
 
     def _wire_search_components(self):
         """Set up search, multiword search, and word frequency after indexing."""
