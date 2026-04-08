@@ -76,7 +76,13 @@ class TfIdf:
         Returns:
             float: Inverse document frequency (>= 0.0).
         """
-        raise NotImplementedError
+        word_lower = word.lower().strip()
+        if word_lower not in self.indexer.index:
+            return 0.0
+
+        docs_containing = len(self.indexer.index[word_lower])
+        total_docs = self.indexer.document_count
+        return math.log(total_docs / docs_containing)
 
     def calculate_tfidf(self, word, doc_id):
         """
