@@ -21,7 +21,14 @@ class WordFrequency:
         Raises:
             ValueError: If indexer is None or not built
         """
-        raise NotImplementedError
+        if indexer is None:
+            raise ValueError("Indexer cannot be None")
+        
+        if not indexer.documents or not indexer.index:
+            raise ValueError("Indexer must be built with documents and index")
+        
+        self.indexer = indexer
+        self.frequencies = {}  # Will be populated by calculate_frequencies
 
     def calculate_frequencies(self):
         """
