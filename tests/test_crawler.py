@@ -28,7 +28,7 @@ class TestCrawler:
             
             assert isinstance(result, str)
             assert "<html>" in result
-            assert "Famous Quotes" in result
+            assert "love what you do" in result
     
     def test_extract_text_returns_string(self):
         """

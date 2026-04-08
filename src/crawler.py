@@ -17,6 +17,8 @@ class Crawler:
         """
         Fetch a single page from a URL.
         
+        Makes HTTP GET request to the URL and returns raw HTML.
+        
         Args:
             url: URL to fetch
         
@@ -26,16 +28,23 @@ class Crawler:
         Raises:
             requests.RequestException: If network request fails
         """
-        pass
+        response = requests.get(url)
+        response.raise_for_status()  # Raise exception for 4xx/5xx status codes
+        return response.text
     
     def extract_text(self, html: str) -> str:
         """
         Extract plain text from HTML content.
         
+        Uses BeautifulSoup to parse HTML and extract only visible text,
+        removing all HTML tags and markup.
+        
         Args:
             html: HTML content to parse
         
         Returns:
-            Extracted plain text
+            Extracted plain text with HTML tags removed
         """
-        pass
+        soup = BeautifulSoup(html, 'html.parser')
+        text = soup.get_text(separator=' ', strip=True)
+        return text
