@@ -98,7 +98,26 @@ class MultiwordSearch:
             ValueError: If query invalid
             RuntimeError: If search not initialized
         """
-        raise NotImplementedError
+        if query is None:
+            raise ValueError("Query cannot be None")
+        
+        # Tokenize query into words
+        words = self.tokenize_query(query)
+        
+        # Search for each word and collect results
+        result_sets = []
+        for word in words:
+            # search_query returns list of dicts with 'doc_id' key
+            results = self.search.search_query(word)
+            # Extract just the doc_ids
+            doc_ids = [result["doc_id"] for result in results]
+            result_sets.append(doc_ids)
+        
+        # Get union of all result sets (OR logic)
+        any_docs = self.get_union(result_sets)
+        
+        # Return sorted list of document IDs
+        return sorted(list(any_docs))
 
     def get_intersection(self, result_sets):
         """
