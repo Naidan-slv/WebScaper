@@ -96,7 +96,39 @@ class CLI:
         Raises:
             FileNotFoundError: If index files don't exist
         """
-        raise NotImplementedError
+        if not os.path.exists(DEFAULT_INDEX_FILE):
+            raise FileNotFoundError(
+                f"Index file not found: {DEFAULT_INDEX_FILE}. Run 'build' first."
+            )
+        if not os.path.exists(DEFAULT_DOCS_FILE):
+            raise FileNotFoundError(
+                f"Documents file not found: {DEFAULT_DOCS_FILE}. Run 'build' first."
+            )
+
+        print(f"\nLoading index from {DEFAULT_INDEX_FILE}...")
+
+        # Load index
+        self.indexer = Indexer()
+        self.persistence = Persistence(self.indexer)
+
+        loaded_index = self.persistence.load_index(DEFAULT_INDEX_FILE)
+        self.indexer.index = loaded_index
+
+        loaded_docs = self.persistence.load_documents(DEFAULT_DOCS_FILE)
+        # Convert string keys back to int keys
+        self.indexer.documents = {int(k): v for k, v in loaded_docs.items()}
+        self.indexer.document_count = len(self.indexer.documents)
+
+        # Wire up search
+        self._wire_search_components()
+
+        summary = {
+            "words_loaded": len(self.indexer.index),
+            "docs_loaded": self.indexer.document_count,
+        }
+        print(f"  Loaded {summary['words_loaded']} words, {summary['docs_loaded']} documents.")
+        print("  Ready to search.\n")
+        return summary
 
     def print_index(self, word):
         """
