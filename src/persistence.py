@@ -44,7 +44,36 @@ class Persistence:
             ValueError: If filepath invalid or index empty
             OSError: If file write fails
         """
-        raise NotImplementedError
+        try:
+            if filepath is None:
+                raise ValueError("Filepath cannot be None")
+            if not isinstance(filepath, str):
+                raise ValueError(f"Filepath must be string, got {type(filepath).__name__}")
+            if not filepath.strip():
+                raise ValueError("Filepath cannot be empty string")
+            
+            if not self.indexer.index:
+                raise ValueError("Index is empty, nothing to save")
+            
+            # Convert index to JSON-serializable format
+            data = dict(self.indexer.index)
+            
+            # Write to file
+            with open(filepath, "w") as f:
+                json.dump(data, f, indent=2)
+            
+            # Return bytes written
+            with open(filepath, "rb") as f:
+                byte_count = len(f.read())
+            
+            return byte_count
+            
+        except ValueError as e:
+            raise e
+        except (OSError, IOError) as e:
+            raise OSError(f"Failed to write index to {filepath}: {e}")
+        except Exception as e:
+            raise OSError(f"Unexpected error saving index: {type(e).__name__}: {e}")
 
     def load_index(self, filepath):
         """
