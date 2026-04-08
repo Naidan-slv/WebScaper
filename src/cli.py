@@ -85,7 +85,17 @@ class CLI:
         Raises:
             ValueError: If query is invalid
         """
-        raise NotImplementedError
+        if query is None:
+            raise ValueError("Query cannot be None")
+        if isinstance(query, str) and not query.strip():
+            raise ValueError("Query cannot be empty")
+        if not isinstance(query, str):
+            raise ValueError("Query must be a string")
+        
+        # Execute search through search component
+        results = self.search.search_with_snippets(query.lower())
+        
+        return results
 
     def display_results(self, query, results):
         """
