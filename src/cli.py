@@ -55,7 +55,22 @@ class CLI:
             ValueError: If URL is invalid or indexer fails to build
             Exception: If crawler fails to fetch pages
         """
-        raise NotImplementedError
+        if url is None:
+            raise ValueError("URL cannot be None")
+        if not isinstance(url, str) or not url.strip():
+            raise ValueError("URL must be a non-empty string")
+        
+        # Fetch page using crawler
+        html = self.crawler.fetch_page(url)
+        
+        # Add document to indexer
+        self.indexer.add_document(html)
+        
+        # Build the index
+        self.indexer.build_index()
+        
+        # Return number of documents indexed
+        return len(self.indexer.documents)
 
     def search_query(self, query):
         """

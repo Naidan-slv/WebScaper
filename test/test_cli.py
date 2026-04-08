@@ -95,6 +95,7 @@ class TestBuildIndex:
         )
         cli_setup.indexer.add_document.return_value = None
         cli_setup.indexer.build_index.return_value = None
+        cli_setup.indexer.documents = {1: "doc1"}
         
         doc_count = cli_setup.build_index("https://example.com")
         
