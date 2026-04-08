@@ -291,9 +291,8 @@ class TestSearchAndWithSnippets:
             return []
         
         search.search_query = Mock(side_effect=mock_search)
-        search.search_with_snippets = Mock(return_value=[
-            {"doc_id": 2, "snippet": "love life snippet", "text": "full text"}
-        ])
+        search.get_document_text = Mock(return_value="full text here")
+        search.get_snippet = Mock(return_value="snippet with love context")
         return MultiwordSearch(search)
 
     def test_search_and_with_snippets_returns_formatted_results(self, mws_setup):
@@ -305,11 +304,14 @@ class TestSearchAndWithSnippets:
         assert "snippet" in result[0]
 
     def test_search_and_with_snippets_respects_context_words(self, mws_setup):
-        """search_and_with_snippets uses context_words parameter."""
+        """search_and_with_snippets uses context_words parameter when getting snippet."""
         mws_setup.search_and_with_snippets("love life", context_words=10)
         
-        # Verify search_with_snippets was called (would receive context param in implementation)
-        assert mws_setup.search.search_with_snippets.called
+        # Verify get_snippet was called with context_words parameter
+        assert mws_setup.search.get_snippet.called
+        # Check that it was called with context_words=10
+        call_args = mws_setup.search.get_snippet.call_args
+        assert call_args[0][2] == 10  # Third argument is context_words
 
     def test_search_and_with_snippets_raises_error_if_query_invalid(self, mws_setup):
         """search_and_with_snippets raises ValueError if query invalid."""
@@ -318,7 +320,8 @@ class TestSearchAndWithSnippets:
 
     def test_search_and_with_snippets_returns_empty_if_no_match(self, mws_setup):
         """search_and_with_snippets returns empty if no matching docs."""
-        mws_setup.search.search_with_snippets = Mock(return_value=[])
+        # Mock search_query to return no results for both words
+        mws_setup.search.search_query = Mock(return_value=[])
         
         result = mws_setup.search_and_with_snippets("love life")
         

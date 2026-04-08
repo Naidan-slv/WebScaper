@@ -82,7 +82,38 @@ class MultiwordSearch:
             ValueError: If query invalid
             RuntimeError: If search not initialized
         """
-        raise NotImplementedError
+        if query is None:
+            raise ValueError("Query cannot be None")
+        
+        # Tokenize query into words
+        words = self.tokenize_query(query)
+        
+        # Get documents containing all words
+        doc_ids = self.search_and(query)
+        
+        # For each matching document, get snippets for the first word
+        # (all words are in the document, so snippet for first word is sufficient)
+        results = []
+        if doc_ids and words:
+            first_word = words[0]
+            # Use search_with_snippets from search component which returns
+            # results with 'doc_id', 'snippet', 'text' keys
+            for doc_id in doc_ids:
+                try:
+                    # Get the document text
+                    doc_text = self.search.get_document_text(doc_id)
+                    # Get snippet for first word
+                    snippet = self.search.get_snippet(doc_id, first_word, context_words)
+                    results.append({
+                        "doc_id": doc_id,
+                        "snippet": snippet,
+                        "text": doc_text
+                    })
+                except (ValueError, RuntimeError):
+                    # Skip if document not found
+                    continue
+        
+        return results
 
     def search_or(self, query):
         """
