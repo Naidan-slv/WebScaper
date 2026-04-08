@@ -569,6 +569,75 @@ feat(cli): rewrite CLI to match coursework brief (build/load/print/find commands
 
 ---
 
+### Entry 13: Phase 3 - TF-IDF Ranking Implementation
+
+**Date**: 2026-04-08  
+**Task**: Implement TF-IDF (Term Frequency - Inverse Document Frequency) ranking module  
+**AI Tool**: GitHub Copilot (TDD implementation, algorithm guidance)  
+**Purpose**: Add relevance-based ranking to search results (required for 80+ grade)
+
+**What AI Generated**:
+- TfIdf class skeleton with 5 methods: `__init__`, `calculate_tf`, `calculate_idf`, `calculate_tfidf`, `rank_documents`, `search`
+- 35 tests across 6 test classes covering all methods
+- Full implementation following strict TDD: skeleton → tests → implement each method → commit
+
+**Did It Help?**: Yes  
+**Details**:
+  - What worked well: AI correctly implemented the mathematical formulas — TF = word count / total words, IDF = log(N / df), TF-IDF = TF * IDF; ranking logic with multi-word score summation was clean
+  - What didn't work: Initial `__init__` replacement accidentally ate the `calculate_tf` method definition due to a string replacement collision — had to manually fix the missing `def` line
+  - What you had to fix/modify: Fixed the replacement collision; verified all 35 tests pass with exact mathematical assertions (pytest.approx)
+  - Learning insights: TF-IDF is elegant — common words (IDF→0) get low scores naturally; rare document-specific words bubble up; the log function provides good discrimination between word frequencies
+
+**Test Coverage**: 35 tests (all passing)
+- TestTfIdfInit (4 tests): Validation of indexer dependency
+- TestCalculateTf (6 tests): Term frequency per document, case-insensitive, edge cases
+- TestCalculateIdf (6 tests): Inverse document frequency, rare vs common words
+- TestCalculateTfIdf (6 tests): Combined score, zero cases, ranking property
+- TestRankDocuments (7 tests): Multi-word queries, sorting, empty results, validation
+- TestSearch (6 tests): Full search with snippets, limit, validation
+
+**Commits Made** (TDD style):
+```
+feat(tfidf): add TfIdf class skeleton with 5 methods
+test(tfidf): add 35 tests for TfIdf class (all failing against skeleton)
+feat(tfidf): implement __init__ - 4 tests pass
+feat(tfidf): implement calculate_tf - 6 tests pass
+feat(tfidf): implement calculate_idf - 6 tests pass
+feat(tfidf): implement calculate_tfidf - 6 tests pass
+feat(tfidf): implement rank_documents - 7 tests pass
+feat(tfidf): implement search - all 35 tests pass
+```
+
+---
+
+### Entry 14: Phase 3 - TF-IDF CLI Integration
+
+**Date**: 2026-04-08  
+**Task**: Wire TF-IDF ranking into CLI find command  
+**AI Tool**: GitHub Copilot (integration, test updates)  
+**Purpose**: Replace unranked find results with TF-IDF ranked output showing relevance scores
+
+**What AI Generated**:
+- Updated CLI: import TfIdf, add `self.tfidf` to init and wiring, replace `find()` body with `self.tfidf.search(query)`
+- Updated tests: added `score` field assertion, ranking order test, new `test_init_tfidf_is_none`
+- Output format: numbered results with `[score: 0.1234]` prefix
+
+**Did It Help?**: Yes, but required test fixture fixes  
+**Details**:
+  - What worked well: Integration was clean — TfIdf.search() already returns `{doc_id, score, snippet}` which is exactly what the CLI needs; removed the old manual search+multiword branching code
+  - What didn't work: Test fixtures used "good" as search term, but "good" appeared in ALL test documents → IDF = log(2/2) = 0 → TF-IDF = 0 → no results. This is mathematically correct but broke the test assertion
+  - What you had to fix/modify: Changed test search terms from "good" (ubiquitous) to "friends" (unique to one doc) so TF-IDF produces non-zero scores; this is actually a great insight into how TF-IDF works — common words are inherently down-weighted
+  - Learning insights: TF-IDF's mathematical properties directly affect test design; you can't test relevance with words that appear everywhere because IDF correctly scores them as zero
+
+**Test Coverage**: 28 tests (all passing, up from 26 — added `test_init_tfidf_is_none` and `test_find_results_ranked_by_score`)
+
+**Commits Made**:
+```
+feat(cli): wire TF-IDF into find command for ranked search results - 28 tests pass
+```
+
+---
+
 ## Key Points for Video Critical Evaluation
 
 Use this section to prepare talking points about:
@@ -586,20 +655,22 @@ Use this section to prepare talking points about:
 | Aspect | Details |
 |--------|----------|
 | **AI Tool Used** | GitHub Copilot (University of Leeds Secure Access) |
-| **Total AI Interactions** | 12 entries across all phases |
-| **Most Helpful For** | Test case generation, known CS patterns, error handling, boolean logic, statistics, integration testing |
-| **Most Problematic For** | Mock object specifics, library-specific edge cases, doc_id indexing assumptions |
+| **Total AI Interactions** | 14 entries across all phases |
+| **Most Helpful For** | Test case generation, known CS patterns, error handling, boolean logic, statistics, integration testing, TF-IDF algorithm |
+| **Most Problematic For** | Mock object specifics, library-specific edge cases, doc_id indexing assumptions, test fixture design for TF-IDF |
 | **Code Written by AI** | ~60% scaffold + implementation; 40% testing & refinement |
-| **Success Rate** | 99% (12/12 entries successful) |
+| **Success Rate** | 99% (14/14 entries successful) |
 | **Phase 1 Status** | ✅ **COMPLETE** - 4+11+26+29=70 tests (CLI tests reduced from 29→26 after rewrite) |
 | **Phase 2 Status** | ✅ **COMPLETE** - 26+33+24+24=107 tests |
+| **Phase 3 Status** | ✅ **COMPLETE** - TF-IDF ranking (35 tests) + CLI integration (28 tests) |
 | **Integration Tests** | ✅ **35 PASSING** (real HTTP against quotes.toscrape.com) |
-| **TOTAL TESTS** | ✅ **191 PASSING** (156 unit + 35 integration) |
-| **Lines of Code** | ~1,800+ in src/ |
-| **Commits** | 60+ semantic commits with feature branches |
+| **MultiwordSearch Tests** | ✅ **39 PASSING** |
+| **TOTAL TESTS** | ✅ **267 PASSING** (232 unit + 35 integration) |
+| **Lines of Code** | ~2,100+ in src/ |
+| **Commits** | 80+ semantic commits with feature branches |
 | **Current Branch** | main (all features merged) |
-| **Next Goal** | TF-IDF ranking (required for 80+ grade) |
-| **Grade Target** | 80+ (requires TF-IDF ranking + video) |
+| **Next Goal** | Video demonstration |
+| **Grade Target** | 80+ (TF-IDF ranking ✅ + video pending) |
 | **Deadline** | 8 May 2026 (30 days remaining) |
 
 ---
@@ -629,9 +700,10 @@ Use this section to prepare talking points about:
 - Entry point: `python -m src.main`
 - Verified end-to-end with real website
 
-### Phase 3: Advanced (Planned)
-- TF-IDF ranking (required for 80+ grade)
-- Video demonstration
+### Phase 3: Advanced ✅
+- **TF-IDF ranking (35 tests):** Term frequency, inverse document frequency, combined scoring, ranked search
+- **CLI integration (28 tests):** find command now returns TF-IDF ranked results with relevance scores
+- Video demonstration (pending)
 
 ---
 
@@ -664,7 +736,7 @@ Use this section to prepare talking points about:
 
 **Overall Impact of AI in Development:**
 - ✅ **Accelerated development**: 60+ commits across all phases in short timeframe
-- ✅ **Improved code quality**: Comprehensive testing from day 1 (191 tests)
+- ✅ **Improved code quality**: Comprehensive testing from day 1 (267 tests)
 - ✅ **Pattern learning**: AI implementations teach good practices
 - ✅ **Time efficiency**: Skeleton + tests generated quickly; freed time for refinement
 - ✅ **Bug discovery**: Integration tests caught real bugs that mocks hid
@@ -694,8 +766,8 @@ Use this section to prepare talking points about:
 **For 15% GenAI Critical Evaluation Section of Video:**
 Emphasize:
 1. AI was used for scaffolding and testing, not just generation
-2. 191 passing tests represent human-verified quality
-3. 60+ semantic commits show deliberate progression
+2. Comprehensive testing (267 tests) represents human-verified quality
+3. 80+ semantic commits show deliberate progression
 4. Clear git history documents decision-making
 5. This log provides complete transparency for grading
 
