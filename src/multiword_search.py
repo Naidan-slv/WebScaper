@@ -118,4 +118,12 @@ class MultiwordSearch:
         Raises:
             ValueError: If query invalid
         """
-        raise NotImplementedError
+        if query is None:
+            raise ValueError("Query cannot be None")
+        
+        query = query.strip()
+        if not query:
+            raise ValueError("Query cannot be empty")
+        
+        words = query.lower().split()
+        return words
