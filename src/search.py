@@ -101,7 +101,26 @@ class Search:
             ValueError: If doc_id is invalid or not found
             TypeError: If doc_id is not an integer
         """
-        raise NotImplementedError("get_document_text not implemented")
+        try:
+            # Type validation
+            if not isinstance(doc_id, int):
+                raise TypeError(f"doc_id must be integer, not {type(doc_id).__name__}")
+            
+            # Value validation - must be non-negative
+            if doc_id < 0:
+                raise ValueError(f"doc_id must be non-negative, got {doc_id}")
+            
+            # Check if document exists
+            if doc_id not in self.indexer.documents:
+                raise ValueError(f"Document with ID {doc_id} not found")
+            
+            # Retrieve and return document text
+            return self.indexer.get_document(doc_id)
+        
+        except (ValueError, TypeError) as e:
+            raise
+        except Exception as e:
+            raise RuntimeError(f"Failed to retrieve document {doc_id}: {str(e)}")
     
     def get_snippet(self, doc_id: int, query: str, context_words: int = 2) -> str:
         """
