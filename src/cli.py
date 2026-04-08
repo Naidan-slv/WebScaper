@@ -1,263 +1,263 @@
 """
-Basic CLI for the web scraper search engine.
+Command-line interface for the Search Engine Tool.
 
-Provides a command-line interface to:
-- Build an inverted index from a website
-- Search the index with queries
-- Display results with context snippets
+Implements the 4 required commands from the COMP3011 coursework brief:
+  > build   - Crawl website, build index, save to file
+  > load    - Load previously saved index from file
+  > print   - Print inverted index for a word
+  > find    - Find pages containing search terms
 """
+
+import os
+from src.crawler import Crawler
+from src.indexer import Indexer
+from src.search import Search
+from src.multi_page_crawler import MultiPageCrawler
+from src.multiword_search import MultiwordSearch
+from src.word_frequency import WordFrequency
+from src.persistence import Persistence
+
+
+# Default paths for index storage
+DEFAULT_INDEX_DIR = "data"
+DEFAULT_INDEX_FILE = os.path.join(DEFAULT_INDEX_DIR, "index.json")
+DEFAULT_DOCS_FILE = os.path.join(DEFAULT_INDEX_DIR, "documents.json")
+BASE_URL = "https://quotes.toscrape.com/"
 
 
 class CLI:
-    """Command-line interface for web scraper search engine."""
+    """Command-line interface for the search engine tool."""
 
-    def __init__(self, crawler, indexer, search):
-        """
-        Initialize CLI with crawler, indexer, and search components.
-        
-        Args:
-            crawler: Crawler instance for fetching pages
-            indexer: Indexer instance for building search index
-            search: Search instance for executing queries
-            
-        Raises:
-            ValueError: If any component is None
-            RuntimeError: If indexer is not built
-        """
-        if crawler is None:
-            raise ValueError("Crawler cannot be None")
-        if indexer is None:
-            raise ValueError("Indexer cannot be None")
-        if search is None:
-            raise ValueError("Search cannot be None")
-        
-        # Check if indexer has been built
-        if not hasattr(indexer, "index"):
-            raise RuntimeError("Indexer must have index attribute")
-        if not indexer.index:
-            raise RuntimeError("Indexer must be built before initializing CLI")
-        
-        self.crawler = crawler
-        self.indexer = indexer
-        self.search = search
+    def __init__(self):
+        """Initialize CLI with no components loaded yet."""
+        self.crawler = Crawler(timeout=15, politeness_delay=6)
+        self.indexer = Indexer()
+        self.search = None
+        self.multiword_search = None
+        self.word_freq = None
+        self.persistence = None
+        self.is_built = False
 
-    def build_index(self, url):
+    def build(self, max_pages=10):
         """
-        Fetch pages from URL and build search index.
-        
+        Crawl the website, build the index, and save to file system.
+
+        Implements: > build
+
         Args:
-            url (str): Website URL to scrape and index
-            
+            max_pages: Maximum number of pages to crawl (default 10)
+
         Returns:
-            int: Number of documents indexed
-            
-        Raises:
-            ValueError: If URL is invalid or indexer fails to build
-            Exception: If crawler fails to fetch pages
+            dict: Summary with pages_crawled, words_indexed, docs_stored
         """
-        if url is None:
-            raise ValueError("URL cannot be None")
-        if not isinstance(url, str) or not url.strip():
-            raise ValueError("URL must be a non-empty string")
-        
-        try:
-            # Fetch page using crawler
-            html = self.crawler.fetch_page(url)
-            
-            if not html:
-                raise ValueError(f"Fetched content is empty from {url}")
-            
-            # Add document to indexer
-            self.indexer.add_document(html)
-            
-            # Build the index
-            self.indexer.build_index()
-            
-            # Return number of documents indexed
-            doc_count = len(self.indexer.documents)
-            if doc_count == 0:
-                raise ValueError("Index was built but contains no documents")
-            
-            return doc_count
-            
-        except ValueError as e:
-            # Re-raise validation errors
-            raise e
-        except AttributeError as e:
-            raise RuntimeError(f"Indexer component missing required method: {e}")
-        except Exception as e:
-            raise Exception(f"Failed to build index from {url}: {type(e).__name__}: {e}")
+        print(f"\nCrawling {BASE_URL} (up to {max_pages} pages)...")
+        print("Respecting 6-second politeness window between requests.\n")
 
-    def search_query(self, query):
-        """
-        Execute search query and return results with snippets.
-        
-        Args:
-            query (str): Search query (single or multiple words)
-            
-        Returns:
-            list: Results with format [{'doc_id': int, 'snippet': str, 'text': str}, ...]
-            
-        Raises:
-            ValueError: If query is invalid
-        """
-        try:
-            if query is None:
-                raise ValueError("Query cannot be None")
-            if not isinstance(query, str):
-                raise ValueError(f"Query must be a string, got {type(query).__name__}")
-            if not query.strip():
-                raise ValueError("Query cannot be empty or whitespace only")
-            
-            # Execute search through search component
-            try:
-                results = self.search.search_with_snippets(query.lower())
-            except AttributeError as e:
-                raise RuntimeError(f"Search component missing method: {e}")
-            
-            if not isinstance(results, list):
-                raise TypeError(f"Search returned {type(results).__name__}, expected list")
-            
-            return results
-            
-        except (ValueError, RuntimeError, TypeError) as e:
-            raise e
-        except Exception as e:
-            raise Exception(f"Search operation failed: {type(e).__name__}: {e}")
+        # 1. Crawl all pages
+        mpc = MultiPageCrawler(self.crawler, max_pages=max_pages, base_url=BASE_URL)
+        pages = mpc.fetch_and_parse_all()
+        print(f"  Fetched {len(pages)} pages.")
 
-    def display_results(self, query, results):
+        # 2. Index all pages
+        self.indexer = Indexer()  # Fresh indexer
+        for page in pages:
+            self.indexer.add_document(page["text"])
+        self.indexer.build_index()
+        print(f"  Indexed {self.indexer.document_count} documents, {len(self.indexer.index)} unique words.")
+
+        # 3. Save to file system
+        os.makedirs(DEFAULT_INDEX_DIR, exist_ok=True)
+        self.persistence = Persistence(self.indexer)
+        self.persistence.save_index(DEFAULT_INDEX_FILE)
+        self.persistence.save_documents(DEFAULT_DOCS_FILE)
+        print(f"  Index saved to {DEFAULT_INDEX_FILE}")
+        print(f"  Documents saved to {DEFAULT_DOCS_FILE}")
+
+        # 4. Wire up search components
+        self._wire_search_components()
+
+        summary = {
+            "pages_crawled": len(pages),
+            "words_indexed": len(self.indexer.index),
+            "docs_stored": self.indexer.document_count,
+        }
+        print(f"\n  Build complete.")
+        return summary
+
+    def load(self):
         """
-        Format and display search results to console.
-        
-        Args:
-            query (str): Original search query
-            results (list): Results from search_query()
-            
+        Load a previously saved index from the file system.
+
+        Implements: > load
+
         Returns:
-            str: Formatted output string
+            dict: Summary with words_loaded, docs_loaded
+
+        Raises:
+            FileNotFoundError: If index files don't exist
         """
-        try:
-            if query is None:
-                raise ValueError("Query cannot be None")
-            if not isinstance(query, str):
-                raise ValueError(f"Query must be string, got {type(query).__name__}")
-            
-            if results is None:
-                results = []
-            elif not isinstance(results, list):
-                raise TypeError(f"Results must be list, got {type(results).__name__}")
-            
-            if not results:
-                return f"No results found for '{query}'"
-            
-            output_lines = [f"Found {len(results)} result(s) for '{query}':", ""]
-            
-            for i, result in enumerate(results, 1):
-                try:
-                    if not isinstance(result, dict):
-                        raise TypeError(f"Result {i} must be dict, got {type(result).__name__}")
-                    
-                    doc_id = result.get("doc_id", "?")
-                    snippet = result.get("snippet", "")
-                    
-                    if not isinstance(snippet, str):
-                        snippet = str(snippet)
-                    
-                    output_lines.append(f"{i}. Document ID: {doc_id}")
-                    output_lines.append(f"   Snippet: {snippet}")
-                    output_lines.append("")
-                    
-                except (TypeError, AttributeError) as e:
-                    output_lines.append(f"{i}. [Error formatting result: {e}]")
-                    output_lines.append("")
-            
-            return "\n".join(output_lines)
-            
-        except (ValueError, TypeError) as e:
-            raise e
-        except Exception as e:
-            raise Exception(f"Error displaying results: {type(e).__name__}: {e}")
+        if not os.path.exists(DEFAULT_INDEX_FILE):
+            raise FileNotFoundError(
+                f"Index file not found: {DEFAULT_INDEX_FILE}. Run 'build' first."
+            )
+        if not os.path.exists(DEFAULT_DOCS_FILE):
+            raise FileNotFoundError(
+                f"Documents file not found: {DEFAULT_DOCS_FILE}. Run 'build' first."
+            )
+
+        print(f"\nLoading index from {DEFAULT_INDEX_FILE}...")
+
+        # Load index
+        self.indexer = Indexer()
+        self.persistence = Persistence(self.indexer)
+
+        loaded_index = self.persistence.load_index(DEFAULT_INDEX_FILE)
+        self.indexer.index = loaded_index
+
+        loaded_docs = self.persistence.load_documents(DEFAULT_DOCS_FILE)
+        # Convert string keys back to int keys
+        self.indexer.documents = {int(k): v for k, v in loaded_docs.items()}
+        self.indexer.document_count = len(self.indexer.documents)
+
+        # Wire up search
+        self._wire_search_components()
+
+        summary = {
+            "words_loaded": len(self.indexer.index),
+            "docs_loaded": self.indexer.document_count,
+        }
+        print(f"  Loaded {summary['words_loaded']} words, {summary['docs_loaded']} documents.")
+        print("  Ready to search.\n")
+        return summary
+
+    def print_index(self, word):
+        """
+        Print the inverted index entry for a given word.
+
+        Implements: > print <word>
+
+        Args:
+            word: The word to look up in the index
+
+        Returns:
+            dict or None: Index entry for the word, or None if not found
+        """
+        if not self.is_built:
+            print("No index loaded. Run 'build' or 'load' first.")
+            return None
+
+        word_lower = word.lower()
+        if word_lower in self.indexer.index:
+            entry = self.indexer.index[word_lower]
+            print(f"\nIndex entry for '{word_lower}':")
+            print(f"  {entry}")
+            return {"word": word_lower, "doc_ids": entry}
+
+        print(f"\n  '{word_lower}' not found in index.")
+        return None
+
+    def find(self, query):
+        """
+        Find pages containing the given search terms.
+
+        Implements: > find <query>
+
+        Args:
+            query: Search query (single or multiple words)
+
+        Returns:
+            list: Search results with doc_ids and snippets
+        """
+        if not self.is_built:
+            print("No index loaded. Run 'build' or 'load' first.")
+            return []
+
+        words = query.lower().split()
+        if len(words) == 1:
+            doc_ids = self.search.search(words[0])
+        else:
+            doc_ids = self.multiword_search.search_and(query)
+
+        results = []
+        for doc_id in doc_ids:
+            snippet = self.indexer.documents.get(doc_id, "")[:100]
+            results.append({"doc_id": doc_id, "snippet": snippet})
+
+        if results:
+            print(f"\nFound {len(results)} result(s) for '{query}':")
+            for r in results:
+                print(f"  Doc {r['doc_id']}: {r['snippet']}...")
+        else:
+            print(f"\n  No results for '{query}'.")
+        return results
+
+    def _wire_search_components(self):
+        """Set up search, multiword search, and word frequency after indexing."""
+        self.search = Search(self.indexer)
+        self.multiword_search = MultiwordSearch(self.search)
+        self.word_freq = WordFrequency(self.indexer)
+        self.word_freq.calculate_frequencies()
+        self.is_built = True
 
     def run(self):
         """
-        Run interactive REPL for user queries.
-        
-        Workflow:
-        1. Prompt user for website URL
-        2. Build index
-        3. Loop: Accept queries, display results
-        4. Exit on "quit" or EOF
+        Run the interactive command-line shell.
+
+        Commands:
+            build       - Crawl website and build index
+            load        - Load saved index from file
+            print <w>   - Print inverted index for word
+            find <q>    - Find pages with search terms
+            help        - Show available commands
+            quit/exit   - Exit the program
         """
+        print("\nSearch Engine Tool — COMP3011 Coursework")
+        print("Type 'help' for available commands.\n")
+
         try:
-            # Step 1: Get URL from user
-            try:
-                url = input("Enter website URL to index: ").strip()
-            except (KeyboardInterrupt, EOFError):
-                print("\nInterrupted. Exiting.")
-                return
-            except Exception as e:
-                print(f"Error reading input: {e}")
-                return
-            
-            if not url:
-                print("Error: No URL provided. Exiting.")
-                return
-            
-            # Step 2: Build index
-            print(f"\nBuilding index from {url}...")
-            try:
-                doc_count = self.build_index(url)
-                print(f"✓ Successfully indexed {doc_count} document(s)\n")
-            except ValueError as e:
-                print(f"✗ Validation error: {e}")
-                return
-            except RuntimeError as e:
-                print(f"✗ Component error: {e}")
-                return
-            except Exception as e:
-                print(f"✗ Failed to build index: {type(e).__name__}: {e}")
-                return
-            
-            # Step 3: Accept queries
-            print("Enter search queries (type 'quit' to exit):")
             while True:
-                try:
-                    query = input("\nQuery: ").strip()
-                except (KeyboardInterrupt, EOFError):
-                    print("\n\nInterrupted. Goodbye!")
-                    return
-                except Exception as e:
-                    print(f"Error reading query: {e}")
+                user_input = input("> ").strip()
+                if not user_input:
                     continue
-                
-                # Check for quit command
-                if query.lower() == "quit":
+
+                parts = user_input.split(maxsplit=1)
+                command = parts[0].lower()
+                args = parts[1] if len(parts) > 1 else ""
+
+                if command in ("quit", "exit"):
                     print("Goodbye!")
-                    return
-                
-                # Skip empty queries
-                if not query:
-                    print("Please enter a search query.")
-                    continue
-                
-                # Execute search
-                try:
-                    results = self.search_query(query)
-                    output = self.display_results(query, results)
-                    print(output)
-                    
-                except ValueError as e:
-                    print(f"✗ Invalid query: {e}")
-                except RuntimeError as e:
-                    print(f"✗ Search component error: {e}")
-                except TypeError as e:
-                    print(f"✗ Type error in search: {e}")
-                except Exception as e:
-                    print(f"✗ Search failed: {type(e).__name__}: {e}")
-                    
-        except KeyboardInterrupt:
-            print("\n\nInterrupted. Goodbye!")
-        except EOFError:
-            print("\n\nEnd of input. Goodbye!")
-        except Exception as e:
-            print(f"✗ Unexpected error in CLI: {type(e).__name__}: {e}")
+                    break
+                elif command == "help":
+                    self._print_help()
+                elif command == "build":
+                    self.build()
+                elif command == "load":
+                    try:
+                        self.load()
+                    except FileNotFoundError as e:
+                        print(f"  Error: {e}")
+                elif command == "print":
+                    if not args:
+                        print("  Usage: print <word>")
+                    else:
+                        self.print_index(args)
+                elif command == "find":
+                    if not args:
+                        print("  Usage: find <query>")
+                    else:
+                        self.find(args)
+                else:
+                    print(f"  Unknown command: '{command}'. Type 'help' for options.")
+
+        except (KeyboardInterrupt, EOFError):
+            print("\nGoodbye!")
+
+    def _print_help(self):
+        """Print available commands."""
+        print("\nAvailable commands:")
+        print("  build         - Crawl website and build index")
+        print("  load          - Load saved index from file")
+        print("  print <word>  - Print inverted index for word")
+        print("  find <query>  - Find pages with search terms")
+        print("  help          - Show this help message")
+        print("  quit / exit   - Exit the program\n")
