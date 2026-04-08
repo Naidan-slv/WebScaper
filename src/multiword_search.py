@@ -112,7 +112,16 @@ class MultiwordSearch:
         Returns:
             set: Document IDs in any set
         """
-        raise NotImplementedError
+        if not result_sets:
+            return set()
+        
+        # Combine all document IDs from all sets
+        union = set()
+        
+        for result_set in result_sets:
+            union = union.union(set(result_set))
+        
+        return union
 
     def tokenize_query(self, query):
         """
