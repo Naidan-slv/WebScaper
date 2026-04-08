@@ -211,7 +211,46 @@ class CLI:
             help        - Show available commands
             quit/exit   - Exit the program
         """
-        raise NotImplementedError
+        print("\nSearch Engine Tool — COMP3011 Coursework")
+        print("Type 'help' for available commands.\n")
+
+        try:
+            while True:
+                user_input = input("> ").strip()
+                if not user_input:
+                    continue
+
+                parts = user_input.split(maxsplit=1)
+                command = parts[0].lower()
+                args = parts[1] if len(parts) > 1 else ""
+
+                if command in ("quit", "exit"):
+                    print("Goodbye!")
+                    break
+                elif command == "help":
+                    self._print_help()
+                elif command == "build":
+                    self.build()
+                elif command == "load":
+                    try:
+                        self.load()
+                    except FileNotFoundError as e:
+                        print(f"  Error: {e}")
+                elif command == "print":
+                    if not args:
+                        print("  Usage: print <word>")
+                    else:
+                        self.print_index(args)
+                elif command == "find":
+                    if not args:
+                        print("  Usage: find <query>")
+                    else:
+                        self.find(args)
+                else:
+                    print(f"  Unknown command: '{command}'. Type 'help' for options.")
+
+        except (KeyboardInterrupt, EOFError):
+            print("\nGoodbye!")
 
     def _print_help(self):
         """Print available commands."""
