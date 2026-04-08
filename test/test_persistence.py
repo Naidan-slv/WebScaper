@@ -202,7 +202,8 @@ class TestLoadDocuments:
         
         data = persistence.load_documents(documents_file)
         
-        assert data == {1: "doc text 1", 2: "doc text 2"}
+        # JSON keys are strings, not integers
+        assert data == {"1": "doc text 1", "2": "doc text 2"}
 
     def test_load_documents_raises_error_if_file_not_found(self):
         """load_documents raises FileNotFoundError if file not found."""

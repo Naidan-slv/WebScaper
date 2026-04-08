@@ -179,7 +179,33 @@ class Persistence:
             FileNotFoundError: If file doesn't exist
             json.JSONDecodeError: If JSON malformed
         """
-        raise NotImplementedError
+        try:
+            if filepath is None:
+                raise ValueError("Filepath cannot be None")
+            if not isinstance(filepath, str):
+                raise ValueError(f"Filepath must be string, got {type(filepath).__name__}")
+            if not filepath.strip():
+                raise ValueError("Filepath cannot be empty string")
+            
+            # Check if file exists
+            if not Path(filepath).exists():
+                raise FileNotFoundError(f"Documents file not found: {filepath}")
+            
+            # Load JSON file
+            with open(filepath, "r") as f:
+                data = json.load(f)
+            
+            if not isinstance(data, dict):
+                raise ValueError(f"Documents must be dict, got {type(data).__name__}")
+            
+            return data
+            
+        except (ValueError, FileNotFoundError, json.JSONDecodeError) as e:
+            raise e
+        except (OSError, IOError) as e:
+            raise FileNotFoundError(f"Failed to read documents from {filepath}: {e}")
+        except Exception as e:
+            raise Exception(f"Error loading documents: {type(e).__name__}: {e}")
 
     def save_checkpoint(self, dirpath):
         """
