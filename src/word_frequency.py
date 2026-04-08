@@ -40,7 +40,21 @@ class WordFrequency:
         Raises:
             RuntimeError: If indexer not initialized
         """
-        raise NotImplementedError
+        self.frequencies = {}
+        
+        # Process each document
+        for doc_id, text in self.indexer.documents.items():
+            # Tokenize document
+            tokens = tokenize(text)
+            
+            # Count word frequencies
+            word_freq = {}
+            for word in tokens:
+                word_freq[word] = word_freq.get(word, 0) + 1
+            
+            self.frequencies[doc_id] = word_freq
+        
+        return self.frequencies
 
     def get_word_frequency(self, word, doc_id):
         """
