@@ -221,7 +221,37 @@ class Persistence:
             ValueError: If dirpath invalid
             OSError: If file write fails
         """
-        raise NotImplementedError
+        try:
+            if dirpath is None:
+                raise ValueError("Directory path cannot be None")
+            if not isinstance(dirpath, str):
+                raise ValueError(f"Directory path must be string, got {type(dirpath).__name__}")
+            if not dirpath.strip():
+                raise ValueError("Directory path cannot be empty string")
+            
+            # Create directory if it doesn't exist
+            checkpoint_dir = Path(dirpath)
+            checkpoint_dir.mkdir(parents=True, exist_ok=True)
+            
+            # Save index
+            index_file = checkpoint_dir / "index.json"
+            index_bytes = self.save_index(str(index_file))
+            
+            # Save documents
+            docs_file = checkpoint_dir / "documents.json"
+            docs_bytes = self.save_documents(str(docs_file))
+            
+            return {
+                "index_file": index_bytes,
+                "docs_file": docs_bytes
+            }
+            
+        except ValueError as e:
+            raise e
+        except (OSError, IOError) as e:
+            raise OSError(f"Failed to create checkpoint at {dirpath}: {e}")
+        except Exception as e:
+            raise OSError(f"Error saving checkpoint: {type(e).__name__}: {e}")
 
     def load_checkpoint(self, dirpath):
         """
