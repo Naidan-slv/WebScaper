@@ -100,7 +100,7 @@ class TfIdf:
         Raises:
             KeyError: If doc_id not found.
         """
-        raise NotImplementedError
+        return self.calculate_tf(word, doc_id) * self.calculate_idf(word)
 
     def rank_documents(self, query):
         """
