@@ -212,4 +212,39 @@ class Search:
             ValueError: If query is empty/None or snippet_context negative
             TypeError: If parameters are wrong type
         """
-        raise NotImplementedError("search_with_snippets not implemented")
+        try:
+            # Type validation
+            if not isinstance(snippet_context, int):
+                raise TypeError(f"snippet_context must be integer, not {type(snippet_context).__name__}")
+            
+            # Value validation - negative context
+            if snippet_context < 0:
+                raise ValueError(f"snippet_context must be non-negative, got {snippet_context}")
+            
+            # Search for matching documents
+            doc_ids = self.search(query)
+            
+            # If no matches, return empty list
+            if not doc_ids:
+                return []
+            
+            # Build results with snippets
+            results = []
+            for doc_id in doc_ids:
+                try:
+                    snippet = self.get_snippet(doc_id, query, context_words=snippet_context)
+                    results.append({
+                        "doc_id": doc_id,
+                        "snippet": snippet
+                    })
+                except (ValueError, TypeError, RuntimeError) as e:
+                    # If snippet generation fails, skip this result
+                    # This shouldn't happen if indexer is consistent, but be defensive
+                    continue
+            
+            return results
+        
+        except (ValueError, TypeError) as e:
+            raise
+        except Exception as e:
+            raise RuntimeError(f"Search with snippets failed for query '{query}': {str(e)}")
