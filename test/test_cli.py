@@ -227,12 +227,26 @@ class TestPrintCommand:
         return cli
 
     def test_print_found_word(self):
-        """print_index returns entry for word in index."""
+        """print_index returns entry with stats for word in index."""
         cli = self._build_cli()
         result = cli.print_index("hello")
         assert result is not None
         assert result["word"] == "hello"
         assert 0 in result["doc_ids"]
+
+    def test_print_returns_frequency(self):
+        """print_index result includes frequency per document."""
+        cli = self._build_cli()
+        result = cli.print_index("hello")
+        # "hello world hello" -> hello appears 2 times in doc 0
+        assert result["entries"][0]["frequency"] == 2
+
+    def test_print_returns_positions(self):
+        """print_index result includes positions per document."""
+        cli = self._build_cli()
+        result = cli.print_index("hello")
+        # "hello world hello" -> hello at positions [0, 2]
+        assert result["entries"][0]["positions"] == [0, 2]
 
     def test_print_not_found(self):
         """print_index returns None for word not in index."""
