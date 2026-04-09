@@ -145,7 +145,17 @@ class Persistence:
             
             # Convert documents to JSON-serializable format
             # Convert int keys to strings for JSON compatibility
-            data = {str(k): v for k, v in self.indexer.documents.items()}
+            # Include URLs if available
+            urls = getattr(self.indexer, 'urls', None)
+            if not isinstance(urls, dict):
+                urls = {}
+            data = {}
+            for k, v in self.indexer.documents.items():
+                entry = {"text": v}
+                url = urls.get(k)
+                if url is not None:
+                    entry["url"] = url
+                data[str(k)] = entry
             
             # Write to file
             with open(filepath, "w") as f:
@@ -168,11 +178,14 @@ class Persistence:
         """
         Load documents from JSON file.
         
+        Handles both old format (doc_id -> text) and new format
+        (doc_id -> {"text": str, "url": str}).
+        
         Args:
             filepath (str): Path to load documents from
             
         Returns:
-            dict: Loaded documents (doc_id -> text)
+            dict: Loaded documents data
             
         Raises:
             ValueError: If filepath invalid or file format invalid

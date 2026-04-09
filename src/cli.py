@@ -63,7 +63,7 @@ class CLI:
         # 2. Index all pages
         self.indexer = Indexer()  # Fresh indexer
         for page in pages:
-            self.indexer.add_document(page["text"])
+            self.indexer.add_document(page["text"], url=page.get("url"))
         self.indexer.build_index()
         print(f"  Indexed {self.indexer.document_count} documents, {len(self.indexer.index)} unique words.")
 
@@ -117,8 +117,17 @@ class CLI:
         self.indexer.index = loaded_index
 
         loaded_docs = self.persistence.load_documents(DEFAULT_DOCS_FILE)
-        # Convert string keys back to int keys
-        self.indexer.documents = {int(k): v for k, v in loaded_docs.items()}
+        # Convert string keys back to int keys, handle both old and new format
+        for k, v in loaded_docs.items():
+            doc_id = int(k)
+            if isinstance(v, dict):
+                # New format: {"text": str, "url": str}
+                self.indexer.documents[doc_id] = v["text"]
+                if "url" in v:
+                    self.indexer.urls[doc_id] = v["url"]
+            else:
+                # Old format: just text
+                self.indexer.documents[doc_id] = v
         self.indexer.document_count = len(self.indexer.documents)
 
         # Wire up search
@@ -186,16 +195,19 @@ class CLI:
         results = []
         for r in ranked:
             snippet = self.indexer.documents.get(r["doc_id"], "")[:100]
+            url = self.indexer.get_document_url(r["doc_id"])
             results.append({
                 "doc_id": r["doc_id"],
                 "score": r["score"],
                 "snippet": snippet,
+                "url": url,
             })
 
         if results:
             print(f"\nFound {len(results)} result(s) for '{query}' (ranked by relevance):")
             for i, r in enumerate(results, 1):
-                print(f"  {i}. [score: {r['score']:.4f}] Doc {r['doc_id']}: {r['snippet']}...")
+                url_str = f" {r['url']}" if r["url"] else ""
+                print(f"  {i}. [score: {r['score']:.4f}]{url_str} Doc {r['doc_id']}: {r['snippet']}...")
         else:
             print(f"\n  No results for '{query}'.")
         return results
