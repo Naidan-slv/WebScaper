@@ -144,6 +144,53 @@ class TfIdf:
         results.sort(key=lambda r: r["score"], reverse=True)
         return results
 
+    def rank_documents_and(self, query):
+        """
+        Rank documents that contain ALL query terms, scored by TF-IDF.
+
+        For multi-word queries, only documents containing every term are
+        included. Scores are summed across all query terms.
+
+        Args:
+            query (str): Search query (single or multi-word).
+
+        Returns:
+            list: [{'doc_id': int, 'score': float}, ...] sorted by score descending.
+
+        Raises:
+            ValueError: If query is None or empty.
+        """
+        if query is None:
+            raise ValueError("Query cannot be None")
+        if not query.strip():
+            raise ValueError("Query cannot be empty")
+
+        words = tokenize(query)
+
+        # Find docs that contain ALL words (intersection)
+        doc_sets = []
+        for word in words:
+            if word not in self.indexer.index:
+                return []  # A word has no matches → AND result is empty
+            doc_sets.append(set(self.indexer.index[word].keys()))
+
+        common_docs = doc_sets[0]
+        for s in doc_sets[1:]:
+            common_docs &= s
+
+        if not common_docs:
+            return []
+
+        # Score the common docs by summing TF-IDF across all query terms
+        results = []
+        for doc_id in common_docs:
+            score = sum(self.calculate_tfidf(word, doc_id) for word in words)
+            if score > 0.0:
+                results.append({"doc_id": doc_id, "score": score})
+
+        results.sort(key=lambda r: r["score"], reverse=True)
+        return results
+
     def search(self, query, limit=10):
         """
         Search and return ranked results with scores and snippets.

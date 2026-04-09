@@ -167,7 +167,7 @@ class CLI:
 
     def find(self, query):
         """
-        Find pages containing the given search terms, ranked by TF-IDF.
+        Find pages containing ALL given search terms (AND logic), ranked by TF-IDF.
 
         Implements: > find <query>
 
@@ -182,7 +182,15 @@ class CLI:
             print("No index loaded. Run 'build' or 'load' first.")
             return []
 
-        results = self.tfidf.search(query)
+        ranked = self.tfidf.rank_documents_and(query)
+        results = []
+        for r in ranked:
+            snippet = self.indexer.documents.get(r["doc_id"], "")[:100]
+            results.append({
+                "doc_id": r["doc_id"],
+                "score": r["score"],
+                "snippet": snippet,
+            })
 
         if results:
             print(f"\nFound {len(results)} result(s) for '{query}' (ranked by relevance):")

@@ -290,12 +290,14 @@ class TestFindCommand:
         results = cli.find("friends")
         assert len(results) > 0
 
-    def test_find_multi_word(self):
-        """find returns results for multi-word query."""
+    def test_find_multi_word_and_logic(self):
+        """find multi-word returns only docs containing ALL words (AND)."""
         cli = self._build_cli()
-        results = cli.find("world friends")
-        # both words in doc 0 only
-        assert len(results) >= 1
+        results = cli.find("good friends")
+        doc_ids = [r["doc_id"] for r in results]
+        # doc 0 has both 'good' and 'friends', doc 1 has only 'good'
+        assert 0 in doc_ids
+        assert 1 not in doc_ids
 
     def test_find_no_results(self):
         """find returns empty for non-existent word."""

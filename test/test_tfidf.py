@@ -296,3 +296,60 @@ class TestSearch:
         """Raises ValueError for None query."""
         with pytest.raises(ValueError):
             tfidf.search(None)
+
+
+# ============================================================
+# Test Class 7: rank_documents_and (AND logic)
+# ============================================================
+
+class TestRankDocumentsAnd:
+    """Tests for AND-logic ranking — only docs containing ALL query words."""
+
+    @pytest.fixture
+    def and_indexer(self):
+        """Indexer with 3 docs for AND-logic testing."""
+        idx = Indexer()
+        idx.add_document("good friends are rare")       # doc 0: good + friends
+        idx.add_document("good things take time")        # doc 1: good only
+        idx.add_document("friends forever and always")   # doc 2: friends only
+        idx.build_index()
+        return idx
+
+    @pytest.fixture
+    def and_tfidf(self, and_indexer):
+        return TfIdf(and_indexer)
+
+    def test_and_returns_only_docs_with_all_words(self, and_tfidf):
+        """rank_documents_and returns only docs containing ALL query terms."""
+        results = and_tfidf.rank_documents_and("good friends")
+        doc_ids = [r["doc_id"] for r in results]
+        assert 0 in doc_ids         # has both
+        assert 1 not in doc_ids     # missing 'friends'
+        assert 2 not in doc_ids     # missing 'good'
+
+    def test_and_single_word_same_as_rank(self, and_tfidf):
+        """Single-word AND query behaves like normal rank_documents."""
+        and_results = and_tfidf.rank_documents_and("good")
+        or_results = and_tfidf.rank_documents("good")
+        assert len(and_results) == len(or_results)
+
+    def test_and_no_overlap_returns_empty(self, and_tfidf):
+        """If no doc has ALL words, returns empty list."""
+        results = and_tfidf.rank_documents_and("rare time")
+        assert results == []
+
+    def test_and_results_sorted_by_score(self, and_tfidf):
+        """AND results are sorted by TF-IDF score descending."""
+        results = and_tfidf.rank_documents_and("good friends")
+        scores = [r["score"] for r in results]
+        assert scores == sorted(scores, reverse=True)
+
+    def test_and_raises_if_query_none(self, and_tfidf):
+        """Raises ValueError for None query."""
+        with pytest.raises(ValueError):
+            and_tfidf.rank_documents_and(None)
+
+    def test_and_raises_if_query_empty(self, and_tfidf):
+        """Raises ValueError for empty query."""
+        with pytest.raises(ValueError):
+            and_tfidf.rank_documents_and("")
