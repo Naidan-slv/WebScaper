@@ -1,14 +1,17 @@
 """
-Tests for the Indexer class - Step 3: Basic inverted index creation.
+Tests for the Indexer class - Rich inverted index with frequency + positions.
 
 Tests:
 - test_indexer_initializes_empty: Empty index at startup?
 - test_indexer_adds_document: Can add single document?
-- test_indexer_builds_inverted_index: Creates word -> documents mapping?
+- test_indexer_builds_inverted_index: Creates word -> {doc_id: {frequency, positions}} mapping?
+- test_indexer_stores_word_frequency: Frequency count per doc?
+- test_indexer_stores_word_positions: Position list per doc?
 - test_indexer_finds_documents_with_word: Can find docs by keyword?
 - test_indexer_returns_empty_for_unknown_word: Returns empty for unknown word?
-- test_indexer_handles_duplicate_words_in_doc: Deduplicates words per doc?
+- test_indexer_handles_duplicate_words_in_doc: Deduplicates doc IDs in search?
 - test_indexer_is_case_insensitive: Case-insensitive search?
+- test_indexer_get_index_entry: Retrieve full stats for a word?
 """
 
 import pytest
@@ -61,25 +64,100 @@ class TestIndexer:
     
     def test_indexer_builds_inverted_index_simple(self):
         """
-        Test that Indexer builds basic inverted index.
+        Test that Indexer builds rich inverted index with stats.
         
-        Should create mapping: word -> [document IDs containing word]
+        Should create mapping: word -> {doc_id: {frequency, positions}}
         """
         indexer = Indexer()
         indexer.add_document("love work")
         indexer.add_document("work hard")
         indexer.build_index()
         
-        # Check index structure
+        # Check index structure - words exist
         assert "love" in indexer.index
         assert "work" in indexer.index
         assert "hard" in indexer.index
         
-        # Check document lists
-        assert 0 in indexer.index["love"]  # "love" is in doc 0
-        assert 0 in indexer.index["work"]  # "work" is in both doc 0 and 1
+        # Check new dict structure: each word maps to dict of doc entries
+        assert isinstance(indexer.index["love"], dict)
+        assert isinstance(indexer.index["work"], dict)
+        
+        # Check doc IDs are keys in the nested dict
+        assert 0 in indexer.index["love"]
+        assert 0 in indexer.index["work"]
         assert 1 in indexer.index["work"]
-        assert 1 in indexer.index["hard"]  # "hard" is in doc 1
+        assert 1 in indexer.index["hard"]
+        
+        # Each doc entry has frequency and positions
+        assert "frequency" in indexer.index["love"][0]
+        assert "positions" in indexer.index["love"][0]
+    
+    def test_indexer_stores_word_frequency(self):
+        """
+        Test that index stores correct word frequency per document.
+        
+        "love love work" -> love: {0: {frequency: 2, ...}}
+        """
+        indexer = Indexer()
+        indexer.add_document("love love work")
+        indexer.build_index()
+        
+        assert indexer.index["love"][0]["frequency"] == 2
+        assert indexer.index["work"][0]["frequency"] == 1
+    
+    def test_indexer_stores_word_positions(self):
+        """
+        Test that index stores correct word positions per document.
+        
+        "love work love" -> love: {0: {positions: [0, 2]}}
+        """
+        indexer = Indexer()
+        indexer.add_document("love work love")
+        indexer.build_index()
+        
+        assert indexer.index["love"][0]["positions"] == [0, 2]
+        assert indexer.index["work"][0]["positions"] == [1]
+    
+    def test_indexer_frequency_across_documents(self):
+        """
+        Test frequency is tracked per document independently.
+        
+        Doc 0: "love love" -> love freq=2
+        Doc 1: "love"      -> love freq=1
+        """
+        indexer = Indexer()
+        indexer.add_document("love love")
+        indexer.add_document("love")
+        indexer.build_index()
+        
+        assert indexer.index["love"][0]["frequency"] == 2
+        assert indexer.index["love"][1]["frequency"] == 1
+    
+    def test_indexer_get_index_entry_returns_stats(self):
+        """
+        Test get_index_entry returns full stats for a word.
+        
+        Should return dict of {doc_id: {frequency, positions}}.
+        """
+        indexer = Indexer()
+        indexer.add_document("love work love")
+        indexer.build_index()
+        
+        entry = indexer.get_index_entry("love")
+        assert entry is not None
+        assert 0 in entry
+        assert entry[0]["frequency"] == 2
+        assert entry[0]["positions"] == [0, 2]
+    
+    def test_indexer_get_index_entry_returns_none_for_unknown(self):
+        """
+        Test get_index_entry returns None for unknown word.
+        """
+        indexer = Indexer()
+        indexer.add_document("hello world")
+        indexer.build_index()
+        
+        assert indexer.get_index_entry("unicorn") is None
     
     def test_indexer_finds_documents_with_single_word(self):
         """
