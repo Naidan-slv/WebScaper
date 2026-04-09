@@ -28,17 +28,17 @@ WebScaper/
 │   ├── tfidf.py                # TF-IDF ranking algorithm
 │   ├── persistence.py          # JSON save/load for index and documents
 │   └── utils.py                # Shared utilities
-├── test/
+├── tests/
 │   ├── conftest.py             # Shared pytest fixtures
 │   ├── test_crawler.py         # 16 tests
 │   ├── test_multi_page_crawler.py  # 24 tests
-│   ├── test_indexer.py         # 11 tests
+│   ├── test_indexer.py         # 21 tests
 │   ├── test_search.py          # 29 tests
 │   ├── test_multiword_search.py    # 39 tests
 │   ├── test_word_frequency.py  # 24 tests
-│   ├── test_tfidf.py           # 35 tests
+│   ├── test_tfidf.py           # 41 tests
 │   ├── test_persistence.py     # 26 tests
-│   ├── test_cli.py             # 28 tests
+│   ├── test_cli.py             # 31 tests
 │   └── test_integration_real.py    # 35 integration tests (live site)
 ├── data/
 │   ├── index.json              # Compiled inverted index
@@ -55,7 +55,7 @@ WebScaper/
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/WebScaper.git
+git clone https://github.com/Naidan-slv/WebScaper.git
 cd WebScaper
 
 # Create a virtual environment (recommended)
@@ -123,12 +123,14 @@ Loading index from data/index.json...
 
 #### `print <word>` — Show inverted index entry
 
-Displays which documents contain the given word.
+Displays which documents contain the given word, with frequency and position statistics.
 
 ```
 > print love
 Index entry for 'love':
-  [0, 1, 3, 7]
+  Doc 0: frequency=2, positions=[194, 263]
+  Doc 1: frequency=8, positions=[214, 284, 411, 466, 510, 519, 537, 590]
+  Doc 2: frequency=6, positions=[8, 19, 27, 78, 108, 317]
 
 > print xyznotaword
   'xyznotaword' not found in index.
@@ -136,20 +138,17 @@ Index entry for 'love':
 
 #### `find <query>` — Search with TF-IDF ranking
 
-Finds pages matching the query, ranked by TF-IDF relevance score. Supports single and multi-word queries.
+Finds pages matching the query, ranked by TF-IDF relevance score. Multi-word queries use AND logic — only pages containing **all** words are returned.
 
 ```
 > find love
-Found 4 result(s) for 'love' (ranked by relevance):
-  1. [score: 0.0091] Doc 1: "This life is what you make it..."
-  2. [score: 0.0050] Doc 0: "The world as we have created it..."
-  3. [score: 0.0041] Doc 3: "One good thing about music..."
-  4. [score: 0.0033] Doc 7: "A day without sunshine..."
+Found 10 result(s) for 'love' (ranked by relevance):
+  1. [score: 0.0091] https://quotes.toscrape.com//page/5/ Doc 4: ...
+  2. [score: 0.0050] https://quotes.toscrape.com//page/2/ Doc 1: ...
 
 > find good friends
-Found 2 result(s) for 'good friends' (ranked by relevance):
-  1. [score: 0.0124] Doc 3: "One good thing about music..."
-  2. [score: 0.0078] Doc 0: "The world as we have created it..."
+Found 1 result(s) for 'good friends' (ranked by relevance):
+  1. [score: 0.0124] https://quotes.toscrape.com// Doc 0: ...
 
 > find xyznotaword
   No results for 'xyznotaword'.
@@ -164,14 +163,14 @@ Found 2 result(s) for 'good friends' (ranked by relevance):
 
 ## Testing
 
-The project has **267 tests** across 10 test files.
+The project has **251 tests** across 11 test files.
 
 **All test commands must be run from the project root directory** (`WebScaper/`).
 
 ### Run all unit tests
 
 ```bash
-python -m pytest --ignore=test/test_integration_real.py -v
+python -m pytest --ignore=tests/test_integration_real.py -v
 ```
 
 ### Run all tests including live integration tests
@@ -185,13 +184,13 @@ python -m pytest -v
 ### Run tests with coverage report
 
 ```bash
-python -m pytest --ignore=test/test_integration_real.py --cov=src --cov-report=term-missing
+python -m pytest --ignore=tests/test_integration_real.py --cov=src --cov-report=term-missing
 ```
 
 ### Run a specific test file
 
 ```bash
-python -m pytest test/test_tfidf.py -v
+python -m pytest tests/test_tfidf.py -v
 ```
 
 ## Design Decisions
