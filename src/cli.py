@@ -114,6 +114,10 @@ class CLI:
         self.persistence = Persistence(self.indexer)
 
         loaded_index = self.persistence.load_index(DEFAULT_INDEX_FILE)
+        # Convert string doc_id keys to int in the rich index structure
+        for word, entries in loaded_index.items():
+            if isinstance(entries, dict):
+                loaded_index[word] = {int(k): v for k, v in entries.items()}
         self.indexer.index = loaded_index
 
         loaded_docs = self.persistence.load_documents(DEFAULT_DOCS_FILE)
