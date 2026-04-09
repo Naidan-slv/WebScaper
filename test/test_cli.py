@@ -278,8 +278,8 @@ class TestFindCommand:
     def _build_cli(self):
         """Create a CLI with a built index for testing."""
         cli = CLI()
-        cli.indexer.add_document("the world is full of good friends")
-        cli.indexer.add_document("good things come to those who wait")
+        cli.indexer.add_document("the world is full of good friends", url="http://quotes.toscrape.com/")
+        cli.indexer.add_document("good things come to those who wait", url="http://quotes.toscrape.com/page/2/")
         cli.indexer.build_index()
         cli._wire_search_components()
         return cli
@@ -310,6 +310,17 @@ class TestFindCommand:
         cli = CLI()
         results = cli.find("hello")
         assert results == []
+
+    def test_find_results_include_url(self):
+        """find results include the page URL for each document."""
+        cli = self._build_cli()
+        results = cli.find("good")
+        assert len(results) > 0
+        for r in results:
+            assert "url" in r
+        # doc 0 should have its URL
+        doc0_result = [r for r in results if r["doc_id"] == 0]
+        assert doc0_result[0]["url"] == "http://quotes.toscrape.com/"
 
     def test_find_returns_snippets(self):
         """find results contain doc_id, score, and snippet."""
