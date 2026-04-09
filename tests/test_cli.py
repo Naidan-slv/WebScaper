@@ -180,11 +180,11 @@ class TestLoadCommand:
         """load() restores the inverted index from file."""
         cli = CLI()
 
-        # Create test files
+        # Create test files with rich index format
         index_file = tmp_path / "index.json"
         docs_file = tmp_path / "documents.json"
-        index_file.write_text('{"hello": [0], "world": [0]}')
-        docs_file.write_text('{"0": "hello world"}')
+        index_file.write_text('{"hello": {"0": {"frequency": 1, "positions": [0]}}, "world": {"0": {"frequency": 1, "positions": [1]}}}')
+        docs_file.write_text('{"0": {"text": "hello world"}}')
 
         with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
             with patch("src.cli.DEFAULT_DOCS_FILE", str(docs_file)):
@@ -200,8 +200,8 @@ class TestLoadCommand:
 
         index_file = tmp_path / "index.json"
         docs_file = tmp_path / "documents.json"
-        index_file.write_text('{"hello": [0], "world": [0]}')
-        docs_file.write_text('{"0": "hello world"}')
+        index_file.write_text('{"hello": {"0": {"frequency": 1, "positions": [0]}}, "world": {"0": {"frequency": 1, "positions": [1]}}}')
+        docs_file.write_text('{"0": {"text": "hello world"}}')
 
         with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
             with patch("src.cli.DEFAULT_DOCS_FILE", str(docs_file)):
@@ -399,3 +399,71 @@ class TestRunREPL:
         cli.run()
         captured = capsys.readouterr()
         assert "Goodbye" in captured.out
+
+
+# ============================================================
+# Test Class 7: Build → Load → Find Round-Trip
+# ============================================================
+
+class TestBuildLoadRoundTrip:
+    """Tests for build → save → load → find round-trip integrity."""
+
+    def test_build_load_find_round_trip(self, tmp_path):
+        """Index built and saved can be loaded and searched correctly."""
+        from src.persistence import Persistence
+
+        # --- Build phase: manually index documents ---
+        cli = CLI()
+        cli.indexer.add_document(
+            "the world is full of good friends",
+            url="http://example.com/1",
+        )
+        cli.indexer.add_document(
+            "good things come to those who wait",
+            url="http://example.com/2",
+        )
+        cli.indexer.build_index()
+
+        # Save via Persistence
+        index_file = str(tmp_path / "index.json")
+        docs_file = str(tmp_path / "documents.json")
+        persistence = Persistence(cli.indexer)
+        persistence.save_index(index_file)
+        persistence.save_documents(docs_file)
+
+        # --- Load phase: fresh CLI loads from files ---
+        cli2 = CLI()
+        with patch("src.cli.DEFAULT_INDEX_FILE", index_file):
+            with patch("src.cli.DEFAULT_DOCS_FILE", docs_file):
+                cli2.load()
+
+        # --- Find phase: search must return correct AND results ---
+        results = cli2.find("good friends")
+        doc_ids = [r["doc_id"] for r in results]
+        assert 0 in doc_ids       # doc 0 has both "good" and "friends"
+        assert 1 not in doc_ids   # doc 1 has "good" but not "friends"
+
+    def test_load_then_print_works(self, tmp_path):
+        """print_index works correctly after load (rich format intact)."""
+        from src.persistence import Persistence
+
+        cli = CLI()
+        cli.indexer.add_document("hello world hello")
+        cli.indexer.build_index()
+
+        index_file = str(tmp_path / "index.json")
+        docs_file = str(tmp_path / "documents.json")
+        persistence = Persistence(cli.indexer)
+        persistence.save_index(index_file)
+        persistence.save_documents(docs_file)
+
+        cli2 = CLI()
+        with patch("src.cli.DEFAULT_INDEX_FILE", index_file):
+            with patch("src.cli.DEFAULT_DOCS_FILE", docs_file):
+                cli2.load()
+
+        result = cli2.print_index("hello")
+        assert result is not None
+        assert result["word"] == "hello"
+        assert result["entries"][0]["frequency"] == 2
+        assert result["entries"][0]["positions"] == [0, 2]

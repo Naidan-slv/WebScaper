@@ -23,7 +23,7 @@ from src.tfidf import TfIdf
 DEFAULT_INDEX_DIR = "data"
 DEFAULT_INDEX_FILE = os.path.join(DEFAULT_INDEX_DIR, "index.json")
 DEFAULT_DOCS_FILE = os.path.join(DEFAULT_INDEX_DIR, "documents.json")
-BASE_URL = "https://quotes.toscrape.com/"
+BASE_URL = "https://quotes.toscrape.com"
 
 
 class CLI:
@@ -171,8 +171,10 @@ class CLI:
                 stats = entry[doc_id]
                 freq = stats["frequency"]
                 positions = stats["positions"]
-                entries.append({"doc_id": doc_id, "frequency": freq, "positions": positions})
-                print(f"  Doc {doc_id}: frequency={freq}, positions={positions}")
+                url = self.indexer.get_document_url(doc_id)
+                entries.append({"doc_id": doc_id, "frequency": freq, "positions": positions, "url": url})
+                url_str = f" ({url})" if url else ""
+                print(f"  Doc {doc_id}{url_str}: frequency={freq}, positions={positions}")
             return {"word": word_lower, "doc_ids": doc_ids, "entries": entries}
 
         print(f"\n  '{word.lower()}' not found in index.")
@@ -198,10 +200,21 @@ class CLI:
         ranked = self.tfidf.rank_documents_and(query)
         results = []
         for r in ranked:
-            snippet = self.indexer.documents.get(r["doc_id"], "")[:100]
-            url = self.indexer.get_document_url(r["doc_id"])
+            doc_id = r["doc_id"]
+            url = self.indexer.get_document_url(doc_id)
+            # Generate context-aware snippet around the first matching query word
+            words = query.lower().split()
+            snippet = ""
+            for word in words:
+                try:
+                    snippet = self.search.get_snippet(doc_id, word, context_words=5)
+                    break
+                except (ValueError, RuntimeError):
+                    continue
+            if not snippet:
+                snippet = self.indexer.documents.get(doc_id, "")[:100]
             results.append({
-                "doc_id": r["doc_id"],
+                "doc_id": doc_id,
                 "score": r["score"],
                 "snippet": snippet,
                 "url": url,
