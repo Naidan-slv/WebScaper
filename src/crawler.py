@@ -102,6 +102,11 @@ class Crawler:
                 raise ValueError("HTML content must be a non-empty string")
             
             soup = BeautifulSoup(html, 'html.parser')
+            
+            # Remove non-content elements (scripts, styles) to reduce index noise
+            for tag in soup.find_all(['script', 'style']):
+                tag.decompose()
+            
             text = soup.get_text(separator=' ', strip=True)
             return text
         
