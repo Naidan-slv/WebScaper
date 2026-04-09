@@ -288,3 +288,44 @@ class TestIndexer:
         # Search for word appearing in multiple docs
         beauty_docs = indexer.search("beauty")  # only in doc 2
         assert beauty_docs == [2]
+
+
+# ============================================================
+# URL Storage Tests
+# ============================================================
+
+class TestIndexerUrls:
+    """Tests for storing page URLs alongside documents."""
+
+    def test_add_document_with_url(self):
+        """add_document accepts optional url parameter and stores it."""
+        indexer = Indexer()
+        doc_id = indexer.add_document("hello world", url="http://example.com/page/1/")
+        assert doc_id == 0
+        assert indexer.get_document_url(doc_id) == "http://example.com/page/1/"
+
+    def test_add_document_without_url(self):
+        """add_document without url still works (backward compat)."""
+        indexer = Indexer()
+        doc_id = indexer.add_document("hello world")
+        assert doc_id == 0
+        assert indexer.get_document_url(doc_id) is None
+
+    def test_get_document_url_multiple_docs(self):
+        """Each document stores its own URL."""
+        indexer = Indexer()
+        indexer.add_document("page one", url="http://example.com/1/")
+        indexer.add_document("page two", url="http://example.com/2/")
+        assert indexer.get_document_url(0) == "http://example.com/1/"
+        assert indexer.get_document_url(1) == "http://example.com/2/"
+
+    def test_get_document_url_unknown_doc(self):
+        """get_document_url returns None for unknown doc_id."""
+        indexer = Indexer()
+        assert indexer.get_document_url(99) is None
+
+    def test_documents_dict_still_stores_text(self):
+        """documents dict stays as {id: text} for backward compat."""
+        indexer = Indexer()
+        indexer.add_document("hello world", url="http://example.com/")
+        assert indexer.documents[0] == "hello world"

@@ -360,11 +360,11 @@ class TestPersistenceIntegration:
             
             # Verify data integrity
             assert load_result["index"] == indexer.index
-            # JSON converts int keys to strings
+            # JSON converts int keys to strings; documents now saved as {"text": str}
             assert load_result["documents"] == {
-                "1": "Love is important",
-                "2": "Love life all day",
-                "3": "Life happens"
+                "1": {"text": "Love is important"},
+                "2": {"text": "Love life all day"},
+                "3": {"text": "Life happens"}
             }
 
     def test_save_and_load_preserves_data_types(self):
