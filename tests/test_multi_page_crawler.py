@@ -110,12 +110,13 @@ class TestFetchAllPages:
         """Provide MultiPageCrawler with mocked crawler."""
         crawler = Mock()
         # Mock fetch_page to return different content for each page
+        # Pages 1-2 include a "Next" link; page 3 is the last page
         def mock_fetch(url):
-            if "page/2" in url:
-                return "<html>page 2</html>"
-            elif "page/3" in url:
-                return "<html>page 3</html>"
-            return "<html>page 1</html>"
+            if "page/3" in url:
+                return "<html><body>page 3</body></html>"
+            elif "page/2" in url:
+                return '<html><body>page 2<li class="next"><a href="/page/3/">Next</a></li></body></html>'
+            return '<html><body>page 1<li class="next"><a href="/page/2/">Next</a></li></body></html>'
         
         crawler.fetch_page = Mock(side_effect=mock_fetch)
         return MultiPageCrawler(crawler, max_pages=3)
@@ -168,8 +169,8 @@ class TestFetchAndParseAll:
         
         def mock_fetch(url):
             if "page/2" in url:
-                return "<html>page 2 content</html>"
-            return "<html>page 1 content</html>"
+                return "<html><body>page 2 content</body></html>"
+            return '<html><body>page 1 content<li class="next"><a href="/page/2/">Next</a></li></body></html>'
         
         def mock_extract(html):
             if "page 2" in html:
@@ -220,6 +221,44 @@ class TestFetchAndParseAll:
             mpc_setup.fetch_and_parse_all()
 
 
+class TestHasNextPage:
+    """Tests for next-page detection."""
+
+    @pytest.fixture
+    def mpc(self):
+        """Provide MultiPageCrawler instance."""
+        crawler = Mock()
+        return MultiPageCrawler(crawler)
+
+    def test_has_next_page_returns_true(self, mpc):
+        """Returns True when HTML has a next page link."""
+        html = '<html><body><li class="next"><a href="/page/2/">Next</a></li></body></html>'
+        assert mpc.has_next_page(html) is True
+
+    def test_has_next_page_returns_false(self, mpc):
+        """Returns False when HTML has no next page link."""
+        html = '<html><body>content only</body></html>'
+        assert mpc.has_next_page(html) is False
+
+    def test_has_next_page_with_only_previous_link(self, mpc):
+        """Returns False for a page with only a Previous link (last page)."""
+        html = '<html><body><li class="previous"><a href="/page/9/">Previous</a></li></body></html>'
+        assert mpc.has_next_page(html) is False
+
+    def test_fetch_stops_at_last_page(self):
+        """fetch_all_pages stops early when no next page is found."""
+        crawler = Mock()
+        def mock_fetch(url):
+            if "page/2" in url:
+                return "<html><body>page 2</body></html>"  # No next link
+            return '<html><body>page 1<li class="next"><a href="/page/2/">Next</a></li></body></html>'
+        crawler.fetch_page = Mock(side_effect=mock_fetch)
+        mpc = MultiPageCrawler(crawler, max_pages=5)
+        pages = mpc.fetch_all_pages()
+        assert len(pages) == 2  # Stopped at page 2, not 5
+        assert mpc.pages_fetched == 2
+
+
 class TestGetPagesFetched:
     """Tests for tracking pages fetched."""
 
@@ -227,7 +266,7 @@ class TestGetPagesFetched:
     def mpc_setup(self):
         """Provide MultiPageCrawler instance."""
         crawler = Mock()
-        crawler.fetch_page = Mock(return_value="<html>page</html>")
+        crawler.fetch_page = Mock(return_value='<html><body>page<li class="next"><a href="#">Next</a></li></body></html>')
         crawler.extract_text = Mock(return_value="text")
         return MultiPageCrawler(crawler, max_pages=5)
 
@@ -261,11 +300,11 @@ class TestMultiPageCrawlerIntegration:
         
         def mock_fetch(url):
             pages = {
-                "https://quotes.toscrape.com/": "<html>page 1</html>",
-                "https://quotes.toscrape.com/page/2/": "<html>page 2</html>",
-                "https://quotes.toscrape.com/page/3/": "<html>page 3</html>",
+                "https://quotes.toscrape.com/": '<html><body>page 1<li class="next"><a href="/page/2/">Next</a></li></body></html>',
+                "https://quotes.toscrape.com/page/2/": '<html><body>page 2<li class="next"><a href="/page/3/">Next</a></li></body></html>',
+                "https://quotes.toscrape.com/page/3/": "<html><body>page 3</body></html>",
             }
-            return pages.get(url, "<html>default</html>")
+            return pages.get(url, "<html><body>default</body></html>")
         
         def mock_extract(html):
             if "page 1" in html:
@@ -293,7 +332,7 @@ class TestMultiPageCrawlerIntegration:
     def test_multi_page_crawler_respects_politeness_delay(self):
         """Multi-page crawler respects crawler's politeness delay."""
         crawler = Mock()
-        crawler.fetch_page = Mock(return_value="<html>page</html>")
+        crawler.fetch_page = Mock(return_value='<html><body>page<li class="next"><a href="#">Next</a></li></body></html>')
         crawler.extract_text = Mock(return_value="text")
         # Crawler should have politeness_delay attribute
         crawler.politeness_delay = 6

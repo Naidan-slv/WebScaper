@@ -5,6 +5,7 @@ Extends basic crawler to fetch multiple pages from websites.
 Handles pagination with politeness delays and error recovery.
 """
 
+from bs4 import BeautifulSoup
 from src.crawler import Crawler
 
 
@@ -56,9 +57,29 @@ class MultiPageCrawler:
         else:
             return self.base_url + f"/page/{current_page}/"
 
+    def has_next_page(self, html):
+        """
+        Check if an HTML page contains a 'Next' page link.
+        
+        Parses the HTML to detect pagination. Stops crawling when the
+        last page is reached (no 'Next' link present).
+        
+        Args:
+            html (str): Raw HTML content of a page
+            
+        Returns:
+            bool: True if a 'Next' link exists, False otherwise
+        """
+        soup = BeautifulSoup(html, 'html.parser')
+        next_li = soup.find('li', class_='next')
+        return next_li is not None
+
     def fetch_all_pages(self):
         """
-        Fetch all pages up to max_pages.
+        Fetch all pages up to max_pages, stopping at the last page.
+        
+        Stops early if the current page has no 'Next' link, indicating
+        the last page has been reached.
         
         Returns:
             list: HTML content of each page fetched
@@ -74,6 +95,10 @@ class MultiPageCrawler:
                 html = self.crawler.fetch_page(url)
                 pages.append(html)
                 self.pages_fetched += 1
+                
+                # Stop if this page has no "Next" link (last page reached)
+                if not self.has_next_page(html):
+                    break
         except Exception as e:
             raise RuntimeError(f"Failed to fetch pages: {str(e)}")
         
