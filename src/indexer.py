@@ -21,20 +21,24 @@ class Indexer:
         """Initialize indexer with empty index and document store."""
         self.index = {}  # word -> set of document IDs
         self.documents = {}  # document ID -> original text
+        self.urls = {}  # document ID -> page URL
         self.document_count = 0
     
-    def add_document(self, text: str) -> int:
+    def add_document(self, text: str, url: str = None) -> int:
         """
         Add a document to the indexer.
         
         Args:
             text: Document text to index
+            url: Optional URL of the source page
         
         Returns:
             Document ID assigned to this document
         """
         doc_id = self.document_count
         self.documents[doc_id] = text
+        if url is not None:
+            self.urls[doc_id] = url
         self.document_count += 1
         return doc_id
     
@@ -112,3 +116,15 @@ class Indexer:
             KeyError: If document ID not found
         """
         return self.documents[doc_id]
+
+    def get_document_url(self, doc_id: int) -> str:
+        """
+        Retrieve the URL of a document by ID.
+        
+        Args:
+            doc_id: Document ID to retrieve URL for
+        
+        Returns:
+            URL string, or None if no URL stored for this document
+        """
+        return self.urls.get(doc_id)
