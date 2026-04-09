@@ -134,7 +134,7 @@ class CLI:
 
     def print_index(self, word):
         """
-        Print the inverted index entry for a given word.
+        Print the inverted index entry for a given word with statistics.
 
         Implements: > print <word>
 
@@ -142,20 +142,27 @@ class CLI:
             word: The word to look up in the index
 
         Returns:
-            dict or None: Index entry for the word, or None if not found
+            dict or None: {word, doc_ids, entries} with frequency/positions, or None
         """
         if not self.is_built:
             print("No index loaded. Run 'build' or 'load' first.")
             return None
 
-        word_lower = word.lower()
-        if word_lower in self.indexer.index:
-            entry = self.indexer.index[word_lower]
+        entry = self.indexer.get_index_entry(word)
+        if entry is not None:
+            word_lower = word.lower()
+            doc_ids = sorted(entry.keys())
+            entries = []
             print(f"\nIndex entry for '{word_lower}':")
-            print(f"  {entry}")
-            return {"word": word_lower, "doc_ids": entry}
+            for doc_id in doc_ids:
+                stats = entry[doc_id]
+                freq = stats["frequency"]
+                positions = stats["positions"]
+                entries.append({"doc_id": doc_id, "frequency": freq, "positions": positions})
+                print(f"  Doc {doc_id}: frequency={freq}, positions={positions}")
+            return {"word": word_lower, "doc_ids": doc_ids, "entries": entries}
 
-        print(f"\n  '{word_lower}' not found in index.")
+        print(f"\n  '{word.lower()}' not found in index.")
         return None
 
     def find(self, query):
