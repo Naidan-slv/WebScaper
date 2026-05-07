@@ -191,6 +191,63 @@ class TfIdf:
         results.sort(key=lambda r: r["score"], reverse=True)
         return results
 
+    def rank_phrase(self, phrase):
+        """Rank documents containing an exact phrase using word positions."""
+        if phrase is None:
+            raise ValueError("Phrase cannot be None")
+
+        words = tokenize(phrase)
+        if not words:
+            raise ValueError("Phrase cannot be empty")
+        if len(words) == 1:
+            return self.rank_documents_and(words[0])
+
+        doc_sets = []
+        for word in words:
+            if word not in self.indexer.index:
+                return []
+            doc_sets.append(set(self.indexer.index[word].keys()))
+
+        common_docs = doc_sets[0]
+        for s in doc_sets[1:]:
+            common_docs &= s
+
+        results = []
+        for doc_id in common_docs:
+            positions = self._phrase_positions(words, doc_id)
+            if not positions:
+                continue
+
+            # Repeated exact phrases should rank higher than one-off matches.
+            base_score = sum(self.calculate_tfidf(word, doc_id) for word in words)
+            score = base_score * len(positions)
+            if score > 0.0:
+                results.append({
+                    "doc_id": doc_id,
+                    "score": score,
+                    "positions": positions,
+                    "phrase_frequency": len(positions),
+                })
+
+        results.sort(key=lambda r: (-r["score"], r["doc_id"]))
+        return results
+
+    def _phrase_positions(self, words, doc_id):
+        """Return starting positions where all phrase words appear consecutively."""
+        first_positions = self.indexer.index[words[0]][doc_id]["positions"]
+        other_positions = [
+            set(self.indexer.index[word][doc_id]["positions"])
+            for word in words[1:]
+        ]
+
+        starts = []
+        for start in first_positions:
+            if all(start + offset in other_positions[offset - 1]
+                   for offset in range(1, len(words))):
+                starts.append(start)
+
+        return starts
+
     def search(self, query, limit=10):
         """
         Search and return ranked results with scores and snippets.

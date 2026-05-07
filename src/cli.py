@@ -6,6 +6,7 @@ Implements the 4 required commands from the COMP3011 coursework brief:
   > load    - Load previously saved index from file
   > print   - Print inverted index for a word
   > find    - Find pages containing search terms
+    > find ""  - Find an exact phrase using word positions
 """
 
 import os
@@ -17,6 +18,7 @@ from src.multiword_search import MultiwordSearch
 from src.word_frequency import WordFrequency
 from src.persistence import Persistence
 from src.tfidf import TfIdf
+from src.utils import tokenize
 
 
 # Default paths for index storage
@@ -182,7 +184,10 @@ class CLI:
 
     def find(self, query):
         """
-        Find pages containing ALL given search terms (AND logic), ranked by TF-IDF.
+        Find pages containing search terms, ranked by TF-IDF.
+
+        Unquoted queries use AND logic. Quoted queries use exact phrase
+        matching based on the positions stored in the inverted index.
 
         Implements: > find <query>
 
@@ -197,20 +202,42 @@ class CLI:
             print("No index loaded. Run 'build' or 'load' first.")
             return []
 
-        ranked = self.tfidf.rank_documents_and(query)
+        if query is None:
+            print("  Usage: find <query>")
+            return []
+
+        query_text = query.strip()
+        is_phrase = (
+            len(query_text) >= 2
+            and query_text[0] == query_text[-1]
+            and query_text[0] in ('"', "'")
+        )
+
+        if is_phrase:
+            query_text = query_text[1:-1].strip()
+            if not query_text:
+                print("  Usage: find \"<phrase>\"")
+                return []
+            ranked = self.tfidf.rank_phrase(query_text)
+        else:
+            ranked = self.tfidf.rank_documents_and(query_text)
+
         results = []
         for r in ranked:
             doc_id = r["doc_id"]
             url = self.indexer.get_document_url(doc_id)
             # Generate context-aware snippet around the first matching query word
-            words = query.lower().split()
+            words = tokenize(query_text)
             snippet = ""
-            for word in words:
-                try:
-                    snippet = self.search.get_snippet(doc_id, word, context_words=5)
-                    break
-                except (ValueError, RuntimeError):
-                    continue
+            if is_phrase and r.get("positions"):
+                snippet = self._get_phrase_snippet(doc_id, words, r["positions"][0])
+            else:
+                for word in words:
+                    try:
+                        snippet = self.search.get_snippet(doc_id, word, context_words=5)
+                        break
+                    except (ValueError, RuntimeError):
+                        continue
             if not snippet:
                 snippet = self.indexer.documents.get(doc_id, "")[:100]
             results.append({
@@ -218,16 +245,39 @@ class CLI:
                 "score": r["score"],
                 "snippet": snippet,
                 "url": url,
+                "match_type": "phrase" if is_phrase else "terms",
             })
+            if is_phrase:
+                results[-1]["phrase_positions"] = r["positions"]
+                results[-1]["phrase_frequency"] = r["phrase_frequency"]
 
         if results:
-            print(f"\nFound {len(results)} result(s) for '{query}' (ranked by relevance):")
+            label = "exact phrase" if is_phrase else "query"
+            print(f"\nFound {len(results)} result(s) for {label} '{query_text}' (ranked by relevance):")
             for i, r in enumerate(results, 1):
                 url_str = f" {r['url']}" if r["url"] else ""
                 print(f"  {i}. [score: {r['score']:.4f}]{url_str} Doc {r['doc_id']}: {r['snippet']}...")
         else:
-            print(f"\n  No results for '{query}'.")
+            label = "exact phrase" if is_phrase else "query"
+            print(f"\n  No results for {label} '{query_text}'.")
         return results
+
+    def _get_phrase_snippet(self, doc_id, words, start_pos, context_words=5):
+        """Build a snippet around an exact phrase occurrence."""
+        tokens = tokenize(self.indexer.documents.get(doc_id, ""))
+        if not tokens:
+            return ""
+
+        start = max(0, start_pos - context_words)
+        end = min(len(tokens), start_pos + len(words) + context_words)
+        snippet_tokens = tokens[start:end]
+
+        if start > 0:
+            snippet_tokens.insert(0, "...")
+        if end < len(tokens):
+            snippet_tokens.append("...")
+
+        return " ".join(snippet_tokens)
 
     def _wire_search_components(self):
         """Set up search, multiword search, word frequency, and TF-IDF after indexing."""
@@ -247,6 +297,7 @@ class CLI:
             load        - Load saved index from file
             print <w>   - Print inverted index for word
             find <q>    - Find pages with search terms
+            find "q"    - Find an exact phrase
             help        - Show available commands
             quit/exit   - Exit the program
         """
@@ -298,5 +349,6 @@ class CLI:
         print("  load          - Load saved index from file")
         print("  print <word>  - Print inverted index for word")
         print("  find <query>  - Find pages with search terms")
+        print("  find \"phrase\" - Find exact phrase using word positions")
         print("  help          - Show this help message")
         print("  quit / exit   - Exit the program\n")
