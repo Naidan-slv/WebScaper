@@ -7,6 +7,7 @@ Tests cover all 5 public methods + __init__:
 - calculate_idf: Inverse document frequency across corpus
 - calculate_tfidf: Combined TF * IDF score
 - rank_documents: Multi-word query ranking
+- rank_phrase: Exact phrase ranking using positional index entries
 - search: Ranked search with snippets
 """
 
@@ -353,3 +354,72 @@ class TestRankDocumentsAnd:
         """Raises ValueError for empty query."""
         with pytest.raises(ValueError):
             and_tfidf.rank_documents_and("")
+
+
+# ============================================================
+# Test Class 8: rank_phrase (exact phrase matching)
+# ============================================================
+
+class TestRankPhrase:
+    """Tests for exact phrase ranking using stored word positions."""
+
+    @pytest.fixture
+    def phrase_indexer(self):
+        idx = Indexer()
+        idx.add_document("good friends are rare")           # doc 0: exact phrase at 0
+        idx.add_document("good old friends stay close")     # doc 1: words, not adjacent
+        idx.add_document("friends good are reversed")       # doc 2: wrong order
+        idx.add_document("good friends good friends")       # doc 3: exact phrase twice
+        idx.build_index()
+        return idx
+
+    @pytest.fixture
+    def phrase_tfidf(self, phrase_indexer):
+        return TfIdf(phrase_indexer)
+
+    def test_phrase_returns_only_adjacent_ordered_matches(self, phrase_tfidf):
+        results = phrase_tfidf.rank_phrase("good friends")
+        doc_ids = [r["doc_id"] for r in results]
+
+        assert 0 in doc_ids
+        assert 3 in doc_ids
+        assert 1 not in doc_ids
+        assert 2 not in doc_ids
+
+    def test_phrase_result_includes_match_positions(self, phrase_tfidf):
+        results = phrase_tfidf.rank_phrase("good friends")
+        by_doc = {r["doc_id"]: r for r in results}
+
+        assert by_doc[0]["positions"] == [0]
+        assert by_doc[3]["positions"] == [0, 2]
+
+    def test_phrase_frequency_boosts_repeated_phrase(self, phrase_tfidf):
+        results = phrase_tfidf.rank_phrase("good friends")
+
+        assert results[0]["doc_id"] == 3
+        assert results[0]["phrase_frequency"] == 2
+
+    def test_phrase_is_case_insensitive_and_ignores_punctuation(self, phrase_tfidf):
+        lower = phrase_tfidf.rank_phrase("good friends")
+        mixed = phrase_tfidf.rank_phrase("GOOD, FRIENDS!")
+
+        assert [r["doc_id"] for r in mixed] == [r["doc_id"] for r in lower]
+
+    def test_phrase_single_word_uses_normal_ranking(self, phrase_tfidf):
+        phrase_results = phrase_tfidf.rank_phrase("rare")
+        normal_results = phrase_tfidf.rank_documents_and("rare")
+
+        assert phrase_results == normal_results
+
+    def test_phrase_no_results_for_nonexistent_phrase(self, phrase_tfidf):
+        results = phrase_tfidf.rank_phrase("rare friends")
+
+        assert results == []
+
+    def test_phrase_raises_if_query_none(self, phrase_tfidf):
+        with pytest.raises(ValueError):
+            phrase_tfidf.rank_phrase(None)
+
+    def test_phrase_raises_if_query_empty(self, phrase_tfidf):
+        with pytest.raises(ValueError):
+            phrase_tfidf.rank_phrase("")

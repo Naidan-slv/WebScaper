@@ -339,6 +339,48 @@ class TestFindCommand:
             scores = [r["score"] for r in results]
             assert scores == sorted(scores, reverse=True)
 
+    def test_find_quoted_phrase_uses_exact_positions(self):
+        """Quoted find query returns only exact phrase matches."""
+        cli = CLI()
+        cli.indexer.add_document("good friends are rare", url="http://example.com/exact")
+        cli.indexer.add_document("good old friends stay close", url="http://example.com/gap")
+        cli.indexer.add_document("friends good are reversed", url="http://example.com/reversed")
+        cli.indexer.build_index()
+        cli._wire_search_components()
+
+        results = cli.find('"good friends"')
+        doc_ids = [r["doc_id"] for r in results]
+
+        assert 0 in doc_ids
+        assert 1 not in doc_ids
+        assert 2 not in doc_ids
+        assert results[0]["match_type"] == "phrase"
+
+    def test_find_quoted_phrase_returns_phrase_positions(self):
+        """Phrase results include starting positions for the match."""
+        cli = CLI()
+        cli.indexer.add_document("good friends good friends", url="http://example.com/repeated")
+        cli.indexer.build_index()
+        cli._wire_search_components()
+
+        results = cli.find('"good friends"')
+
+        assert results[0]["phrase_positions"] == [0, 2]
+        assert results[0]["phrase_frequency"] == 2
+        assert "good friends" in results[0]["snippet"]
+
+    def test_find_quoted_phrase_output_labels_exact_phrase(self, capsys):
+        """CLI output labels quoted searches as exact phrase searches."""
+        cli = CLI()
+        cli.indexer.add_document("good friends are rare")
+        cli.indexer.build_index()
+        cli._wire_search_components()
+
+        cli.find('"good friends"')
+        captured = capsys.readouterr()
+
+        assert "exact phrase" in captured.out
+
 
 # ============================================================
 # Test Class 6: REPL (run) Tests
