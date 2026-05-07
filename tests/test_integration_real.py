@@ -4,12 +4,13 @@ Integration tests that make REAL HTTP requests to https://quotes.toscrape.com/
 These tests validate that the entire search engine pipeline works with the
 actual target website from the COMP3011 coursework brief.
 
-WARNING: These tests make real network requests and respect the 6-second
-politeness window. They will be SLOW by design. Run separately from unit tests.
+WARNING: These tests make real network requests. The application code enforces
+the 6-second politeness window, but tests mock time.sleep so the suite remains
+quick while still checking that the delay is called.
 
 Usage:
-    pytest test/test_integration_real.py -v -s
-    pytest test/test_integration_real.py -v -s -k "single_page"
+    pytest tests/test_integration_real.py -v -s
+    pytest tests/test_integration_real.py -v -s -k "single_page"
 """
 
 import pytest

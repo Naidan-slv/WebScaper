@@ -636,73 +636,94 @@ feat(tfidf): implement search - all 35 tests pass
 feat(cli): wire TF-IDF into find command for ranked search results - 28 tests pass
 ```
 
----
+
+### Entry 15: Exact Phrase Search Using Positional Index
+
+**Date**: 2026-05-07  
+**Task**: Add exact phrase search for quoted queries such as `find "good friends"`  
+**AI Tool**: GitHub Copilot (University of Leeds Secure Copilot Access)  
+**Purpose**: Add an advanced search feature beyond the base brief and demonstrate why the inverted index stores word positions, not just frequencies
+
+**What AI Generated/Suggested**:
+- A `rank_phrase()` method in the TF-IDF module
+- Tests for adjacent word matching, wrong word order, repeated phrases, case-insensitive input, and punctuation handling
+- CLI routing so quoted queries use phrase search while unquoted queries still use AND search
+- Updated help text and phrase-specific result metadata
+
+**Did It Help?**: Yes, with manual fixes  
+**Details**:
+  - What worked well: The existing positional index made phrase search a small, explainable extension. The tests clearly distinguished `find good friends` from `find "good friends"`.
+  - What didn't work: The first CLI version generated snippets around the first query word rather than the actual phrase occurrence. A test indentation mistake also caused one collection error.
+  - What you had to fix/modify: Added `_get_phrase_snippet()` so phrase results display the exact phrase in context, then reran the targeted, unit, and full test suites.
+  - Learning insights: Position lists make phrase search possible without rescanning every document from scratch. This is a practical reason real search engines use positional indexes.
+
+**Test Coverage**: 304 tests passing after the change
+- 269 local tests
+- 35 live integration tests
+- Added phrase-search tests in `tests/test_tfidf.py` and `tests/test_cli.py`
+
+**Commits Made**:
+```
+feat(search): add exact phrase search
+```
+
 
 ## Key Points for Video Critical Evaluation
 
-Use this section to prepare talking points about:
-- Specific tasks where AI was essential vs. nice-to-have
-- Code quality issues that required manual fixes
-- How AI affected your learning process
-- Whether using/not using AI changed your understanding of search engines
-- Time savings vs. debugging overhead trade-offs
-- Examples of AI hallucinations or incorrect suggestions (if any)
+Use this section to prepare the 30-second GenAI reflection in the video:
+- AI helped most with boilerplate, test generation, and established algorithms such as inverted indexing and TF-IDF.
+- AI was less reliable around integration details: mock objects, method-name assumptions, doc_id indexing, and output formatting needed manual checking.
+- Integration tests were important because they caught problems that unit tests with mocks could hide.
+- The exact phrase feature showed that the positional index was not just extra data; it enabled a real search-engine behaviour.
+- The main learning point was that AI sped up implementation, but understanding came from debugging, testing, and explaining the code.
 
----
 
-## Summary Stats (as of 8 April 2026)
+## Summary Stats as of 7 May 2026
 
 | Aspect | Details |
-|--------|----------|
-| **AI Tool Used** | GitHub Copilot (University of Leeds Secure Access) |
-| **Total AI Interactions** | 14 entries across all phases |
-| **Most Helpful For** | Test case generation, known CS patterns, error handling, boolean logic, statistics, integration testing, TF-IDF algorithm |
-| **Most Problematic For** | Mock object specifics, library-specific edge cases, doc_id indexing assumptions, test fixture design for TF-IDF |
-| **Code Written by AI** | ~60% scaffold + implementation; 40% testing & refinement |
-| **Success Rate** | 99% (14/14 entries successful) |
-| **Phase 1 Status** | ✅ **COMPLETE** - 4+11+26+29=70 tests (CLI tests reduced from 29→26 after rewrite) |
-| **Phase 2 Status** | ✅ **COMPLETE** - 26+33+24+24=107 tests |
-| **Phase 3 Status** | ✅ **COMPLETE** - TF-IDF ranking (35 tests) + CLI integration (28 tests) |
-| **Integration Tests** | ✅ **35 PASSING** (real HTTP against quotes.toscrape.com) |
-| **MultiwordSearch Tests** | ✅ **39 PASSING** |
-| **TOTAL TESTS** | ✅ **267 PASSING** (232 unit + 35 integration) |
-| **Lines of Code** | ~2,100+ in src/ |
-| **Commits** | 80+ semantic commits with feature branches |
-| **Current Branch** | main (all features merged) |
-| **Next Goal** | Video demonstration |
-| **Grade Target** | 80+ (TF-IDF ranking ✅ + video pending) |
-| **Deadline** | 8 May 2026 (30 days remaining) |
+|--------|---------|
+| AI Tool Used | GitHub Copilot (University of Leeds Secure Access) |
+| Total AI Usage Entries | 15 entries across all phases |
+| Most Helpful For | Test case generation, known CS patterns, error handling, boolean logic, TF-IDF, phrase-search scaffolding |
+| Most Problematic For | Mock details, integration assumptions, doc_id indexing, TF-IDF test fixture design, CLI output details |
+| Current Test Result | 304 passing tests |
+| Local Tests | 269 passing tests |
+| Live Integration Tests | 35 passing tests |
+| Coverage | 90% line coverage on local tests |
+| Advanced Features | TF-IDF ranking and exact phrase search |
+| Current Goal | Final documentation polish, video recording, and submission |
+| Deadline | 8 May 2026 |
 
----
 
 ## Achievement Breakdown by Phase
 
-### Phase 1: Foundation (70 tests) ✅
+### Phase 1: Foundation
 - Crawler: HTTP fetching + BeautifulSoup parsing + 6s politeness window
 - Indexer: Inverted index data structure with efficient O(1) lookup
 - Search: Single-word queries with context snippets
 - CLI: Interactive REPL with commands (build, load, find, print)
 
-### Phase 2: Core Features (107 tests) ✅
-- **Step 1 (26 tests):** Persistence - JSON save/load + checkpoint recovery
-- **Step 2 (33 tests):** Multi-word search - AND/OR boolean queries
-- **Step 3 (24 tests):** Multi-page crawler - Automatic pagination detection
-- **Step 4 (24 tests):** Word frequency - Document statistics & top-N words
+### Phase 2: Core Features
+- **Persistence:** JSON save/load + checkpoint recovery
+- **Multi-word search:** AND/OR boolean queries
+- **Multi-page crawler:** Pagination detection and last-page stopping
+- **Word frequency:** Document statistics and top-N words
 
-### Integration Testing (35 tests) ✅
+### Integration Testing
 - Real HTTP requests against live quotes.toscrape.com
 - Full pipeline verification: crawl → index → search → persist → reload
 - Bug discovery: MultiwordSearch calling non-existent method (caught by integration tests, hidden by mocks)
 - 0-based doc_id validation against real data
 
-### CLI Rewrite ✅
+### CLI Rewrite
 - All 4 brief-mandated commands: build, load, print, find
 - Entry point: `python -m src.main`
 - Verified end-to-end with real website
 
-### Phase 3: Advanced ✅
-- **TF-IDF ranking (35 tests):** Term frequency, inverse document frequency, combined scoring, ranked search
-- **CLI integration (28 tests):** find command now returns TF-IDF ranked results with relevance scores
+### Phase 3: Advanced Features
+- **TF-IDF ranking:** Term frequency, inverse document frequency, combined scoring, ranked search
+- **CLI integration:** find command returns TF-IDF ranked results with relevance scores
+- **Exact phrase search:** Quoted queries use position lists to match adjacent words in order
 - Video demonstration (pending)
 
 ---
@@ -723,52 +744,13 @@ Use this section to prepare talking points about:
 4. Performance optimization decisions
 5. API design choices
 
-**AI Reliability by Task Type:**
-- Pure algorithms: 99% success (no fixes needed)
-- Testing infrastructure: 95% success (minor fixture tweaks)
-- Library integration: 85% success (mock object issues)
-- Error handling: 90% success (specific exception handling)
-- Architecture: 100% success (guided by human requirements)
 
----
+## Final Reflection for Video
 
-## Final Reflection (To Complete Before Video)
+Overall, AI made the project faster to build but did not remove the need to understand the implementation. It was strongest when the task matched common programming patterns, such as writing tests, using Requests and BeautifulSoup, building an inverted index, and implementing TF-IDF scoring.
 
-**Overall Impact of AI in Development:**
-- ✅ **Accelerated development**: 60+ commits across all phases in short timeframe
-- ✅ **Improved code quality**: Comprehensive testing from day 1 (267 tests)
-- ✅ **Pattern learning**: AI implementations teach good practices
-- ✅ **Time efficiency**: Skeleton + tests generated quickly; freed time for refinement
-- ✅ **Bug discovery**: Integration tests caught real bugs that mocks hid
-- ⚠️ **Understanding required**: Must verify all code, not just trust AI output
-- ⚠️ **Debugging overhead**: Mock objects and library specifics required manual fixing
+The main weaknesses appeared at integration boundaries. Some generated tests made wrong assumptions about mock objects or document IDs, and one integration bug was only found when the real pipeline was tested. This showed that generated code still needs manual verification.
 
-**Lessons from This Project:**
-1. AI scaffolding is powerful, but human judgment drives architecture
-2. Comprehensive testing (191 tests) catches AI mistakes early
-3. TDD workflow (test → code → verify) works well with AI
-4. Domain knowledge (CS patterns) + AI tools (code generation) = productivity
-5. Clear requirements → better AI output; ambiguous specs → more fixes needed
+The most useful learning came from debugging and improving AI suggestions. For example, the phrase-search feature made me understand why storing word positions matters: without positions, the tool can only check whether words appear somewhere in the same page; with positions, it can check whether the words appear next to each other in order.
 
-**How AI Changed Problem-Solving Approach:**
-- Before: Fear of complexity; AI removes mental friction
-- After: Focus on design; coding becomes implementation detail
-- Practical result: Can tackle larger scope with same effort budget
-- Risk: Over-trusting AI without verification
-
-**Ethical Considerations:**
-- ✅ **Transparency**: This log documents every AI use
-- ✅ **Understanding**: Each AI suggestion was reviewed and fixed
-- ✅ **Originality**: Architecture and design decisions are human-driven
-- ✅ **Code ownership**: All code has been read, understood, and modified
-- ✅ **Academic integrity**: Using AI as documented tool, not hiding authorship
-
-**For 15% GenAI Critical Evaluation Section of Video:**
-Emphasize:
-1. AI was used for scaffolding and testing, not just generation
-2. Comprehensive testing (267 tests) represents human-verified quality
-3. 80+ semantic commits show deliberate progression
-4. Clear git history documents decision-making
-5. This log provides complete transparency for grading
-
----
+For academic integrity, all AI use has been declared in this log. The code was tested, reviewed, and adapted rather than accepted blindly.
