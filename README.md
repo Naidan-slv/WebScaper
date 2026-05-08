@@ -43,7 +43,8 @@ WebScaper/
 │   ├── test_main.py            # 1 test
 │   └── test_integration_real.py    # 35 integration tests (live site)
 ├── data/
-│   └── .gitkeep                # Generated JSON files are ignored by git
+│   ├── index.json              # Compiled inverted index
+│   └── documents.json          # Stored document text and URLs for load/search snippets
 ├── docs/
 │   └── AI_USAGE_LOG.md         # GenAI usage declaration
 ├── requirements.txt
@@ -68,7 +69,7 @@ source .venv/bin/activate   # macOS/Linux
 pip install -r requirements.txt
 ```
 
-Generated crawl output is not committed to the repository. Running `build` creates `data/index.json` and `data/documents.json` locally; these files are ignored by git because they are derived from the scraped website. The compiled index file can be attached separately for coursework submission.
+The repository includes a compiled index in `data/index.json`. It also includes `data/documents.json`, which stores document text and URLs so the `load` command can restore snippets and page links without crawling again. Running `build` refreshes both files locally.
 
 ### Dependencies
 
@@ -208,7 +209,7 @@ python -m pytest tests/test_tfidf.py -v
 - **Smoothed IDF** — Uses `log(1 + N/df)` instead of the standard `log(N/df)` so that words appearing in every document still receive a small non-zero score. This is essential for small corpora like quotes.toscrape.com (~10 pages) where common words would otherwise score exactly zero.
 - **Positional phrase search** — The index stores each word's positions, so quoted queries can verify that words appear consecutively in the correct order.
 - **Modular architecture** — Each component (crawler, indexer, search, TF-IDF, persistence) is a separate class with its own test file, following single-responsibility principle.
-- **JSON persistence** — The inverted index and document store are serialised locally as JSON for simplicity and human readability, but generated scrape output is ignored by git.
+- **JSON persistence** — The inverted index and document store are serialised as JSON for simplicity and human readability. `index.json` is the compiled index file required for submission, while `documents.json` supports loading snippets and URLs.
 - **Incremental workflow** — Features were developed incrementally with focused tests, semantic commits, and regression checks after each major change.
 
 ## GenAI Declaration

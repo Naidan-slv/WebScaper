@@ -208,7 +208,3 @@ __marimo__/
 
 # Notes folder - do not commit
 /notes
-
-# Generated crawl/index output - created locally by `build`
-/data/*.json
-!/data/.gitkeep

@@ -1,0 +1,14008 @@
+{
+  "quotes": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        273
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        600
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        327
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        238
+      ]
+    },
+    "4": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        259
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        281
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        399
+      ]
+    },
+    "7": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        302
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        375
+      ]
+    },
+    "9": {
+      "frequency": 3,
+      "positions": [
+        0,
+        3,
+        259
+      ]
+    }
+  },
+  "to": {
+    "0": {
+      "frequency": 7,
+      "positions": [
+        1,
+        4,
+        65,
+        133,
+        149,
+        172,
+        180
+      ]
+    },
+    "1": {
+      "frequency": 18,
+      "positions": [
+        1,
+        4,
+        19,
+        34,
+        39,
+        101,
+        115,
+        202,
+        223,
+        226,
+        233,
+        236,
+        251,
+        319,
+        324,
+        442,
+        454,
+        567
+      ]
+    },
+    "2": {
+      "frequency": 9,
+      "positions": [
+        1,
+        4,
+        107,
+        162,
+        164,
+        212,
+        223,
+        242,
+        280
+      ]
+    },
+    "3": {
+      "frequency": 8,
+      "positions": [
+        1,
+        4,
+        69,
+        75,
+        112,
+        155,
+        174,
+        210
+      ]
+    },
+    "4": {
+      "frequency": 7,
+      "positions": [
+        1,
+        4,
+        51,
+        70,
+        106,
+        203,
+        221
+      ]
+    },
+    "5": {
+      "frequency": 4,
+      "positions": [
+        1,
+        4,
+        85,
+        88
+      ]
+    },
+    "6": {
+      "frequency": 15,
+      "positions": [
+        1,
+        4,
+        29,
+        39,
+        47,
+        85,
+        99,
+        104,
+        121,
+        132,
+        185,
+        188,
+        241,
+        306,
+        373
+      ]
+    },
+    "7": {
+      "frequency": 6,
+      "positions": [
+        1,
+        4,
+        69,
+        172,
+        256,
+        263
+      ]
+    },
+    "8": {
+      "frequency": 9,
+      "positions": [
+        1,
+        4,
+        35,
+        39,
+        62,
+        77,
+        227,
+        264,
+        289
+      ]
+    },
+    "9": {
+      "frequency": 12,
+      "positions": [
+        1,
+        4,
+        37,
+        44,
+        56,
+        64,
+        82,
+        99,
+        151,
+        157,
+        192,
+        233
+      ]
+    }
+  },
+  "scrape": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        2,
+        5
+      ]
+    }
+  },
+  "login": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        6
+      ]
+    }
+  },
+  "the": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        7,
+        77,
+        96
+      ]
+    },
+    "1": {
+      "frequency": 13,
+      "positions": [
+        28,
+        60,
+        82,
+        86,
+        301,
+        336,
+        350,
+        418,
+        463,
+        472,
+        481,
+        491,
+        550
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        150,
+        153
+      ]
+    },
+    "3": {
+      "frequency": 9,
+      "positions": [
+        7,
+        12,
+        18,
+        23,
+        63,
+        77,
+        113,
+        119,
+        171
+      ]
+    },
+    "4": {
+      "frequency": 6,
+      "positions": [
+        18,
+        121,
+        125,
+        176,
+        181,
+        217
+      ]
+    },
+    "5": {
+      "frequency": 5,
+      "positions": [
+        72,
+        137,
+        160,
+        225,
+        233
+      ]
+    },
+    "6": {
+      "frequency": 6,
+      "positions": [
+        8,
+        60,
+        63,
+        156,
+        218,
+        222
+      ]
+    },
+    "7": {
+      "frequency": 9,
+      "positions": [
+        50,
+        94,
+        128,
+        146,
+        168,
+        177,
+        204,
+        214,
+        250
+      ]
+    },
+    "8": {
+      "frequency": 15,
+      "positions": [
+        55,
+        91,
+        170,
+        175,
+        177,
+        191,
+        199,
+        207,
+        250,
+        259,
+        272,
+        278,
+        308,
+        311,
+        333
+      ]
+    },
+    "9": {
+      "frequency": 7,
+      "positions": [
+        7,
+        33,
+        52,
+        103,
+        153,
+        162,
+        190
+      ]
+    }
+  },
+  "world": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        8,
+        36
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        87
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        83
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        215
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        176,
+        309
+      ]
+    }
+  },
+  "as": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        9,
+        71,
+        80
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        88,
+        231
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        256
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        197,
+        199
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        14,
+        285,
+        287
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        218
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        329
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        224
+      ]
+    }
+  },
+  "we": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        10,
+        45
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        570
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        97,
+        153
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        219
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        220,
+        229
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        241,
+        254
+      ]
+    }
+  },
+  "have": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        11,
+        196
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        437,
+        448
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        104,
+        259
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        186,
+        215
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        22
+      ]
+    },
+    "6": {
+      "frequency": 4,
+      "positions": [
+        270,
+        322,
+        338,
+        374
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        61,
+        129,
+        141
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        150
+      ]
+    }
+  },
+  "created": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        12
+      ]
+    }
+  },
+  "it": {
+    "0": {
+      "frequency": 6,
+      "positions": [
+        13,
+        20,
+        37,
+        99,
+        169,
+        229
+      ]
+    },
+    "1": {
+      "frequency": 9,
+      "positions": [
+        13,
+        41,
+        51,
+        103,
+        216,
+        250,
+        259,
+        415,
+        513
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        156,
+        239,
+        299
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        38,
+        53,
+        205
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        192,
+        223
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        30
+      ]
+    },
+    "6": {
+      "frequency": 10,
+      "positions": [
+        92,
+        126,
+        131,
+        140,
+        152,
+        171,
+        174,
+        179,
+        268,
+        298
+      ]
+    },
+    "7": {
+      "frequency": 4,
+      "positions": [
+        73,
+        125,
+        132,
+        152
+      ]
+    },
+    "8": {
+      "frequency": 4,
+      "positions": [
+        31,
+        183,
+        342,
+        346
+      ]
+    },
+    "9": {
+      "frequency": 6,
+      "positions": [
+        11,
+        79,
+        142,
+        173,
+        199,
+        231
+      ]
+    }
+  },
+  "is": {
+    "0": {
+      "frequency": 12,
+      "positions": [
+        14,
+        38,
+        70,
+        74,
+        79,
+        83,
+        125,
+        128,
+        170,
+        219,
+        230,
+        246
+      ]
+    },
+    "1": {
+      "frequency": 10,
+      "positions": [
+        9,
+        31,
+        422,
+        467,
+        476,
+        485,
+        495,
+        514,
+        549,
+        564
+      ]
+    },
+    "2": {
+      "frequency": 7,
+      "positions": [
+        47,
+        60,
+        148,
+        185,
+        190,
+        195,
+        240
+      ]
+    },
+    "3": {
+      "frequency": 8,
+      "positions": [
+        39,
+        54,
+        65,
+        67,
+        117,
+        133,
+        173,
+        206
+      ]
+    },
+    "4": {
+      "frequency": 7,
+      "positions": [
+        101,
+        124,
+        166,
+        197,
+        226,
+        230,
+        234
+      ]
+    },
+    "5": {
+      "frequency": 7,
+      "positions": [
+        8,
+        31,
+        142,
+        151,
+        166,
+        194,
+        253
+      ]
+    },
+    "6": {
+      "frequency": 5,
+      "positions": [
+        103,
+        187,
+        239,
+        246,
+        291
+      ]
+    },
+    "7": {
+      "frequency": 5,
+      "positions": [
+        59,
+        116,
+        174,
+        254,
+        261
+      ]
+    },
+    "8": {
+      "frequency": 6,
+      "positions": [
+        28,
+        68,
+        72,
+        110,
+        287,
+        313
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        12,
+        232
+      ]
+    }
+  },
+  "a": {
+    "0": {
+      "frequency": 10,
+      "positions": [
+        15,
+        75,
+        84,
+        108,
+        151,
+        157,
+        209,
+        217,
+        221,
+        242
+      ]
+    },
+    "1": {
+      "frequency": 9,
+      "positions": [
+        24,
+        195,
+        218,
+        252,
+        357,
+        423,
+        516,
+        521,
+        545
+      ]
+    },
+    "2": {
+      "frequency": 6,
+      "positions": [
+        125,
+        133,
+        138,
+        166,
+        171,
+        279
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        136,
+        193
+      ]
+    },
+    "4": {
+      "frequency": 10,
+      "positions": [
+        7,
+        10,
+        40,
+        47,
+        84,
+        104,
+        151,
+        227,
+        231,
+        235
+      ]
+    },
+    "5": {
+      "frequency": 6,
+      "positions": [
+        77,
+        81,
+        100,
+        106,
+        180,
+        200
+      ]
+    },
+    "6": {
+      "frequency": 5,
+      "positions": [
+        18,
+        250,
+        292,
+        304,
+        360
+      ]
+    },
+    "7": {
+      "frequency": 5,
+      "positions": [
+        10,
+        117,
+        134,
+        199,
+        271
+      ]
+    },
+    "8": {
+      "frequency": 9,
+      "positions": [
+        12,
+        25,
+        42,
+        64,
+        78,
+        125,
+        130,
+        282,
+        301
+      ]
+    },
+    "9": {
+      "frequency": 8,
+      "positions": [
+        13,
+        108,
+        120,
+        206,
+        208,
+        220,
+        225,
+        228
+      ]
+    }
+  },
+  "process": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        16
+      ]
+    }
+  },
+  "of": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        17,
+        153,
+        159
+      ]
+    },
+    "1": {
+      "frequency": 13,
+      "positions": [
+        76,
+        105,
+        111,
+        221,
+        303,
+        349,
+        359,
+        465,
+        474,
+        483,
+        493,
+        518,
+        523
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        40,
+        90,
+        152
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        36,
+        90,
+        195
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        42
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        25,
+        125,
+        213
+      ]
+    },
+    "6": {
+      "frequency": 4,
+      "positions": [
+        62,
+        124,
+        160,
+        343
+      ]
+    },
+    "7": {
+      "frequency": 4,
+      "positions": [
+        17,
+        57,
+        137,
+        236
+      ]
+    },
+    "8": {
+      "frequency": 12,
+      "positions": [
+        93,
+        120,
+        124,
+        132,
+        165,
+        174,
+        190,
+        193,
+        198,
+        209,
+        274,
+        280
+      ]
+    },
+    "9": {
+      "frequency": 3,
+      "positions": [
+        129,
+        135,
+        198
+      ]
+    }
+  },
+  "our": {
+    "0": {
+      "frequency": 4,
+      "positions": [
+        18,
+        26,
+        39,
+        51
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        227,
+        237
+      ]
+    }
+  },
+  "thinking": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        19,
+        27,
+        35
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        344
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        152
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        81
+      ]
+    }
+  },
+  "cannot": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        21
+      ]
+    }
+  },
+  "be": {
+    "0": {
+      "frequency": 6,
+      "positions": [
+        22,
+        98,
+        112,
+        134,
+        173,
+        181
+      ]
+    },
+    "1": {
+      "frequency": 5,
+      "positions": [
+        45,
+        271,
+        307,
+        343,
+        455
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        158,
+        213,
+        224
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        192,
+        211
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        204
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        105
+      ]
+    },
+    "6": {
+      "frequency": 6,
+      "positions": [
+        105,
+        113,
+        177,
+        189,
+        265,
+        307
+      ]
+    },
+    "8": {
+      "frequency": 4,
+      "positions": [
+        137,
+        204,
+        224,
+        265
+      ]
+    },
+    "9": {
+      "frequency": 4,
+      "positions": [
+        21,
+        67,
+        158,
+        165
+      ]
+    }
+  },
+  "changed": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        23
+      ]
+    }
+  },
+  "without": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        24,
+        244
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        10,
+        22,
+        244
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        230
+      ]
+    }
+  },
+  "changing": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        25
+      ]
+    }
+  },
+  "by": {
+    "0": {
+      "frequency": 12,
+      "positions": [
+        28,
+        53,
+        86,
+        115,
+        140,
+        161,
+        188,
+        207,
+        236,
+        251,
+        274,
+        278
+      ]
+    },
+    "1": {
+      "frequency": 12,
+      "positions": [
+        205,
+        239,
+        261,
+        406,
+        428,
+        456,
+        500,
+        529,
+        553,
+        575,
+        601,
+        605
+      ]
+    },
+    "2": {
+      "frequency": 13,
+      "positions": [
+        73,
+        92,
+        110,
+        140,
+        174,
+        199,
+        232,
+        268,
+        270,
+        287,
+        306,
+        328,
+        332
+      ]
+    },
+    "3": {
+      "frequency": 12,
+      "positions": [
+        28,
+        57,
+        82,
+        105,
+        123,
+        144,
+        160,
+        176,
+        197,
+        217,
+        239,
+        243
+      ]
+    },
+    "4": {
+      "frequency": 13,
+      "positions": [
+        26,
+        54,
+        76,
+        93,
+        114,
+        131,
+        145,
+        168,
+        183,
+        205,
+        238,
+        260,
+        264
+      ]
+    },
+    "5": {
+      "frequency": 13,
+      "positions": [
+        28,
+        35,
+        50,
+        90,
+        127,
+        153,
+        171,
+        185,
+        202,
+        241,
+        257,
+        282,
+        286
+      ]
+    },
+    "6": {
+      "frequency": 12,
+      "positions": [
+        51,
+        70,
+        93,
+        191,
+        204,
+        232,
+        254,
+        313,
+        331,
+        378,
+        400,
+        404
+      ]
+    },
+    "7": {
+      "frequency": 12,
+      "positions": [
+        25,
+        44,
+        74,
+        104,
+        158,
+        184,
+        220,
+        243,
+        266,
+        279,
+        303,
+        307
+      ]
+    },
+    "8": {
+      "frequency": 13,
+      "positions": [
+        19,
+        44,
+        99,
+        146,
+        213,
+        233,
+        266,
+        294,
+        318,
+        345,
+        351,
+        376,
+        380
+      ]
+    },
+    "9": {
+      "frequency": 13,
+      "positions": [
+        26,
+        57,
+        72,
+        91,
+        102,
+        110,
+        143,
+        176,
+        200,
+        214,
+        237,
+        260,
+        264
+      ]
+    }
+  },
+  "albert": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        29,
+        87,
+        162
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        262
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        233,
+        288
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        177
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        115
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        128
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        20
+      ]
+    }
+  },
+  "einstein": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        30,
+        88,
+        163
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        263
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        234,
+        289
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        178
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        116
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        129
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        21
+      ]
+    }
+  },
+  "about": {
+    "0": {
+      "frequency": 10,
+      "positions": [
+        31,
+        56,
+        89,
+        118,
+        143,
+        164,
+        191,
+        211,
+        239,
+        254
+      ]
+    },
+    "1": {
+      "frequency": 12,
+      "positions": [
+        204,
+        208,
+        242,
+        264,
+        345,
+        409,
+        431,
+        459,
+        503,
+        532,
+        556,
+        578
+      ]
+    },
+    "2": {
+      "frequency": 11,
+      "positions": [
+        76,
+        96,
+        113,
+        143,
+        177,
+        202,
+        235,
+        273,
+        290,
+        296,
+        309
+      ]
+    },
+    "3": {
+      "frequency": 10,
+      "positions": [
+        31,
+        60,
+        85,
+        108,
+        126,
+        148,
+        163,
+        179,
+        201,
+        220
+      ]
+    },
+    "4": {
+      "frequency": 10,
+      "positions": [
+        30,
+        57,
+        79,
+        96,
+        117,
+        148,
+        171,
+        188,
+        208,
+        241
+      ]
+    },
+    "5": {
+      "frequency": 12,
+      "positions": [
+        38,
+        53,
+        93,
+        130,
+        156,
+        175,
+        188,
+        205,
+        244,
+        249,
+        254,
+        261
+      ]
+    },
+    "6": {
+      "frequency": 10,
+      "positions": [
+        54,
+        73,
+        96,
+        194,
+        207,
+        235,
+        257,
+        317,
+        334,
+        381
+      ]
+    },
+    "7": {
+      "frequency": 10,
+      "positions": [
+        28,
+        47,
+        77,
+        107,
+        161,
+        187,
+        223,
+        246,
+        269,
+        282
+      ]
+    },
+    "8": {
+      "frequency": 10,
+      "positions": [
+        22,
+        47,
+        102,
+        149,
+        216,
+        236,
+        269,
+        297,
+        321,
+        354
+      ]
+    },
+    "9": {
+      "frequency": 10,
+      "positions": [
+        29,
+        60,
+        75,
+        94,
+        113,
+        146,
+        179,
+        203,
+        217,
+        241
+      ]
+    }
+  },
+  "tags": {
+    "0": {
+      "frequency": 11,
+      "positions": [
+        32,
+        57,
+        90,
+        119,
+        144,
+        165,
+        192,
+        212,
+        240,
+        255,
+        262
+      ]
+    },
+    "1": {
+      "frequency": 11,
+      "positions": [
+        209,
+        243,
+        265,
+        410,
+        432,
+        460,
+        504,
+        533,
+        557,
+        579,
+        589
+      ]
+    },
+    "2": {
+      "frequency": 10,
+      "positions": [
+        77,
+        97,
+        114,
+        144,
+        178,
+        203,
+        236,
+        291,
+        310,
+        316
+      ]
+    },
+    "3": {
+      "frequency": 11,
+      "positions": [
+        32,
+        61,
+        86,
+        109,
+        127,
+        149,
+        164,
+        180,
+        202,
+        221,
+        227
+      ]
+    },
+    "4": {
+      "frequency": 10,
+      "positions": [
+        31,
+        58,
+        97,
+        118,
+        149,
+        172,
+        189,
+        209,
+        242,
+        248
+      ]
+    },
+    "5": {
+      "frequency": 11,
+      "positions": [
+        39,
+        54,
+        94,
+        131,
+        157,
+        176,
+        189,
+        206,
+        245,
+        262,
+        270
+      ]
+    },
+    "6": {
+      "frequency": 11,
+      "positions": [
+        55,
+        74,
+        97,
+        195,
+        208,
+        236,
+        258,
+        318,
+        335,
+        382,
+        388
+      ]
+    },
+    "7": {
+      "frequency": 10,
+      "positions": [
+        29,
+        48,
+        78,
+        108,
+        162,
+        188,
+        224,
+        247,
+        283,
+        291
+      ]
+    },
+    "8": {
+      "frequency": 11,
+      "positions": [
+        23,
+        48,
+        103,
+        150,
+        217,
+        237,
+        270,
+        298,
+        322,
+        355,
+        364
+      ]
+    },
+    "9": {
+      "frequency": 11,
+      "positions": [
+        30,
+        61,
+        76,
+        95,
+        114,
+        147,
+        180,
+        204,
+        218,
+        242,
+        248
+      ]
+    }
+  },
+  "change": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        33
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        373
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        173
+      ]
+    }
+  },
+  "deepthoughts": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        34
+      ]
+    }
+  },
+  "choices": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        40,
+        59
+      ]
+    }
+  },
+  "harry": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        41
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        44
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        220
+      ]
+    }
+  },
+  "that": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        42,
+        204
+      ]
+    },
+    "1": {
+      "frequency": 5,
+      "positions": [
+        62,
+        137,
+        144,
+        361,
+        525
+      ]
+    },
+    "2": {
+      "frequency": 5,
+      "positions": [
+        54,
+        65,
+        130,
+        184,
+        253
+      ]
+    },
+    "3": {
+      "frequency": 5,
+      "positions": [
+        9,
+        20,
+        50,
+        52,
+        189
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        47,
+        139,
+        228
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        165
+      ]
+    },
+    "7": {
+      "frequency": 4,
+      "positions": [
+        60,
+        119,
+        130,
+        153
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        202,
+        246,
+        332
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        155
+      ]
+    }
+  },
+  "show": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        43
+      ]
+    }
+  },
+  "what": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        44,
+        176,
+        184
+      ]
+    },
+    "1": {
+      "frequency": 4,
+      "positions": [
+        10,
+        16,
+        292,
+        565
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        212
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        195,
+        200
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        148
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        272
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        37,
+        111
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        67,
+        71,
+        75
+      ]
+    }
+  },
+  "truly": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        46
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        38
+      ]
+    }
+  },
+  "are": {
+    "0": {
+      "frequency": 4,
+      "positions": [
+        47,
+        61,
+        178,
+        186
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        113,
+        571
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        84,
+        182
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        17
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        202,
+        341,
+        371
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        155,
+        242,
+        255
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        90,
+        195
+      ]
+    }
+  },
+  "far": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        48
+      ]
+    }
+  },
+  "more": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        49
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        380
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        225,
+        229
+      ]
+    },
+    "3": {
+      "frequency": 4,
+      "positions": [
+        8,
+        13,
+        19,
+        24
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        344
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        171,
+        178
+      ]
+    }
+  },
+  "than": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        50,
+        137,
+        179
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        381
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        187,
+        197
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        345
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        123
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        105
+      ]
+    }
+  },
+  "abilities": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        52,
+        58
+      ]
+    }
+  },
+  "jk": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        54
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        240
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        271
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        58,
+        124
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        206
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        233
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        100
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        27
+      ]
+    }
+  },
+  "rowling": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        55
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        241
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        272
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        59,
+        125
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        207
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        234
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        101
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        28
+      ]
+    }
+  },
+  "there": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        60
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        405
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        46,
+        189
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        7,
+        193
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        238,
+        340
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        109,
+        154
+      ]
+    }
+  },
+  "only": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        62
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        278
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        24,
+        174
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        135,
+        146
+      ]
+    },
+    "7": {
+      "frequency": 3,
+      "positions": [
+        101,
+        178,
+        205
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        338
+      ]
+    }
+  },
+  "two": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        63
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        302
+      ]
+    }
+  },
+  "ways": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        64,
+        203
+      ]
+    }
+  },
+  "live": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        66,
+        93
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        243,
+        250
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        114
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        229
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        217
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        49
+      ]
+    }
+  },
+  "your": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        67
+      ]
+    },
+    "1": {
+      "frequency": 6,
+      "positions": [
+        46,
+        69,
+        117,
+        132,
+        181,
+        185
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        55,
+        70,
+        210
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        42
+      ]
+    },
+    "4": {
+      "frequency": 3,
+      "positions": [
+        108,
+        133,
+        138
+      ]
+    },
+    "6": {
+      "frequency": 4,
+      "positions": [
+        67,
+        110,
+        161,
+        310
+      ]
+    }
+  },
+  "life": {
+    "0": {
+      "frequency": 4,
+      "positions": [
+        68,
+        92,
+        193,
+        265
+      ]
+    },
+    "1": {
+      "frequency": 9,
+      "positions": [
+        8,
+        213,
+        461,
+        494,
+        552,
+        562,
+        563,
+        581,
+        592
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        205,
+        319
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        230
+      ]
+    },
+    "4": {
+      "frequency": 3,
+      "positions": [
+        100,
+        119,
+        251
+      ]
+    },
+    "5": {
+      "frequency": 5,
+      "positions": [
+        122,
+        247,
+        252,
+        264,
+        273
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        319,
+        391
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        294
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        281,
+        300,
+        367
+      ]
+    },
+    "9": {
+      "frequency": 4,
+      "positions": [
+        51,
+        63,
+        115,
+        251
+      ]
+    }
+  },
+  "one": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        69
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        192,
+        293
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        25,
+        73
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        43,
+        211,
+        234
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        134,
+        346
+      ]
+    },
+    "7": {
+      "frequency": 3,
+      "positions": [
+        179,
+        206,
+        219
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        118
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        34
+      ]
+    }
+  },
+  "though": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        72,
+        81
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        157
+      ]
+    }
+  },
+  "nothing": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        73
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        9
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        43,
+        240
+      ]
+    }
+  },
+  "miracle": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        76,
+        85,
+        94
+      ]
+    }
+  },
+  "other": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        78
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        573
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        38
+      ]
+    }
+  },
+  "everything": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        82
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        67,
+        147,
+        159
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        349
+      ]
+    }
+  },
+  "inspirational": {
+    "0": {
+      "frequency": 4,
+      "positions": [
+        91,
+        146,
+        215,
+        264
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        212,
+        509,
+        591
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        318
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        129,
+        222,
+        229
+      ]
+    },
+    "4": {
+      "frequency": 3,
+      "positions": [
+        60,
+        191,
+        250
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        246,
+        263,
+        272
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        390
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        231,
+        293
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        366
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        219,
+        250
+      ]
+    }
+  },
+  "miracles": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        95
+      ]
+    }
+  },
+  "person": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        97
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        64
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        121,
+        209
+      ]
+    }
+  },
+  "gentleman": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        100
+      ]
+    }
+  },
+  "or": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        101
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        276
+      ]
+    },
+    "2": {
+      "frequency": 5,
+      "positions": [
+        13,
+        15,
+        24,
+        50,
+        168
+      ]
+    },
+    "4": {
+      "frequency": 3,
+      "positions": [
+        46,
+        135,
+        140
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        158
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        211
+      ]
+    }
+  },
+  "lady": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        102
+      ]
+    }
+  },
+  "who": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        103
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        139,
+        176
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        117,
+        194
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        20,
+        127
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        16
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        65,
+        200,
+        228
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        253,
+        260
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        8,
+        80,
+        284
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        87,
+        194
+      ]
+    }
+  },
+  "has": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        104
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        168,
+        236
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        9,
+        14,
+        335
+      ]
+    }
+  },
+  "not": {
+    "0": {
+      "frequency": 4,
+      "positions": [
+        105,
+        148,
+        187,
+        197
+      ]
+    },
+    "1": {
+      "frequency": 10,
+      "positions": [
+        270,
+        296,
+        342,
+        404,
+        436,
+        468,
+        477,
+        486,
+        496,
+        515
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        35,
+        258
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        55,
+        88,
+        158
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        194,
+        213
+      ]
+    },
+    "5": {
+      "frequency": 6,
+      "positions": [
+        12,
+        32,
+        62,
+        71,
+        99,
+        231
+      ]
+    },
+    "6": {
+      "frequency": 4,
+      "positions": [
+        135,
+        176,
+        197,
+        216
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        203
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        142,
+        243,
+        337
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        196
+      ]
+    }
+  },
+  "pleasure": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        106
+      ]
+    }
+  },
+  "in": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        107,
+        233
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        85,
+        169,
+        426
+      ]
+    },
+    "2": {
+      "frequency": 6,
+      "positions": [
+        29,
+        44,
+        120,
+        132,
+        149,
+        263
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        175
+      ]
+    },
+    "5": {
+      "frequency": 4,
+      "positions": [
+        80,
+        111,
+        117,
+        123
+      ]
+    },
+    "6": {
+      "frequency": 6,
+      "positions": [
+        26,
+        37,
+        79,
+        155,
+        164,
+        282
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        72
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        41,
+        327
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        141
+      ]
+    }
+  },
+  "good": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        109
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        29,
+        540,
+        542
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        294
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        60
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        33,
+        259
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        82
+      ]
+    }
+  },
+  "novel": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        110
+      ]
+    }
+  },
+  "must": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        111
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        127
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        111
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        129
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        42
+      ]
+    }
+  },
+  "intolerably": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        113
+      ]
+    }
+  },
+  "stupid": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        114
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        167
+      ]
+    }
+  },
+  "jane": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        116
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        36
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        45,
+        147,
+        214
+      ]
+    }
+  },
+  "austen": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        117
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        37
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        46,
+        148,
+        215
+      ]
+    }
+  },
+  "aliteracy": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        120
+      ]
+    }
+  },
+  "books": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        121,
+        267
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        543,
+        558,
+        594
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        321
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        203,
+        232
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        59,
+        253
+      ]
+    },
+    "5": {
+      "frequency": 4,
+      "positions": [
+        138,
+        158,
+        207,
+        275
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        393
+      ]
+    },
+    "7": {
+      "frequency": 3,
+      "positions": [
+        164,
+        284,
+        296
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        151,
+        369
+      ]
+    },
+    "9": {
+      "frequency": 4,
+      "positions": [
+        181,
+        223,
+        243,
+        253
+      ]
+    }
+  },
+  "classic": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        122
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        270,
+        285
+      ]
+    }
+  },
+  "humor": {
+    "0": {
+      "frequency": 3,
+      "positions": [
+        123,
+        256,
+        266
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        593
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        145,
+        179,
+        320
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        152,
+        231
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        252
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        274
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        98,
+        392
+      ]
+    },
+    "7": {
+      "frequency": 6,
+      "positions": [
+        49,
+        79,
+        109,
+        189,
+        248,
+        295
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        49,
+        368
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        252
+      ]
+    }
+  },
+  "imperfection": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        124
+      ]
+    }
+  },
+  "beauty": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        126
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        147
+      ]
+    }
+  },
+  "madness": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        127
+      ]
+    }
+  },
+  "genius": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        129
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        163,
+        167
+      ]
+    }
+  },
+  "and": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        130
+      ]
+    },
+    "1": {
+      "frequency": 14,
+      "positions": [
+        94,
+        97,
+        143,
+        164,
+        188,
+        198,
+        300,
+        322,
+        327,
+        333,
+        377,
+        399,
+        490,
+        544
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        155
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        140
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        162,
+        215
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        164
+      ]
+    },
+    "6": {
+      "frequency": 10,
+      "positions": [
+        41,
+        109,
+        115,
+        145,
+        224,
+        252,
+        264,
+        277,
+        300,
+        352
+      ]
+    },
+    "7": {
+      "frequency": 7,
+      "positions": [
+        67,
+        84,
+        87,
+        90,
+        139,
+        213,
+        276
+      ]
+    },
+    "8": {
+      "frequency": 6,
+      "positions": [
+        70,
+        83,
+        85,
+        162,
+        184,
+        197
+      ]
+    },
+    "9": {
+      "frequency": 5,
+      "positions": [
+        15,
+        18,
+        85,
+        138,
+        160
+      ]
+    }
+  },
+  "its": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        131,
+        232
+      ]
+    },
+    "1": {
+      "frequency": 5,
+      "positions": [
+        23,
+        470,
+        479,
+        488,
+        498
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        169
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        82
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        259
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        316
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        40,
+        235
+      ]
+    }
+  },
+  "better": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        132,
+        171
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        98
+      ]
+    }
+  },
+  "absolutely": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        135,
+        138
+      ]
+    }
+  },
+  "ridiculous": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        136
+      ]
+    }
+  },
+  "boring": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        139
+      ]
+    }
+  },
+  "marilyn": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        141
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        206
+      ]
+    },
+    "4": {
+      "frequency": 4,
+      "positions": [
+        77,
+        94,
+        146,
+        169
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        91
+      ]
+    }
+  },
+  "monroe": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        142
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        207
+      ]
+    },
+    "4": {
+      "frequency": 4,
+      "positions": [
+        78,
+        95,
+        147,
+        170
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        92
+      ]
+    }
+  },
+  "beyourself": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        145
+      ]
+    }
+  },
+  "try": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        147
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        103
+      ]
+    }
+  },
+  "become": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        150,
+        156
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        181
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        86
+      ]
+    }
+  },
+  "man": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        152,
+        158
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        19,
+        126
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        283
+      ]
+    }
+  },
+  "success": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        154,
+        167
+      ]
+    }
+  },
+  "rather": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        155
+      ]
+    }
+  },
+  "value": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        160,
+        168
+      ]
+    }
+  },
+  "adulthood": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        166
+      ]
+    }
+  },
+  "hated": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        174
+      ]
+    }
+  },
+  "for": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        175,
+        183
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        89,
+        146
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        80
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        81
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        14,
+        182,
+        239
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        12
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        252
+      ]
+    },
+    "9": {
+      "frequency": 3,
+      "positions": [
+        42,
+        168,
+        174
+      ]
+    }
+  },
+  "you": {
+    "0": {
+      "frequency": 4,
+      "positions": [
+        177,
+        185,
+        224,
+        248
+      ]
+    },
+    "1": {
+      "frequency": 21,
+      "positions": [
+        11,
+        32,
+        65,
+        120,
+        126,
+        141,
+        150,
+        173,
+        247,
+        256,
+        268,
+        290,
+        304,
+        315,
+        318,
+        338,
+        346,
+        356,
+        364,
+        389,
+        397
+      ]
+    },
+    "2": {
+      "frequency": 22,
+      "positions": [
+        9,
+        20,
+        28,
+        51,
+        83,
+        86,
+        100,
+        103,
+        124,
+        137,
+        181,
+        183,
+        198,
+        208,
+        220,
+        249,
+        254,
+        266,
+        277,
+        285,
+        301,
+        302
+      ]
+    },
+    "3": {
+      "frequency": 7,
+      "positions": [
+        10,
+        15,
+        21,
+        71,
+        72,
+        131,
+        213
+      ]
+    },
+    "4": {
+      "frequency": 8,
+      "positions": [
+        36,
+        63,
+        67,
+        81,
+        87,
+        110,
+        130,
+        179
+      ]
+    },
+    "5": {
+      "frequency": 4,
+      "positions": [
+        49,
+        134,
+        144,
+        183
+      ]
+    },
+    "6": {
+      "frequency": 13,
+      "positions": [
+        24,
+        35,
+        45,
+        57,
+        89,
+        119,
+        128,
+        244,
+        269,
+        273,
+        288,
+        295,
+        366
+      ]
+    },
+    "7": {
+      "frequency": 6,
+      "positions": [
+        96,
+        102,
+        126,
+        140,
+        149,
+        195
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        60,
+        222
+      ]
+    },
+    "9": {
+      "frequency": 6,
+      "positions": [
+        88,
+        116,
+        123,
+        132,
+        149,
+        171
+      ]
+    }
+  },
+  "loved": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        182
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        280
+      ]
+    }
+  },
+  "andr\u00e9": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        189
+      ]
+    }
+  },
+  "gide": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        190
+      ]
+    }
+  },
+  "love": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        194,
+        263
+      ]
+    },
+    "1": {
+      "frequency": 8,
+      "positions": [
+        214,
+        284,
+        411,
+        466,
+        510,
+        519,
+        537,
+        590
+      ]
+    },
+    "2": {
+      "frequency": 6,
+      "positions": [
+        8,
+        19,
+        27,
+        78,
+        108,
+        317
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        104,
+        134,
+        228
+      ]
+    },
+    "4": {
+      "frequency": 9,
+      "positions": [
+        99,
+        150,
+        157,
+        211,
+        225,
+        229,
+        233,
+        243,
+        249
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        41,
+        89,
+        271
+      ]
+    },
+    "6": {
+      "frequency": 7,
+      "positions": [
+        80,
+        100,
+        107,
+        186,
+        196,
+        231,
+        389
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        31,
+        292
+      ]
+    },
+    "8": {
+      "frequency": 5,
+      "positions": [
+        36,
+        38,
+        50,
+        161,
+        365
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        78,
+        249
+      ]
+    }
+  },
+  "i": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        195
+      ]
+    },
+    "1": {
+      "frequency": 7,
+      "positions": [
+        99,
+        412,
+        434,
+        440,
+        445,
+        447,
+        452
+      ]
+    },
+    "2": {
+      "frequency": 6,
+      "positions": [
+        7,
+        18,
+        26,
+        33,
+        49,
+        67
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        185
+      ]
+    },
+    "5": {
+      "frequency": 11,
+      "positions": [
+        10,
+        21,
+        58,
+        65,
+        69,
+        74,
+        97,
+        102,
+        108,
+        113,
+        119
+      ]
+    },
+    "6": {
+      "frequency": 4,
+      "positions": [
+        12,
+        15,
+        321,
+        337
+      ]
+    },
+    "7": {
+      "frequency": 7,
+      "positions": [
+        8,
+        15,
+        170,
+        182,
+        207,
+        233,
+        239
+      ]
+    },
+    "8": {
+      "frequency": 12,
+      "positions": [
+        105,
+        128,
+        135,
+        140,
+        159,
+        167,
+        172,
+        180,
+        325,
+        330,
+        340,
+        347
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        54
+      ]
+    }
+  },
+  "failed": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        198
+      ]
+    }
+  },
+  "ive": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        199
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        358
+      ]
+    }
+  },
+  "just": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        200
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        54,
+        148,
+        230
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        73
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        141
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        76
+      ]
+    }
+  },
+  "found": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        201
+      ]
+    }
+  },
+  "10000": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        202
+      ]
+    }
+  },
+  "wont": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        205
+      ]
+    }
+  },
+  "work": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        206
+      ]
+    }
+  },
+  "thomas": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        208
+      ]
+    }
+  },
+  "edison": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        210,
+        213
+      ]
+    }
+  },
+  "failure": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        214
+      ]
+    }
+  },
+  "paraphrased": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        216
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        111
+      ]
+    }
+  },
+  "woman": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        218
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        85
+      ]
+    }
+  },
+  "like": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        220,
+        247
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        50,
+        413
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        102
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        179
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        91
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        151
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        113
+      ]
+    }
+  },
+  "tea": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        222
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        43,
+        62
+      ]
+    }
+  },
+  "bag": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        223
+      ]
+    }
+  },
+  "never": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        225
+      ]
+    },
+    "1": {
+      "frequency": 3,
+      "positions": [
+        130,
+        135,
+        306
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        207
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        21,
+        38
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        323
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        34
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        10,
+        15
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        117,
+        188
+      ]
+    }
+  },
+  "know": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        226,
+        249
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        393
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        36
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        17,
+        156,
+        170
+      ]
+    }
+  },
+  "how": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        227
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        36
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        12
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        115,
+        257
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        212
+      ]
+    }
+  },
+  "strong": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        228
+      ]
+    }
+  },
+  "until": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        231
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        122,
+        131
+      ]
+    }
+  },
+  "hot": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        234
+      ]
+    }
+  },
+  "water": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        235
+      ]
+    }
+  },
+  "eleanor": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        237
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        51
+      ]
+    }
+  },
+  "roosevelt": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        238
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        52
+      ]
+    }
+  },
+  "misattributedeleanorroosevelt": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        241
+      ]
+    }
+  },
+  "day": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        243
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        351
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        46
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        263,
+        294
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        186,
+        221
+      ]
+    }
+  },
+  "sunshine": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        245
+      ]
+    }
+  },
+  "night": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        250
+      ]
+    }
+  },
+  "steve": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        252
+      ]
+    }
+  },
+  "martin": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        253
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        29,
+        184
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        240
+      ]
+    }
+  },
+  "obvious": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        257
+      ]
+    }
+  },
+  "simile": {
+    "0": {
+      "frequency": 2,
+      "positions": [
+        258,
+        272
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        599
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        326
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        237
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        120,
+        258
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        192,
+        280
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        398
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        301
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        374
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        258
+      ]
+    }
+  },
+  "next": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        259
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        586
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        313
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        120,
+        224
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        245
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        267
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        385
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        288
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        361
+      ]
+    }
+  },
+  "top": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        260
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        587
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        314
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        225
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        246
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        268
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        386
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        289
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        362
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        246
+      ]
+    }
+  },
+  "ten": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        261
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        588
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        315
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        226
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        247
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        269
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        387
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        290
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        363
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        247
+      ]
+    }
+  },
+  "reading": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        268
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        595
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        322
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        34,
+        166,
+        233
+      ]
+    },
+    "4": {
+      "frequency": 3,
+      "positions": [
+        34,
+        61,
+        254
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        143,
+        276
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        394
+      ]
+    },
+    "7": {
+      "frequency": 4,
+      "positions": [
+        124,
+        166,
+        286,
+        297
+      ]
+    },
+    "8": {
+      "frequency": 4,
+      "positions": [
+        114,
+        153,
+        229,
+        370
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        254
+      ]
+    }
+  },
+  "friendship": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        269
+      ]
+    },
+    "1": {
+      "frequency": 4,
+      "positions": [
+        524,
+        534,
+        561,
+        596
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        323
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        87,
+        234
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        255
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        40,
+        277
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        395
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        30,
+        298
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        371
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        255
+      ]
+    }
+  },
+  "friends": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        270
+      ]
+    },
+    "1": {
+      "frequency": 9,
+      "positions": [
+        47,
+        72,
+        84,
+        210,
+        238,
+        245,
+        541,
+        560,
+        597
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        324
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        235
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        256
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        20,
+        208,
+        278
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        396
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        299
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        372
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        256
+      ]
+    }
+  },
+  "truth": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        271
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        26,
+        598
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        325
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        64,
+        236
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        257
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        279
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        397
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        194,
+        300
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        312,
+        324,
+        373
+      ]
+    },
+    "9": {
+      "frequency": 6,
+      "positions": [
+        8,
+        31,
+        104,
+        191,
+        205,
+        257
+      ]
+    }
+  },
+  "goodreadscom": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        275
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        602
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        329
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        240
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        261
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        283
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        401
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        304
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        377
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        261
+      ]
+    }
+  },
+  "made": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        276
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        603
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        330
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        241
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        262
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        284
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        402
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        305
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        11,
+        378
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        262
+      ]
+    }
+  },
+  "with": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        277
+      ]
+    },
+    "1": {
+      "frequency": 2,
+      "positions": [
+        64,
+        604
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        331
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        102,
+        242
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        263
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        285
+      ]
+    },
+    "6": {
+      "frequency": 8,
+      "positions": [
+        10,
+        143,
+        267,
+        301,
+        309,
+        328,
+        376,
+        403
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        52,
+        306
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        182,
+        379
+      ]
+    },
+    "9": {
+      "frequency": 3,
+      "positions": [
+        23,
+        107,
+        263
+      ]
+    }
+  },
+  "zyte": {
+    "0": {
+      "frequency": 1,
+      "positions": [
+        279
+      ]
+    },
+    "1": {
+      "frequency": 1,
+      "positions": [
+        606
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        333
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        244
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        265
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        287
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        405
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        308
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        381
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        265
+      ]
+    }
+  },
+  "this": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        7,
+        548
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        30,
+        43
+      ]
+    }
+  },
+  "make": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        12,
+        81,
+        314
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        123,
+        136
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        83,
+        89
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        48,
+        122
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        63
+      ]
+    }
+  },
+  "no": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        14
+      ]
+    },
+    "2": {
+      "frequency": 4,
+      "positions": [
+        48,
+        105,
+        191,
+        304
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        72
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        23,
+        195
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        133,
+        279
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        111
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        210
+      ]
+    }
+  },
+  "matter": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        15
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        211
+      ]
+    }
+  },
+  "youre": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        17,
+        37,
+        155
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        121
+      ]
+    }
+  },
+  "going": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        18,
+        38,
+        114
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        68
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        372
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        255,
+        262
+      ]
+    }
+  },
+  "mess": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        20,
+        40
+      ]
+    }
+  },
+  "up": {
+    "1": {
+      "frequency": 9,
+      "positions": [
+        21,
+        42,
+        123,
+        128,
+        187,
+        225,
+        235,
+        417,
+        450
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        237
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        153
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        99,
+        144
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        84
+      ]
+    }
+  },
+  "sometimes": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        22
+      ]
+    }
+  },
+  "universal": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        25
+      ]
+    }
+  },
+  "but": {
+    "1": {
+      "frequency": 9,
+      "positions": [
+        27,
+        53,
+        119,
+        229,
+        286,
+        310,
+        352,
+        444,
+        520
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        42
+      ]
+    },
+    "3": {
+      "frequency": 4,
+      "positions": [
+        45,
+        96,
+        118,
+        135
+      ]
+    },
+    "4": {
+      "frequency": 4,
+      "positions": [
+        74,
+        155,
+        159,
+        199
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        61,
+        68,
+        218
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        163,
+        357
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        201
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        343
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        97
+      ]
+    }
+  },
+  "part": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        30,
+        358
+      ]
+    }
+  },
+  "get": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        33
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        276,
+        284
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        39
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        100
+      ]
+    }
+  },
+  "decide": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        35
+      ]
+    }
+  },
+  "girls": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        43
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        98
+      ]
+    }
+  },
+  "will": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        44,
+        177,
+        354
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        275,
+        283
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        16,
+        191
+      ]
+    },
+    "6": {
+      "frequency": 4,
+      "positions": [
+        112,
+        172,
+        175,
+        180
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        62,
+        216
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        223,
+        248,
+        261
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        66,
+        164
+      ]
+    }
+  },
+  "theyll": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        48,
+        92
+      ]
+    }
+  },
+  "act": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        49
+      ]
+    }
+  },
+  "anyway": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        52
+      ]
+    }
+  },
+  "remember": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        55,
+        79
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        76
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        53,
+        74,
+        96
+      ]
+    }
+  },
+  "some": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        56,
+        58
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        275,
+        348,
+        353
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        32
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        220
+      ]
+    }
+  },
+  "come": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        57,
+        93
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        349,
+        354
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        58
+      ]
+    }
+  },
+  "go": {
+    "1": {
+      "frequency": 4,
+      "positions": [
+        59,
+        75,
+        95,
+        443
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        27
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        35
+      ]
+    }
+  },
+  "ones": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        61
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        78
+      ]
+    }
+  },
+  "stay": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        63
+      ]
+    }
+  },
+  "through": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        66
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        21
+      ]
+    }
+  },
+  "theyre": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        68
+      ]
+    }
+  },
+  "true": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        70
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        188
+      ]
+    }
+  },
+  "best": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        71,
+        83
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        251,
+        260
+      ]
+    }
+  },
+  "dont": {
+    "1": {
+      "frequency": 7,
+      "positions": [
+        73,
+        174,
+        257,
+        369,
+        372,
+        375,
+        378
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        58
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        277
+      ]
+    }
+  },
+  "let": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        74,
+        391
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        324
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        257
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        47
+      ]
+    }
+  },
+  "them": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        77,
+        106,
+        112
+      ]
+    },
+    "2": {
+      "frequency": 4,
+      "positions": [
+        109,
+        216,
+        222,
+        228
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        284
+      ]
+    }
+  },
+  "also": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        78
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        128
+      ]
+    }
+  },
+  "sisters": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        80,
+        215
+      ]
+    }
+  },
+  "lovers": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        90
+      ]
+    }
+  },
+  "well": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        91
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        257
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        169
+      ]
+    }
+  },
+  "too": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        96
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        208
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        302
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        166
+      ]
+    }
+  },
+  "baby": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        98
+      ]
+    }
+  },
+  "hate": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        100,
+        469,
+        507
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        240
+      ]
+    }
+  },
+  "say": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        102
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        197
+      ]
+    }
+  },
+  "most": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        104,
+        189,
+        337
+      ]
+    }
+  },
+  "actually": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        107
+      ]
+    }
+  },
+  "pretty": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        108
+      ]
+    }
+  },
+  "much": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        109,
+        201,
+        232
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        156
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        116
+      ]
+    }
+  },
+  "all": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        110
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        262
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        89,
+        130
+      ]
+    },
+    "6": {
+      "frequency": 7,
+      "positions": [
+        83,
+        102,
+        149,
+        198,
+        226,
+        243,
+        364
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        122,
+        237
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        108,
+        194
+      ]
+    }
+  },
+  "break": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        116
+      ]
+    }
+  },
+  "heart": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        118,
+        367
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        111
+      ]
+    }
+  },
+  "cant": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        121,
+        248
+      ]
+    }
+  },
+  "give": {
+    "1": {
+      "frequency": 5,
+      "positions": [
+        122,
+        127,
+        334,
+        355,
+        384
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        165
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        130
+      ]
+    }
+  },
+  "because": {
+    "1": {
+      "frequency": 4,
+      "positions": [
+        124,
+        149,
+        171,
+        193
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        32
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        175
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        87,
+        339,
+        344
+      ]
+    }
+  },
+  "if": {
+    "1": {
+      "frequency": 5,
+      "positions": [
+        125,
+        172,
+        246,
+        287,
+        311
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        99,
+        207,
+        219
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        80
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        96,
+        133
+      ]
+    },
+    "6": {
+      "frequency": 4,
+      "positions": [
+        20,
+        31,
+        42,
+        118
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        7,
+        100
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        54,
+        139
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        161,
+        230
+      ]
+    }
+  },
+  "youll": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        129,
+        134
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        26
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        210
+      ]
+    }
+  },
+  "find": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        131,
+        136
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        76
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        86
+      ]
+    }
+  },
+  "soulmate": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        133
+      ]
+    }
+  },
+  "half": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        138
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        305
+      ]
+    }
+  },
+  "makes": {
+    "1": {
+      "frequency": 4,
+      "positions": [
+        140,
+        388,
+        396,
+        526
+      ]
+    }
+  },
+  "whole": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        142
+      ]
+    }
+  },
+  "goes": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        145
+      ]
+    }
+  },
+  "fail": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        151,
+        157
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        267
+      ]
+    }
+  },
+  "once": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        152
+      ]
+    }
+  },
+  "doesnt": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        153
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        142
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        156,
+        160
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        154
+      ]
+    }
+  },
+  "mean": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        154
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        51
+      ]
+    }
+  },
+  "gonna": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        156
+      ]
+    }
+  },
+  "at": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        158
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        246,
+        261
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        224
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        101,
+        249
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        291
+      ]
+    }
+  },
+  "keep": {
+    "1": {
+      "frequency": 4,
+      "positions": [
+        160,
+        180,
+        184,
+        191
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        107,
+        112
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        234
+      ]
+    }
+  },
+  "trying": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        161
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        84
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        68
+      ]
+    }
+  },
+  "hold": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        162,
+        330
+      ]
+    }
+  },
+  "on": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        163
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        47
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        64,
+        145
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        206,
+        315
+      ]
+    }
+  },
+  "always": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        165,
+        166,
+        167
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        187
+      ]
+    }
+  },
+  "believe": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        168
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        64,
+        161
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        326,
+        331
+      ]
+    }
+  },
+  "yourself": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        170,
+        260
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        206
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        75
+      ]
+    },
+    "5": {
+      "frequency": 3,
+      "positions": [
+        251,
+        256,
+        265
+      ]
+    }
+  },
+  "then": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        175
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        141
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        170
+      ]
+    }
+  },
+  "sweetie": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        178
+      ]
+    }
+  },
+  "so": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        179,
+        200,
+        368
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        52,
+        63,
+        251
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        66
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        222
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        81
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        46
+      ]
+    }
+  },
+  "head": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        182
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        43
+      ]
+    }
+  },
+  "high": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        183
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        303
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        92
+      ]
+    }
+  },
+  "chin": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        186
+      ]
+    }
+  },
+  "importantly": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        190
+      ]
+    }
+  },
+  "smiling": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        192
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        136
+      ]
+    }
+  },
+  "lifes": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        194
+      ]
+    }
+  },
+  "beautiful": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        196
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        14
+      ]
+    }
+  },
+  "thing": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        197
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        295
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        44
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        122
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        17
+      ]
+    }
+  },
+  "theres": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        199
+      ]
+    }
+  },
+  "smile": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        203,
+        385
+      ]
+    }
+  },
+  "heartbreak": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        211
+      ]
+    }
+  },
+  "takes": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        217
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        80
+      ]
+    }
+  },
+  "great": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        219
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        94,
+        103,
+        121
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        24
+      ]
+    }
+  },
+  "deal": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        220
+      ]
+    }
+  },
+  "bravery": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        222
+      ]
+    }
+  },
+  "stand": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        224,
+        234
+      ]
+    }
+  },
+  "enemies": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        228
+      ]
+    }
+  },
+  "courage": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        244
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        81,
+        96
+      ]
+    }
+  },
+  "explain": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        249
+      ]
+    }
+  },
+  "six": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        253
+      ]
+    }
+  },
+  "year": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        254
+      ]
+    }
+  },
+  "old": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        255
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        311
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        225
+      ]
+    }
+  },
+  "understand": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        258,
+        267
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        175
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        119
+      ]
+    }
+  },
+  "simplicity": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        266
+      ]
+    }
+  },
+  "may": {
+    "1": {
+      "frequency": 5,
+      "positions": [
+        269,
+        283,
+        305,
+        341,
+        435
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        157
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        196
+      ]
+    }
+  },
+  "her": {
+    "1": {
+      "frequency": 10,
+      "positions": [
+        272,
+        274,
+        277,
+        332,
+        335,
+        360,
+        371,
+        374,
+        392,
+        401
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        90
+      ]
+    }
+  },
+  "first": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        273
+      ]
+    }
+  },
+  "last": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        275
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        68
+      ]
+    }
+  },
+  "she": {
+    "1": {
+      "frequency": 10,
+      "positions": [
+        279,
+        282,
+        288,
+        312,
+        340,
+        353,
+        362,
+        382,
+        387,
+        395
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        165
+      ]
+    }
+  },
+  "before": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        281
+      ]
+    },
+    "4": {
+      "frequency": 2,
+      "positions": [
+        13,
+        164
+      ]
+    }
+  },
+  "again": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        285
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        232
+      ]
+    }
+  },
+  "loves": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        289
+      ]
+    }
+  },
+  "now": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        291
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        139
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        368
+      ]
+    }
+  },
+  "else": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        293
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        141,
+        150
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        350
+      ]
+    }
+  },
+  "matters": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        294
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        193
+      ]
+    }
+  },
+  "shes": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        295,
+        403
+      ]
+    }
+  },
+  "perfectyou": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        297
+      ]
+    }
+  },
+  "arent": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        298
+      ]
+    }
+  },
+  "either": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        299
+      ]
+    }
+  },
+  "perfect": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        308
+      ]
+    }
+  },
+  "together": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        309
+      ]
+    }
+  },
+  "can": {
+    "1": {
+      "frequency": 4,
+      "positions": [
+        313,
+        339,
+        365,
+        383
+      ]
+    },
+    "2": {
+      "frequency": 2,
+      "positions": [
+        122,
+        135
+      ]
+    },
+    "3": {
+      "frequency": 3,
+      "positions": [
+        92,
+        98,
+        169
+      ]
+    },
+    "4": {
+      "frequency": 5,
+      "positions": [
+        37,
+        82,
+        88,
+        128,
+        178
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        145
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        289
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        97
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        203,
+        303
+      ]
+    }
+  },
+  "laugh": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        316
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        86
+      ]
+    }
+  },
+  "cause": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        317
+      ]
+    }
+  },
+  "think": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        320,
+        446
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        129
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        222
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        110,
+        147
+      ]
+    },
+    "7": {
+      "frequency": 5,
+      "positions": [
+        82,
+        85,
+        88,
+        91,
+        98
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        168
+      ]
+    }
+  },
+  "twice": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        321
+      ]
+    }
+  },
+  "admit": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        323
+      ]
+    }
+  },
+  "being": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        325
+      ]
+    }
+  },
+  "human": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        326
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        195
+      ]
+    }
+  },
+  "making": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        328,
+        572
+      ]
+    }
+  },
+  "mistakes": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        329
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        24
+      ]
+    }
+  },
+  "onto": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        331
+      ]
+    }
+  },
+  "every": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        347
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        81
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        45
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        13
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        185
+      ]
+    }
+  },
+  "second": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        348
+      ]
+    }
+  },
+  "knows": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        363
+      ]
+    }
+  },
+  "breakher": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        366
+      ]
+    }
+  },
+  "hurt": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        370
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        70,
+        143
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        101
+      ]
+    }
+  },
+  "analyze": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        376
+      ]
+    }
+  },
+  "expect": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        379
+      ]
+    }
+  },
+  "when": {
+    "1": {
+      "frequency": 3,
+      "positions": [
+        386,
+        394,
+        402
+      ]
+    },
+    "2": {
+      "frequency": 3,
+      "positions": [
+        14,
+        66,
+        298
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        210
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        120
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        59,
+        127
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        39
+      ]
+    }
+  },
+  "happy": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        390
+      ]
+    }
+  },
+  "mad": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        398
+      ]
+    }
+  },
+  "miss": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        400
+      ]
+    }
+  },
+  "bob": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        407
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        307
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        83
+      ]
+    }
+  },
+  "marley": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        408
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        308
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        84
+      ]
+    }
+  },
+  "nonsense": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        414
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        312
+      ]
+    }
+  },
+  "wakes": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        416
+      ]
+    }
+  },
+  "brain": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        419
+      ]
+    }
+  },
+  "cells": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        420
+      ]
+    }
+  },
+  "fantasy": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        421,
+        433
+      ]
+    }
+  },
+  "necessary": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        424
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        159
+      ]
+    }
+  },
+  "ingredient": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        425
+      ]
+    }
+  },
+  "living": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        427
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        223
+      ]
+    }
+  },
+  "dr": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        429
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        200
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        29
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        379
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        105
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        215
+      ]
+    }
+  },
+  "seuss": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        430
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        201
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        30,
+        35
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        380
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        106
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        216
+      ]
+    }
+  },
+  "gone": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        438
+      ]
+    }
+  },
+  "where": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        439,
+        451
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        17
+      ]
+    }
+  },
+  "intended": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        441
+      ]
+    }
+  },
+  "ended": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        449
+      ]
+    }
+  },
+  "needed": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        453
+      ]
+    }
+  },
+  "douglas": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        457
+      ]
+    }
+  },
+  "adams": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        458
+      ]
+    }
+  },
+  "navigation": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        462
+      ]
+    }
+  },
+  "opposite": {
+    "1": {
+      "frequency": 5,
+      "positions": [
+        464,
+        473,
+        482,
+        492,
+        511
+      ]
+    }
+  },
+  "indifference": {
+    "1": {
+      "frequency": 5,
+      "positions": [
+        471,
+        480,
+        489,
+        499,
+        508
+      ]
+    }
+  },
+  "art": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        475
+      ]
+    }
+  },
+  "ugliness": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        478
+      ]
+    }
+  },
+  "faith": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        484
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        357
+      ]
+    }
+  },
+  "heresy": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        487
+      ]
+    }
+  },
+  "death": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        497
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        116,
+        128
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        275,
+        299
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        62
+      ]
+    }
+  },
+  "elie": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        501
+      ]
+    }
+  },
+  "wiesel": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        502
+      ]
+    }
+  },
+  "activism": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        505
+      ]
+    }
+  },
+  "apathy": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        506
+      ]
+    }
+  },
+  "philosophy": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        512
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        110
+      ]
+    }
+  },
+  "lack": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        517,
+        522
+      ]
+    }
+  },
+  "unhappy": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        527
+      ]
+    }
+  },
+  "marriages": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        528
+      ]
+    }
+  },
+  "friedrich": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        530
+      ]
+    }
+  },
+  "nietzsche": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        531
+      ]
+    }
+  },
+  "lackoffriendship": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        535
+      ]
+    }
+  },
+  "lackoflove": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        536
+      ]
+    }
+  },
+  "marriage": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        538
+      ]
+    }
+  },
+  "unhappymarriage": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        539
+      ]
+    }
+  },
+  "sleepy": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        546
+      ]
+    }
+  },
+  "conscience": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        547
+      ]
+    }
+  },
+  "ideal": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        551
+      ]
+    }
+  },
+  "mark": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        554
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        332
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        280
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        295,
+        319
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        201
+      ]
+    }
+  },
+  "twain": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        555
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        333
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        281
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        296,
+        320
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        202
+      ]
+    }
+  },
+  "contentment": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        559
+      ]
+    }
+  },
+  "happens": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        566
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        23,
+        34,
+        44
+      ]
+    }
+  },
+  "us": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        568
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        91
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        240
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        212
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        253
+      ]
+    }
+  },
+  "while": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        569
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        310
+      ]
+    }
+  },
+  "plans": {
+    "1": {
+      "frequency": 2,
+      "positions": [
+        574,
+        584
+      ]
+    }
+  },
+  "allen": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        576
+      ]
+    }
+  },
+  "saunders": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        577
+      ]
+    }
+  },
+  "fate": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        580
+      ]
+    }
+  },
+  "misattributedjohnlennon": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        582
+      ]
+    }
+  },
+  "planning": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        583
+      ]
+    }
+  },
+  "previous": {
+    "1": {
+      "frequency": 1,
+      "positions": [
+        585
+      ]
+    },
+    "2": {
+      "frequency": 1,
+      "positions": [
+        312
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        223
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        244
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        266
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        384
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        287
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        360
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        245
+      ]
+    }
+  },
+  "knowing": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        11
+      ]
+    }
+  },
+  "from": {
+    "2": {
+      "frequency": 3,
+      "positions": [
+        16,
+        160,
+        278
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        350,
+        355
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        33,
+        37,
+        277
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        126
+      ]
+    }
+  },
+  "simply": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        21
+      ]
+    }
+  },
+  "problems": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        23
+      ]
+    }
+  },
+  "pride": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        25
+      ]
+    }
+  },
+  "way": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        31,
+        39
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        218
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        306
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        53
+      ]
+    }
+  },
+  "do": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        34
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        93,
+        99
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        91
+      ]
+    },
+    "5": {
+      "frequency": 4,
+      "positions": [
+        13,
+        42,
+        66,
+        230
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        215,
+        245
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        249
+      ]
+    }
+  },
+  "any": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        37
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        167
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        121,
+        292
+      ]
+    }
+  },
+  "loving": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        41
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        26
+      ]
+    }
+  },
+  "which": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        45,
+        264
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        235
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        273
+      ]
+    }
+  },
+  "intimate": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        53,
+        64
+      ]
+    }
+  },
+  "hand": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        56,
+        62
+      ]
+    }
+  },
+  "upon": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        57
+      ]
+    }
+  },
+  "my": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        58,
+        61
+      ]
+    },
+    "5": {
+      "frequency": 4,
+      "positions": [
+        19,
+        33,
+        115,
+        121
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        325,
+        329,
+        369
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        22
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        133,
+        188
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        50
+      ]
+    }
+  },
+  "chest": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        59
+      ]
+    }
+  },
+  "fall": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        68
+      ]
+    }
+  },
+  "asleep": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        69
+      ]
+    }
+  },
+  "eyes": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        71
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        139
+      ]
+    }
+  },
+  "close": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        72
+      ]
+    }
+  },
+  "pablo": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        74
+      ]
+    }
+  },
+  "neruda": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        75
+      ]
+    }
+  },
+  "poetry": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        79
+      ]
+    }
+  },
+  "minute": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        82
+      ]
+    }
+  },
+  "angry": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        85
+      ]
+    }
+  },
+  "lose": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        87
+      ]
+    }
+  },
+  "sixty": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        88
+      ]
+    }
+  },
+  "seconds": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        89
+      ]
+    }
+  },
+  "happiness": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        91,
+        98
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        214
+      ]
+    }
+  },
+  "ralph": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        93
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        314
+      ]
+    }
+  },
+  "waldo": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        94
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        315
+      ]
+    }
+  },
+  "emerson": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        95
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        316
+      ]
+    }
+  },
+  "judge": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        101
+      ]
+    }
+  },
+  "people": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        102
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        27
+      ]
+    },
+    "7": {
+      "frequency": 3,
+      "positions": [
+        33,
+        61,
+        274
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        157
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        193
+      ]
+    }
+  },
+  "time": {
+    "2": {
+      "frequency": 3,
+      "positions": [
+        106,
+        161,
+        163
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        14
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        56,
+        293
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        41
+      ]
+    }
+  },
+  "mother": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        111
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        106
+      ]
+    }
+  },
+  "teresa": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        112
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        107
+      ]
+    }
+  },
+  "attributednosource": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        115
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        173
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        95
+      ]
+    }
+  },
+  "anyone": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        116
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        7
+      ]
+    }
+  },
+  "thinks": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        118
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        95
+      ]
+    }
+  },
+  "sitting": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        119,
+        131
+      ]
+    }
+  },
+  "church": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        121
+      ]
+    }
+  },
+  "christian": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        126
+      ]
+    }
+  },
+  "garage": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        134
+      ]
+    }
+  },
+  "car": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        139
+      ]
+    }
+  },
+  "garrison": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        141
+      ]
+    }
+  },
+  "keillor": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        142
+      ]
+    }
+  },
+  "religion": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        146
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        358
+      ]
+    }
+  },
+  "eye": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        151,
+        173
+      ]
+    }
+  },
+  "beholder": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        154,
+        170
+      ]
+    }
+  },
+  "misinformed": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        169
+      ]
+    }
+  },
+  "black": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        172
+      ]
+    }
+  },
+  "jim": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        175
+      ]
+    }
+  },
+  "henson": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        176
+      ]
+    }
+  },
+  "today": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        180
+      ]
+    }
+  },
+  "truer": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        186
+      ]
+    }
+  },
+  "alive": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        193
+      ]
+    }
+  },
+  "youer": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        196
+      ]
+    }
+  },
+  "comedy": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        204
+      ]
+    }
+  },
+  "want": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        209,
+        221
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        120
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        55
+      ]
+    }
+  },
+  "children": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        211,
+        237
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        175,
+        182
+      ]
+    }
+  },
+  "intelligent": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        214,
+        226
+      ]
+    }
+  },
+  "read": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        215,
+        227
+      ]
+    },
+    "3": {
+      "frequency": 2,
+      "positions": [
+        11,
+        154
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        32
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        136
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        278
+      ]
+    }
+  },
+  "fairy": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        217,
+        230
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        230
+      ]
+    }
+  },
+  "tales": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        218,
+        231
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        231
+      ]
+    }
+  },
+  "fairytales": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        238
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        239
+      ]
+    }
+  },
+  "impossible": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        241
+      ]
+    }
+  },
+  "failing": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        245
+      ]
+    }
+  },
+  "something": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        247
+      ]
+    },
+    "6": {
+      "frequency": 3,
+      "positions": [
+        21,
+        32,
+        49
+      ]
+    }
+  },
+  "unless": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        248
+      ]
+    }
+  },
+  "cautiously": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        252
+      ]
+    }
+  },
+  "might": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        255
+      ]
+    },
+    "3": {
+      "frequency": 1,
+      "positions": [
+        214
+      ]
+    }
+  },
+  "lived": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        260
+      ]
+    }
+  },
+  "case": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        265
+      ]
+    }
+  },
+  "default": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        269
+      ]
+    }
+  },
+  "logic": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        274
+      ]
+    }
+  },
+  "z": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        281
+      ]
+    }
+  },
+  "imagination": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        282,
+        292
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        27
+      ]
+    }
+  },
+  "everywhere": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        286
+      ]
+    }
+  },
+  "music": {
+    "2": {
+      "frequency": 2,
+      "positions": [
+        297,
+        311
+      ]
+    },
+    "5": {
+      "frequency": 4,
+      "positions": [
+        112,
+        118,
+        126,
+        132
+      ]
+    }
+  },
+  "hits": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        300
+      ]
+    }
+  },
+  "feel": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        303
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        90
+      ]
+    }
+  },
+  "pain": {
+    "2": {
+      "frequency": 1,
+      "positions": [
+        305
+      ]
+    }
+  },
+  "things": {
+    "3": {
+      "frequency": 3,
+      "positions": [
+        14,
+        95,
+        101
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        71
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        125
+      ]
+    }
+  },
+  "learn": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        22
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        69
+      ]
+    }
+  },
+  "places": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        25
+      ]
+    }
+  },
+  "learning": {
+    "3": {
+      "frequency": 2,
+      "positions": [
+        33,
+        182
+      ]
+    }
+  },
+  "course": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        37
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        58
+      ]
+    }
+  },
+  "happening": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        40
+      ]
+    }
+  },
+  "inside": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        41
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        134
+      ]
+    }
+  },
+  "why": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        46
+      ]
+    }
+  },
+  "earth": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        48
+      ]
+    }
+  },
+  "should": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        49
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        57
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        19
+      ]
+    }
+  },
+  "real": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        56
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        122
+      ]
+    }
+  },
+  "dumbledore": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        62
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        210
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        9
+      ]
+    }
+  },
+  "everyone": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        66
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        140,
+        149
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        241
+      ]
+    }
+  },
+  "got": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        74
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        36
+      ]
+    }
+  },
+  "worth": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        79
+      ]
+    }
+  },
+  "suffering": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        80
+      ]
+    }
+  },
+  "small": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        100
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        78
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        213
+      ]
+    }
+  },
+  "misattributedtomotherteresa": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        110
+      ]
+    }
+  },
+  "wellorganized": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        114
+      ]
+    }
+  },
+  "mind": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        115
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        56
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        221,
+        244
+      ]
+    }
+  },
+  "adventure": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        122
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        71,
+        77
+      ]
+    }
+  },
+  "need": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        132
+      ]
+    }
+  },
+  "little": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        137
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        146
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        200
+      ]
+    }
+  },
+  "chocolate": {
+    "3": {
+      "frequency": 2,
+      "positions": [
+        138,
+        150
+      ]
+    }
+  },
+  "charles": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        145
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        52
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        45
+      ]
+    }
+  },
+  "m": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        146
+      ]
+    }
+  },
+  "schulz": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        147
+      ]
+    }
+  },
+  "food": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        151
+      ]
+    }
+  },
+  "were": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        157
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        98
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        77
+      ]
+    }
+  },
+  "alone": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        159
+      ]
+    }
+  },
+  "william": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        161
+      ]
+    }
+  },
+  "nicholson": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        162
+      ]
+    }
+  },
+  "misattributedtocslewis": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        165
+      ]
+    }
+  },
+  "fool": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        168
+      ]
+    }
+  },
+  "point": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        172
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        128
+      ]
+    }
+  },
+  "knowledge": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        181
+      ]
+    }
+  },
+  "understanding": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        183
+      ]
+    }
+  },
+  "wisdom": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        184
+      ]
+    }
+  },
+  "imagined": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        188
+      ]
+    }
+  },
+  "paradise": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        190
+      ]
+    }
+  },
+  "kind": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        194
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        347
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        84
+      ]
+    }
+  },
+  "library": {
+    "3": {
+      "frequency": 2,
+      "positions": [
+        196,
+        204
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        145,
+        152
+      ]
+    }
+  },
+  "jorge": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        198
+      ]
+    }
+  },
+  "luis": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        199
+      ]
+    }
+  },
+  "borges": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        200
+      ]
+    }
+  },
+  "late": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        209
+      ]
+    }
+  },
+  "been": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        216
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        237
+      ]
+    }
+  },
+  "george": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        218
+      ]
+    },
+    "4": {
+      "frequency": 1,
+      "positions": [
+        27
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        258
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        185
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        238
+      ]
+    }
+  },
+  "eliot": {
+    "3": {
+      "frequency": 1,
+      "positions": [
+        219
+      ]
+    }
+  },
+  "reader": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        8
+      ]
+    }
+  },
+  "lives": {
+    "4": {
+      "frequency": 3,
+      "positions": [
+        9,
+        12,
+        23
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        40
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        285
+      ]
+    }
+  },
+  "thousand": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        11
+      ]
+    }
+  },
+  "he": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        14
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        88
+      ]
+    }
+  },
+  "dies": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        15
+      ]
+    }
+  },
+  "said": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        16
+      ]
+    }
+  },
+  "jojen": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        17
+      ]
+    }
+  },
+  "reads": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        22
+      ]
+    }
+  },
+  "rr": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        28
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        239
+      ]
+    }
+  },
+  "readers": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        33
+      ]
+    }
+  },
+  "readingbooks": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        35
+      ]
+    }
+  },
+  "cup": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        41
+      ]
+    }
+  },
+  "large": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        44
+      ]
+    }
+  },
+  "enough": {
+    "4": {
+      "frequency": 2,
+      "positions": [
+        45,
+        50
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        226
+      ]
+    }
+  },
+  "book": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        48
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        201
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        118,
+        272
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        126
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        154,
+        163
+      ]
+    }
+  },
+  "long": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        49
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        223
+      ]
+    }
+  },
+  "suit": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        52
+      ]
+    }
+  },
+  "me": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        53
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        87,
+        377
+      ]
+    },
+    "7": {
+      "frequency": 3,
+      "positions": [
+        114,
+        258,
+        265
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        43,
+        48
+      ]
+    }
+  },
+  "cs": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        55
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        192
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        234,
+        267,
+        352
+      ]
+    }
+  },
+  "lewis": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        56
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        193
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        235,
+        268,
+        353
+      ]
+    }
+  },
+  "lies": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        65
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        191
+      ]
+    }
+  },
+  "eventually": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        68
+      ]
+    }
+  },
+  "trust": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        71
+      ]
+    }
+  },
+  "anything": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        92
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        108
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        17
+      ]
+    }
+  },
+  "riding": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        103
+      ]
+    }
+  },
+  "bicycle": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        105
+      ]
+    }
+  },
+  "balance": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        109
+      ]
+    }
+  },
+  "moving": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        113
+      ]
+    }
+  },
+  "lover": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        123
+      ]
+    }
+  },
+  "thrill": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        129
+      ]
+    }
+  },
+  "kissing": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        132
+      ]
+    }
+  },
+  "forehead": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        134
+      ]
+    }
+  },
+  "into": {
+    "4": {
+      "frequency": 2,
+      "positions": [
+        137,
+        143
+      ]
+    }
+  },
+  "staring": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        142
+      ]
+    }
+  },
+  "space": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        144
+      ]
+    }
+  },
+  "wise": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        152
+      ]
+    }
+  },
+  "girl": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        153
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        79
+      ]
+    }
+  },
+  "kisses": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        154
+      ]
+    }
+  },
+  "listens": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        158
+      ]
+    }
+  },
+  "leaves": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        163
+      ]
+    }
+  },
+  "left": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        167
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        83
+      ]
+    }
+  },
+  "darkness": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        177
+      ]
+    }
+  },
+  "see": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        180
+      ]
+    },
+    "5": {
+      "frequency": 2,
+      "positions": [
+        120,
+        232
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        367
+      ]
+    },
+    "8": {
+      "frequency": 3,
+      "positions": [
+        173,
+        341,
+        348
+      ]
+    }
+  },
+  "stars": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        182
+      ]
+    }
+  },
+  "luther": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        185
+      ]
+    }
+  },
+  "king": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        186
+      ]
+    }
+  },
+  "jr": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        187
+      ]
+    }
+  },
+  "hope": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        190
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        69
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        208,
+        230
+      ]
+    }
+  },
+  "someone": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        196
+      ]
+    },
+    "5": {
+      "frequency": 1,
+      "positions": [
+        87
+      ]
+    }
+  },
+  "born": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        198
+      ]
+    }
+  },
+  "they": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        201
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        41
+      ]
+    }
+  },
+  "grow": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        202
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        83
+      ]
+    }
+  },
+  "does": {
+    "4": {
+      "frequency": 2,
+      "positions": [
+        212,
+        224
+      ]
+    }
+  },
+  "begin": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        214
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        297
+      ]
+    }
+  },
+  "end": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        216
+      ]
+    }
+  },
+  "seem": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        220
+      ]
+    }
+  },
+  "battle": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        228
+      ]
+    }
+  },
+  "war": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        232
+      ]
+    }
+  },
+  "growing": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        236
+      ]
+    }
+  },
+  "james": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        239
+      ]
+    }
+  },
+  "baldwin": {
+    "4": {
+      "frequency": 1,
+      "positions": [
+        240
+      ]
+    }
+  },
+  "would": {
+    "5": {
+      "frequency": 2,
+      "positions": [
+        11,
+        103
+      ]
+    }
+  },
+  "those": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        15
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        199,
+        227
+      ]
+    }
+  },
+  "really": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        18
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        112
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        160
+      ]
+    },
+    "9": {
+      "frequency": 2,
+      "positions": [
+        89,
+        118
+      ]
+    }
+  },
+  "notion": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        24
+      ]
+    }
+  },
+  "halves": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        29
+      ]
+    }
+  },
+  "nature": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        34
+      ]
+    }
+  },
+  "scares": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        48
+      ]
+    }
+  },
+  "attributed": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        55
+      ]
+    }
+  },
+  "fear": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        56
+      ]
+    },
+    "8": {
+      "frequency": 2,
+      "positions": [
+        273,
+        279
+      ]
+    }
+  },
+  "inspiration": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        57
+      ]
+    }
+  },
+  "am": {
+    "5": {
+      "frequency": 3,
+      "positions": [
+        59,
+        70,
+        75
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        234
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        179
+      ]
+    }
+  },
+  "an": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        63
+      ]
+    },
+    "6": {
+      "frequency": 2,
+      "positions": [
+        27,
+        137
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        54
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        143
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        68
+      ]
+    }
+  },
+  "angel": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        64
+      ]
+    }
+  },
+  "sin": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        67
+      ]
+    }
+  },
+  "devil": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        73
+      ]
+    }
+  },
+  "big": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        82
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        361
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        70
+      ]
+    }
+  },
+  "physicist": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        101
+      ]
+    }
+  },
+  "probably": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        104
+      ]
+    }
+  },
+  "musician": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        107
+      ]
+    }
+  },
+  "often": {
+    "5": {
+      "frequency": 2,
+      "positions": [
+        109,
+        219
+      ]
+    }
+  },
+  "daydreams": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        116
+      ]
+    }
+  },
+  "terms": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        124
+      ]
+    }
+  },
+  "haruki": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        154
+      ]
+    }
+  },
+  "murakami": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        155
+      ]
+    }
+  },
+  "thought": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        159
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        13
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        16
+      ]
+    }
+  },
+  "difference": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        161
+      ]
+    }
+  },
+  "between": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        162
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        66
+      ]
+    }
+  },
+  "stupidity": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        165
+      ]
+    }
+  },
+  "limits": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        170
+      ]
+    }
+  },
+  "alexandre": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        172
+      ]
+    }
+  },
+  "dumas": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        173
+      ]
+    }
+  },
+  "fils": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        174
+      ]
+    }
+  },
+  "misattributedtoeinstein": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        177
+      ]
+    }
+  },
+  "hes": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        178
+      ]
+    }
+  },
+  "drug": {
+    "5": {
+      "frequency": 2,
+      "positions": [
+        181,
+        190
+      ]
+    }
+  },
+  "bella": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        184
+      ]
+    }
+  },
+  "stephenie": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        186
+      ]
+    }
+  },
+  "meyer": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        187
+      ]
+    }
+  },
+  "romance": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        191
+      ]
+    }
+  },
+  "friend": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        196
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        136
+      ]
+    }
+  },
+  "loyal": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        198
+      ]
+    }
+  },
+  "ernest": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        203
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        255
+      ]
+    }
+  },
+  "hemingway": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        204
+      ]
+    },
+    "6": {
+      "frequency": 1,
+      "positions": [
+        256
+      ]
+    }
+  },
+  "novelistquotes": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        209
+      ]
+    }
+  },
+  "door": {
+    "5": {
+      "frequency": 2,
+      "positions": [
+        212,
+        227
+      ]
+    }
+  },
+  "closes": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        215
+      ]
+    }
+  },
+  "another": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        216
+      ]
+    }
+  },
+  "opens": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        217
+      ]
+    }
+  },
+  "look": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        221
+      ]
+    }
+  },
+  "closed": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        226
+      ]
+    }
+  },
+  "opened": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        238
+      ]
+    }
+  },
+  "helen": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        242
+      ]
+    }
+  },
+  "keller": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        243
+      ]
+    }
+  },
+  "isnt": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        248
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        252
+      ]
+    }
+  },
+  "finding": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        250
+      ]
+    }
+  },
+  "creating": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        255
+      ]
+    }
+  },
+  "bernard": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        259
+      ]
+    }
+  },
+  "shaw": {
+    "5": {
+      "frequency": 1,
+      "positions": [
+        260
+      ]
+    }
+  },
+  "thats": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        7
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        35
+      ]
+    }
+  },
+  "problem": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        9
+      ]
+    }
+  },
+  "drinking": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        11
+      ]
+    }
+  },
+  "poured": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        16
+      ]
+    }
+  },
+  "myself": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        17
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        173
+      ]
+    }
+  },
+  "drink": {
+    "6": {
+      "frequency": 4,
+      "positions": [
+        19,
+        25,
+        36,
+        46
+      ]
+    }
+  },
+  "bad": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        22
+      ]
+    }
+  },
+  "attempt": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        28
+      ]
+    }
+  },
+  "forget": {
+    "6": {
+      "frequency": 3,
+      "positions": [
+        30,
+        59,
+        283
+      ]
+    }
+  },
+  "order": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        38
+      ]
+    }
+  },
+  "celebrate": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        40
+      ]
+    }
+  },
+  "happen": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        50
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        155
+      ]
+    }
+  },
+  "bukowski": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        53
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        46
+      ]
+    }
+  },
+  "alcohol": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        56
+      ]
+    }
+  },
+  "face": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        61
+      ]
+    }
+  },
+  "was": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        66
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        133
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        81
+      ]
+    }
+  },
+  "suzanne": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        71,
+        94
+      ]
+    }
+  },
+  "collins": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        72,
+        95
+      ]
+    }
+  },
+  "thehungergames": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        75
+      ]
+    }
+  },
+  "madly": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        78
+      ]
+    }
+  },
+  "right": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        84
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        86
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        69
+      ]
+    }
+  },
+  "kiss": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        86
+      ]
+    }
+  },
+  "anytime": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        88
+      ]
+    }
+  },
+  "vulnerable": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        106,
+        190
+      ]
+    }
+  },
+  "wrung": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        114
+      ]
+    }
+  },
+  "possibly": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        116
+      ]
+    }
+  },
+  "broken": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        117,
+        178
+      ]
+    }
+  },
+  "sure": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        123
+      ]
+    }
+  },
+  "keeping": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        125
+      ]
+    }
+  },
+  "intact": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        127
+      ]
+    }
+  },
+  "even": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        136
+      ]
+    }
+  },
+  "animal": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        138
+      ]
+    }
+  },
+  "wrap": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        139
+      ]
+    }
+  },
+  "carefully": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        141
+      ]
+    }
+  },
+  "round": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        142
+      ]
+    }
+  },
+  "hobbies": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        144
+      ]
+    }
+  },
+  "luxuries": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        147
+      ]
+    }
+  },
+  "avoid": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        148
+      ]
+    }
+  },
+  "entanglements": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        150
+      ]
+    }
+  },
+  "lock": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        151
+      ]
+    }
+  },
+  "safe": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        154,
+        167
+      ]
+    }
+  },
+  "casket": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        157,
+        166
+      ]
+    }
+  },
+  "coffin": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        159
+      ]
+    }
+  },
+  "selfishness": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        162
+      ]
+    }
+  },
+  "dark": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        168
+      ]
+    }
+  },
+  "motionless": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        169
+      ]
+    }
+  },
+  "airless": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        170
+      ]
+    }
+  },
+  "unbreakable": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        182
+      ]
+    }
+  },
+  "impenetrable": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        183
+      ]
+    }
+  },
+  "irredeemable": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        184
+      ]
+    }
+  },
+  "wander": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        201,
+        214
+      ]
+    }
+  },
+  "lost": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        203,
+        211
+      ]
+    }
+  },
+  "jrr": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        205
+      ]
+    }
+  },
+  "tolkien": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        206
+      ]
+    }
+  },
+  "bilbo": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        209
+      ]
+    }
+  },
+  "journey": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        210
+      ]
+    }
+  },
+  "quest": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        212
+      ]
+    }
+  },
+  "travel": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        213
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        304
+      ]
+    }
+  },
+  "pity": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        217,
+        221
+      ]
+    }
+  },
+  "dead": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        219
+      ]
+    }
+  },
+  "above": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        225
+      ]
+    }
+  },
+  "livedeathlove": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        237
+      ]
+    }
+  },
+  "writing": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        242,
+        260
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        167
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        187
+      ]
+    }
+  },
+  "sit": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        247
+      ]
+    }
+  },
+  "down": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        248
+      ]
+    }
+  },
+  "typewriter": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        251
+      ]
+    }
+  },
+  "bleed": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        253
+      ]
+    }
+  },
+  "finish": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        261
+      ]
+    }
+  },
+  "each": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        262
+      ]
+    }
+  },
+  "done": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        266,
+        271
+      ]
+    },
+    "7": {
+      "frequency": 1,
+      "positions": [
+        123
+      ]
+    }
+  },
+  "could": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        274
+      ]
+    },
+    "7": {
+      "frequency": 2,
+      "positions": [
+        19,
+        141
+      ]
+    }
+  },
+  "blunders": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        276
+      ]
+    }
+  },
+  "absurdities": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        278
+      ]
+    }
+  },
+  "doubt": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        280
+      ]
+    }
+  },
+  "crept": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        281
+      ]
+    }
+  },
+  "soon": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        286
+      ]
+    }
+  },
+  "tomorrow": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        290
+      ]
+    }
+  },
+  "new": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        293
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        18
+      ]
+    }
+  },
+  "shall": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        296
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        136
+      ]
+    }
+  },
+  "serenely": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        299
+      ]
+    }
+  },
+  "spirit": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        305
+      ]
+    }
+  },
+  "encumbered": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        308
+      ]
+    }
+  },
+  "regrets": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        320
+      ]
+    }
+  },
+  "schooling": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        326
+      ]
+    }
+  },
+  "interfere": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        327
+      ]
+    }
+  },
+  "education": {
+    "6": {
+      "frequency": 2,
+      "positions": [
+        330,
+        336
+      ]
+    }
+  },
+  "heard": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        339
+      ]
+    }
+  },
+  "troubles": {
+    "6": {
+      "frequency": 4,
+      "positions": [
+        342,
+        370,
+        375,
+        383
+      ]
+    }
+  },
+  "ahead": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        351
+      ]
+    }
+  },
+  "behind": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        356
+      ]
+    }
+  },
+  "bought": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        359
+      ]
+    }
+  },
+  "bat": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        362
+      ]
+    }
+  },
+  "im": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        363
+      ]
+    },
+    "7": {
+      "frequency": 3,
+      "positions": [
+        176,
+        198,
+        202
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        32
+      ]
+    }
+  },
+  "ready": {
+    "6": {
+      "frequency": 1,
+      "positions": [
+        365
+      ]
+    }
+  },
+  "had": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        9
+      ]
+    }
+  },
+  "flower": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        11
+      ]
+    }
+  },
+  "youi": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        18
+      ]
+    }
+  },
+  "walk": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        20
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        139
+      ]
+    }
+  },
+  "garden": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        23
+      ]
+    }
+  },
+  "forever": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        24
+      ]
+    }
+  },
+  "alfred": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        26
+      ]
+    }
+  },
+  "tennyson": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        27
+      ]
+    }
+  },
+  "crazy": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        36
+      ]
+    }
+  },
+  "horrible": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        39
+      ]
+    }
+  },
+  "lead": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        43
+      ]
+    }
+  },
+  "trouble": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        51
+      ]
+    }
+  },
+  "having": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        53
+      ]
+    }
+  },
+  "open": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        55
+      ]
+    }
+  },
+  "insist": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        63
+      ]
+    }
+  },
+  "coming": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        65
+      ]
+    }
+  },
+  "along": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        66
+      ]
+    }
+  },
+  "put": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        70
+      ]
+    }
+  },
+  "terry": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        75
+      ]
+    }
+  },
+  "pratchett": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        76
+      ]
+    }
+  },
+  "openmind": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        80
+      ]
+    }
+  },
+  "low": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        89
+      ]
+    }
+  },
+  "oh": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        93
+      ]
+    }
+  },
+  "knocks": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        113
+      ]
+    }
+  },
+  "out": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        115
+      ]
+    },
+    "8": {
+      "frequency": 1,
+      "positions": [
+        263
+      ]
+    }
+  },
+  "wish": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        127
+      ]
+    }
+  },
+  "author": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        129
+      ]
+    }
+  },
+  "wrote": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        131
+      ]
+    }
+  },
+  "terrific": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        135
+      ]
+    }
+  },
+  "yours": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        138
+      ]
+    }
+  },
+  "call": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        142
+      ]
+    }
+  },
+  "him": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        143
+      ]
+    }
+  },
+  "phone": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        147
+      ]
+    }
+  },
+  "whenever": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        148
+      ]
+    }
+  },
+  "felt": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        150
+      ]
+    }
+  },
+  "jd": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        159
+      ]
+    }
+  },
+  "salinger": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        160
+      ]
+    }
+  },
+  "authors": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        163
+      ]
+    }
+  },
+  "literature": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        165
+      ]
+    }
+  },
+  "reason": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        169
+      ]
+    }
+  },
+  "talk": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        171
+      ]
+    }
+  },
+  "whose": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        180
+      ]
+    }
+  },
+  "answers": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        181
+      ]
+    }
+  },
+  "accept": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        183
+      ]
+    }
+  },
+  "carlin": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        186
+      ]
+    }
+  },
+  "insanity": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        190
+      ]
+    }
+  },
+  "lying": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        192
+      ]
+    }
+  },
+  "selfindulgence": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        193
+      ]
+    }
+  },
+  "dreamer": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        200
+      ]
+    }
+  },
+  "someday": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        209
+      ]
+    }
+  },
+  "join": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        211
+      ]
+    }
+  },
+  "john": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        221
+      ]
+    }
+  },
+  "lennon": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        222
+      ]
+    }
+  },
+  "beatles": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        225
+      ]
+    }
+  },
+  "connection": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        226
+      ]
+    }
+  },
+  "dreamers": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        227
+      ]
+    }
+  },
+  "dreaming": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        228
+      ]
+    }
+  },
+  "dreams": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        229
+      ]
+    }
+  },
+  "peace": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        232
+      ]
+    }
+  },
+  "free": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        235
+      ]
+    }
+  },
+  "prejudice": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        238
+      ]
+    }
+  },
+  "equally": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        242
+      ]
+    }
+  },
+  "wc": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        244
+      ]
+    }
+  },
+  "fields": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        245
+      ]
+    }
+  },
+  "sinister": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        249
+      ]
+    }
+  },
+  "question": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        251
+      ]
+    }
+  },
+  "stop": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        264
+      ]
+    }
+  },
+  "ayn": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        267
+      ]
+    }
+  },
+  "rand": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        268
+      ]
+    }
+  },
+  "praise": {
+    "7": {
+      "frequency": 1,
+      "positions": [
+        275
+      ]
+    }
+  },
+  "mistake": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        13
+      ]
+    }
+  },
+  "tried": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        16
+      ]
+    }
+  },
+  "ladys": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        26
+      ]
+    }
+  },
+  "very": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        29
+      ]
+    }
+  },
+  "rapid": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        30
+      ]
+    }
+  },
+  "jumps": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        32
+      ]
+    }
+  },
+  "admiration": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        34
+      ]
+    }
+  },
+  "matrimony": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        40
+      ]
+    }
+  },
+  "moment": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        43
+      ]
+    }
+  },
+  "romantic": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        51
+      ]
+    }
+  },
+  "women": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        52
+      ]
+    }
+  },
+  "choice": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        65
+      ]
+    }
+  },
+  "easy": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        73
+      ]
+    }
+  },
+  "happened": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        76
+      ]
+    }
+  },
+  "boy": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        79
+      ]
+    }
+  },
+  "brave": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        86
+      ]
+    }
+  },
+  "strayed": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        89
+      ]
+    }
+  },
+  "across": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        90
+      ]
+    }
+  },
+  "path": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        92
+      ]
+    }
+  },
+  "lord": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        94
+      ]
+    }
+  },
+  "voldemort": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        95
+      ]
+    }
+  },
+  "cedric": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        97
+      ]
+    }
+  },
+  "diggory": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        98
+      ]
+    }
+  },
+  "integrity": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        104
+      ]
+    }
+  },
+  "declare": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        106
+      ]
+    }
+  },
+  "after": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        107
+      ]
+    }
+  },
+  "enjoyment": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        112
+      ]
+    }
+  },
+  "sooner": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        117
+      ]
+    }
+  },
+  "tires": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        119
+      ]
+    }
+  },
+  "house": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        131
+      ]
+    }
+  },
+  "own": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        134
+      ]
+    }
+  },
+  "miserable": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        138
+      ]
+    }
+  },
+  "excellent": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        144
+      ]
+    }
+  },
+  "few": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        156
+      ]
+    }
+  },
+  "whom": {
+    "8": {
+      "frequency": 2,
+      "positions": [
+        158,
+        166
+      ]
+    }
+  },
+  "still": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        163
+      ]
+    }
+  },
+  "fewer": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        164
+      ]
+    }
+  },
+  "dissatisfied": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        181
+      ]
+    }
+  },
+  "confirms": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        187
+      ]
+    }
+  },
+  "belief": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        189
+      ]
+    }
+  },
+  "inconsistency": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        192
+      ]
+    }
+  },
+  "characters": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        196
+      ]
+    }
+  },
+  "dependence": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        201
+      ]
+    }
+  },
+  "placed": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        205
+      ]
+    }
+  },
+  "appearance": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        208
+      ]
+    }
+  },
+  "merit": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        210
+      ]
+    }
+  },
+  "sense": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        212
+      ]
+    }
+  },
+  "elizabethbennet": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        218
+      ]
+    }
+  },
+  "janeausten": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        219
+      ]
+    }
+  },
+  "start": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        228
+      ]
+    }
+  },
+  "age": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        238
+      ]
+    }
+  },
+  "growingup": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        240
+      ]
+    }
+  },
+  "necessarily": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        244
+      ]
+    }
+  },
+  "doubting": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        245
+      ]
+    }
+  },
+  "god": {
+    "8": {
+      "frequency": 2,
+      "positions": [
+        247,
+        271
+      ]
+    }
+  },
+  "wondering": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        256
+      ]
+    }
+  },
+  "painful": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        258
+      ]
+    }
+  },
+  "turn": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        262
+      ]
+    }
+  },
+  "follows": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        276
+      ]
+    }
+  },
+  "fully": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        286
+      ]
+    }
+  },
+  "prepared": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        288
+      ]
+    }
+  },
+  "die": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        290
+      ]
+    },
+    "9": {
+      "frequency": 3,
+      "positions": [
+        38,
+        45,
+        65
+      ]
+    }
+  },
+  "lie": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        302
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        109
+      ]
+    }
+  },
+  "around": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        307
+      ]
+    },
+    "9": {
+      "frequency": 1,
+      "positions": [
+        140
+      ]
+    }
+  },
+  "putting": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        314
+      ]
+    }
+  },
+  "shoes": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        317
+      ]
+    }
+  },
+  "misattributedmarktwain": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        323
+      ]
+    }
+  },
+  "christianity": {
+    "8": {
+      "frequency": 2,
+      "positions": [
+        328,
+        356
+      ]
+    }
+  },
+  "sun": {
+    "8": {
+      "frequency": 2,
+      "positions": [
+        334,
+        359
+      ]
+    }
+  },
+  "risen": {
+    "8": {
+      "frequency": 1,
+      "positions": [
+        336
+      ]
+    }
+  },
+  "sighed": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        10
+      ]
+    }
+  },
+  "terrible": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        16
+      ]
+    }
+  },
+  "therefore": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        20
+      ]
+    }
+  },
+  "treated": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        22
+      ]
+    }
+  },
+  "caution": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        25
+      ]
+    }
+  },
+  "jimi": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        58
+      ]
+    }
+  },
+  "hendrix": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        59
+      ]
+    }
+  },
+  "awfully": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        69
+      ]
+    }
+  },
+  "jm": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        73
+      ]
+    }
+  },
+  "barrie": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        74
+      ]
+    }
+  },
+  "ee": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        92
+      ]
+    }
+  },
+  "cummings": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        93
+      ]
+    }
+  },
+  "comforted": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        106
+      ]
+    }
+  },
+  "khaled": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        111
+      ]
+    }
+  },
+  "hosseini": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        112
+      ]
+    }
+  },
+  "consider": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        124
+      ]
+    }
+  },
+  "his": {
+    "9": {
+      "frequency": 2,
+      "positions": [
+        127,
+        136
+      ]
+    }
+  },
+  "view": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        130
+      ]
+    }
+  },
+  "climb": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        133
+      ]
+    }
+  },
+  "skin": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        137
+      ]
+    }
+  },
+  "harper": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        144
+      ]
+    }
+  },
+  "lee": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        145
+      ]
+    }
+  },
+  "betterlifeempathy": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        148
+      ]
+    }
+  },
+  "write": {
+    "9": {
+      "frequency": 3,
+      "positions": [
+        152,
+        172,
+        185
+      ]
+    }
+  },
+  "wants": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        156
+      ]
+    }
+  },
+  "written": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        159
+      ]
+    }
+  },
+  "difficult": {
+    "9": {
+      "frequency": 2,
+      "positions": [
+        167,
+        183
+      ]
+    }
+  },
+  "grownups": {
+    "9": {
+      "frequency": 2,
+      "positions": [
+        169,
+        184
+      ]
+    }
+  },
+  "madeleine": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        177
+      ]
+    }
+  },
+  "lengle": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        178
+      ]
+    }
+  },
+  "writers": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        186
+      ]
+    }
+  },
+  "tell": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        189
+      ]
+    }
+  },
+  "worthy": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        197
+      ]
+    }
+  },
+  "persons": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        207
+      ]
+    }
+  },
+  "needs": {
+    "9": {
+      "frequency": 2,
+      "positions": [
+        222,
+        227
+      ]
+    }
+  },
+  "sword": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        226
+      ]
+    }
+  },
+  "whetstone": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        229
+      ]
+    }
+  },
+  "edge": {
+    "9": {
+      "frequency": 1,
+      "positions": [
+        236
+      ]
+    }
+  }
+}
