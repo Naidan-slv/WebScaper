@@ -14,7 +14,7 @@ import os
 import json
 import pytest
 from unittest.mock import Mock, MagicMock, patch, PropertyMock
-from src.cli import CLI
+from src.main import CLI
 
 
 # ============================================================
@@ -57,11 +57,11 @@ class TestCLIInit:
 class TestBuildCommand:
     """Tests for the 'build' command."""
 
-    @patch("src.cli.MultiPageCrawler")
-    @patch("src.cli.Persistence")
-    @patch("src.cli.WordFrequency")
-    @patch("src.cli.MultiwordSearch")
-    @patch("src.cli.Search")
+    @patch("src.main.MultiPageCrawler")
+    @patch("src.main.Persistence")
+    @patch("src.main.WordFrequency")
+    @patch("src.main.MultiwordSearch")
+    @patch("src.main.Search")
     @patch("os.makedirs")
     def test_build_crawls_and_indexes(self, mock_makedirs, mock_search_cls,
                                        mock_mws_cls, mock_wf_cls,
@@ -90,11 +90,11 @@ class TestBuildCommand:
         assert result["docs_stored"] == 1
         assert cli.is_built is True
 
-    @patch("src.cli.MultiPageCrawler")
-    @patch("src.cli.Persistence")
-    @patch("src.cli.WordFrequency")
-    @patch("src.cli.MultiwordSearch")
-    @patch("src.cli.Search")
+    @patch("src.main.MultiPageCrawler")
+    @patch("src.main.Persistence")
+    @patch("src.main.WordFrequency")
+    @patch("src.main.MultiwordSearch")
+    @patch("src.main.Search")
     @patch("os.makedirs")
     def test_build_saves_index_to_file(self, mock_makedirs, mock_search_cls,
                                         mock_mws_cls, mock_wf_cls,
@@ -119,11 +119,11 @@ class TestBuildCommand:
         mock_persist.save_index.assert_called_once()
         mock_persist.save_documents.assert_called_once()
 
-    @patch("src.cli.MultiPageCrawler")
-    @patch("src.cli.Persistence")
-    @patch("src.cli.WordFrequency")
-    @patch("src.cli.MultiwordSearch")
-    @patch("src.cli.Search")
+    @patch("src.main.MultiPageCrawler")
+    @patch("src.main.Persistence")
+    @patch("src.main.WordFrequency")
+    @patch("src.main.MultiwordSearch")
+    @patch("src.main.Search")
     @patch("os.makedirs")
     def test_build_wires_search_components(self, mock_makedirs, mock_search_cls,
                                             mock_mws_cls, mock_wf_cls,
@@ -160,7 +160,7 @@ class TestLoadCommand:
     def test_load_raises_if_no_index_file(self, tmp_path):
         """load() raises FileNotFoundError if index file doesn't exist."""
         cli = CLI()
-        with patch("src.cli.DEFAULT_INDEX_FILE", str(tmp_path / "missing.json")):
+        with patch("src.main.DEFAULT_INDEX_FILE", str(tmp_path / "missing.json")):
             with pytest.raises(FileNotFoundError):
                 cli.load()
 
@@ -171,8 +171,8 @@ class TestLoadCommand:
         index_file = tmp_path / "index.json"
         index_file.write_text('{"hello": [0]}')
 
-        with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
-            with patch("src.cli.DEFAULT_DOCS_FILE", str(tmp_path / "missing.json")):
+        with patch("src.main.DEFAULT_INDEX_FILE", str(index_file)):
+            with patch("src.main.DEFAULT_DOCS_FILE", str(tmp_path / "missing.json")):
                 with pytest.raises(FileNotFoundError):
                     cli.load()
 
@@ -186,8 +186,8 @@ class TestLoadCommand:
         index_file.write_text('{"hello": {"0": {"frequency": 1, "positions": [0]}}, "world": {"0": {"frequency": 1, "positions": [1]}}}')
         docs_file.write_text('{"0": {"text": "hello world"}}')
 
-        with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
-            with patch("src.cli.DEFAULT_DOCS_FILE", str(docs_file)):
+        with patch("src.main.DEFAULT_INDEX_FILE", str(index_file)):
+            with patch("src.main.DEFAULT_DOCS_FILE", str(docs_file)):
                 result = cli.load()
 
         assert result["words_loaded"] == 2
@@ -203,8 +203,8 @@ class TestLoadCommand:
         index_file.write_text('{"hello": {"0": {"frequency": 1, "positions": [0]}}, "world": {"0": {"frequency": 1, "positions": [1]}}}')
         docs_file.write_text('{"0": {"text": "hello world"}}')
 
-        with patch("src.cli.DEFAULT_INDEX_FILE", str(index_file)):
-            with patch("src.cli.DEFAULT_DOCS_FILE", str(docs_file)):
+        with patch("src.main.DEFAULT_INDEX_FILE", str(index_file)):
+            with patch("src.main.DEFAULT_DOCS_FILE", str(docs_file)):
                 cli.load()
 
         assert cli.search is not None
@@ -452,7 +452,7 @@ class TestBuildLoadRoundTrip:
 
     def test_build_load_find_round_trip(self, tmp_path):
         """Index built and saved can be loaded and searched correctly."""
-        from src.persistence import Persistence
+        from src.indexer import Persistence
 
         # --- Build phase: manually index documents ---
         cli = CLI()
@@ -475,8 +475,8 @@ class TestBuildLoadRoundTrip:
 
         # --- Load phase: fresh CLI loads from files ---
         cli2 = CLI()
-        with patch("src.cli.DEFAULT_INDEX_FILE", index_file):
-            with patch("src.cli.DEFAULT_DOCS_FILE", docs_file):
+        with patch("src.main.DEFAULT_INDEX_FILE", index_file):
+            with patch("src.main.DEFAULT_DOCS_FILE", docs_file):
                 cli2.load()
 
         # --- Find phase: search must return correct AND results ---
@@ -487,7 +487,7 @@ class TestBuildLoadRoundTrip:
 
     def test_load_then_print_works(self, tmp_path):
         """print_index works correctly after load (rich format intact)."""
-        from src.persistence import Persistence
+        from src.indexer import Persistence
 
         cli = CLI()
         cli.indexer.add_document("hello world hello")
@@ -500,8 +500,8 @@ class TestBuildLoadRoundTrip:
         persistence.save_documents(docs_file)
 
         cli2 = CLI()
-        with patch("src.cli.DEFAULT_INDEX_FILE", index_file):
-            with patch("src.cli.DEFAULT_DOCS_FILE", docs_file):
+        with patch("src.main.DEFAULT_INDEX_FILE", index_file):
+            with patch("src.main.DEFAULT_DOCS_FILE", docs_file):
                 cli2.load()
 
         result = cli2.print_index("hello")

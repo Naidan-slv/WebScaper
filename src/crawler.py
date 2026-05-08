@@ -1,116 +1,126 @@
-"""
-Web crawler for fetching and parsing website content.
+"""Crawler code for fetching, parsing, and paginating the target website."""
 
-Step 1: Basic crawler to fetch a single page and extract text with error handling.Step 2: Add politeness window to respect target website (6-second delay between requests)."""
-
-import requests
-from bs4 import BeautifulSoup
 import logging
 import time
 
-# Configure logging for error tracking
+import requests
+from bs4 import BeautifulSoup
+
+
 logger = logging.getLogger(__name__)
 
 
 class Crawler:
-    """
-    Simple web crawler that fetches pages and extracts text with proper error handling.
-    Includes politeness window to respect target website.
-    """
-    
+    """Fetch a page and extract visible text."""
+
     def __init__(self, timeout: int = 10, politeness_delay: int = 6):
-        """
-        Initialize crawler with timeout and politeness delay settings.
-        
-        Args:
-            timeout: Request timeout in seconds (default: 10)
-            politeness_delay: Seconds to sleep before each fetch (default: 6)
-                             Set to 0 to disable politeness window
-        """
         self.timeout = timeout
         self.politeness_delay = politeness_delay
-    
+
     def fetch_page(self, url: str) -> str:
-        """
-        Fetch a single page from a URL with error handling and politeness window.
-        
-        Makes HTTP GET request to the URL and returns raw HTML.
-        Sleeps before each request to respect target website (politeness window).
-        Handles network timeouts, connection errors, and HTTP errors.
-        
-        Args:
-            url: URL to fetch
-        
-        Returns:
-            HTML content of the page as string
-        
-        Raises:
-            requests.Timeout: If request exceeds timeout
-            requests.HTTPError: If server returns 4xx/5xx status
-            requests.RequestException: If other network errors occur
-        
-        Note:
-            Sleeps for politeness_delay seconds before fetching to avoid
-            overwhelming the target server. This is respectful web scraping practice.
-        """
-        # Enforce politeness window: sleep before fetch to avoid hammering server
+        """Fetch a single page, respecting the politeness delay first."""
         time.sleep(self.politeness_delay)
-        
+
         try:
             response = requests.get(url, timeout=self.timeout)
-            response.raise_for_status()  # Raise exception for 4xx/5xx status codes
+            response.raise_for_status()
             return response.text
-        
+
         except requests.Timeout:
-            error_msg = f"Request timeout for {url} (exceeded {self.timeout}s)"
-            logger.error(error_msg)
+            logger.error("Request timeout for %s (exceeded %ss)", url, self.timeout)
             raise
-        
+
         except requests.HTTPError as e:
-            error_msg = f"HTTP {e.response.status_code} for {url}: {e.response.reason}"
-            logger.error(error_msg)
+            logger.error("HTTP %s for %s: %s", e.response.status_code, url, e.response.reason)
             raise
-        
+
         except requests.ConnectionError as e:
-            error_msg = f"Connection error for {url}: {str(e)}"
-            logger.error(error_msg)
+            logger.error("Connection error for %s: %s", url, str(e))
             raise
-        
+
         except requests.RequestException as e:
-            error_msg = f"Request failed for {url}: {str(e)}"
-            logger.error(error_msg)
+            logger.error("Request failed for %s: %s", url, str(e))
             raise
-    
+
     def extract_text(self, html: str) -> str:
-        """
-        Extract plain text from HTML content with error handling.
-        
-        Uses BeautifulSoup to parse HTML and extract only visible text,
-        removing all HTML tags and markup. Handles malformed HTML gracefully.
-        
-        Args:
-            html: HTML content to parse
-        
-        Returns:
-            Extracted plain text with HTML tags removed
-        
-        Raises:
-            ValueError: If HTML is None or not a string
-        """
+        """Extract visible text from an HTML string."""
         try:
             if not html or not isinstance(html, str):
                 raise ValueError("HTML content must be a non-empty string")
-            
-            soup = BeautifulSoup(html, 'html.parser')
-            
-            # Remove non-content elements (scripts, styles) to reduce index noise
-            for tag in soup.find_all(['script', 'style']):
+
+            soup = BeautifulSoup(html, "html.parser")
+            for tag in soup.find_all(["script", "style"]):
                 tag.decompose()
-            
-            text = soup.get_text(separator=' ', strip=True)
-            return text
-        
+
+            return soup.get_text(separator=" ", strip=True)
+
         except Exception as e:
-            error_msg = f"Failed to parse HTML: {str(e)}"
-            logger.error(error_msg)
+            logger.error("Failed to parse HTML: %s", str(e))
             raise
+
+
+class MultiPageCrawler:
+    """Fetch and parse paginated pages from quotes.toscrape.com."""
+
+    def __init__(self, crawler, max_pages=10, base_url="https://quotes.toscrape.com"):
+        if crawler is None:
+            raise ValueError("Crawler instance cannot be None")
+        if max_pages <= 0:
+            raise ValueError("max_pages must be greater than 0")
+
+        self.crawler = crawler
+        self.max_pages = max_pages
+        self.base_url = base_url
+        self.pages_fetched = 0
+
+    def get_next_page_url(self, current_page):
+        """Generate the URL for a 1-indexed page number."""
+        if current_page <= 0:
+            raise ValueError("Page number must be greater than 0")
+
+        if current_page == 1:
+            return self.base_url + "/"
+        return self.base_url + f"/page/{current_page}/"
+
+    def has_next_page(self, html):
+        """Return True if the page contains the site pagination next link."""
+        soup = BeautifulSoup(html, "html.parser")
+        return soup.find("li", class_="next") is not None
+
+    def fetch_all_pages(self):
+        """Fetch pages up to max_pages, stopping at the last site page."""
+        pages = []
+
+        try:
+            for page_num in range(1, self.max_pages + 1):
+                url = self.get_next_page_url(page_num)
+                html = self.crawler.fetch_page(url)
+                pages.append(html)
+                self.pages_fetched += 1
+
+                if not self.has_next_page(html):
+                    break
+        except Exception as e:
+            raise RuntimeError(f"Failed to fetch pages: {str(e)}")
+
+        return pages
+
+    def fetch_and_parse_all(self):
+        """Fetch all pages and return page number, text, and URL for each."""
+        results = []
+        pages_html = self.fetch_all_pages()
+
+        try:
+            for page_num, html in enumerate(pages_html, start=1):
+                results.append({
+                    "page": page_num,
+                    "text": self.crawler.extract_text(html),
+                    "url": self.get_next_page_url(page_num),
+                })
+        except Exception as e:
+            raise RuntimeError(f"Failed to parse pages: {str(e)}")
+
+        return results
+
+    def get_pages_fetched(self):
+        return self.pages_fetched

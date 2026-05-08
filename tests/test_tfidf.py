@@ -14,7 +14,7 @@ Tests cover all 5 public methods + __init__:
 import math
 import pytest
 from src.indexer import Indexer
-from src.tfidf import TfIdf
+from src.search import TfIdf
 
 
 # ============================================================

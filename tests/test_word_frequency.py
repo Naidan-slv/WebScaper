@@ -12,7 +12,7 @@ Tests cover:
 
 import pytest
 from unittest.mock import Mock
-from src.word_frequency import WordFrequency
+from src.indexer import WordFrequency
 
 
 class TestWordFrequencyInit:

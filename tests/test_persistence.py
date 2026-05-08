@@ -14,7 +14,7 @@ import json
 import tempfile
 from pathlib import Path
 from unittest.mock import Mock, MagicMock, patch
-from src.persistence import Persistence
+from src.indexer import Persistence
 
 
 class TestPersistenceInit:

@@ -14,7 +14,7 @@ Tests cover all 7 methods:
 import pytest
 from src.indexer import Indexer
 from src.search import Search
-from src.multiword_search import MultiwordSearch
+from src.search import MultiwordSearch
 
 
 # ============================================================

@@ -645,7 +645,7 @@ feat(cli): wire TF-IDF into find command for ranked search results - 28 tests pa
 **Purpose**: Add an advanced search feature beyond the base brief and demonstrate why the inverted index stores word positions, not just frequencies
 
 **What AI Generated/Suggested**:
-- A `rank_phrase()` method in the TF-IDF module
+- A `rank_phrase()` method in `src/search.py`
 - Tests for adjacent word matching, wrong word order, repeated phrases, case-insensitive input, and punctuation handling
 - CLI routing so quoted queries use phrase search while unquoted queries still use AND search
 - Updated help text and phrase-specific result metadata

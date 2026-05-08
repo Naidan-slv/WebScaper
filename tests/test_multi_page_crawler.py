@@ -12,7 +12,7 @@ Tests cover:
 
 import pytest
 from unittest.mock import Mock, patch, MagicMock
-from src.multi_page_crawler import MultiPageCrawler
+from src.crawler import MultiPageCrawler
 
 
 class TestMultiPageCrawlerInit:

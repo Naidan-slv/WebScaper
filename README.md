@@ -18,17 +18,10 @@ Built for **COMP3011 Web Services and Web Data** (Coursework 2) at the Universit
 ```
 WebScaper/
 ├── src/
-│   ├── main.py                 # Entry point
-│   ├── cli.py                  # Interactive command-line interface
-│   ├── crawler.py              # Single-page HTTP fetcher + HTML parser
-│   ├── multi_page_crawler.py   # Pagination-aware multi-page crawler
-│   ├── indexer.py              # Inverted index builder
-│   ├── search.py               # Single-word search
-│   ├── multiword_search.py     # Multi-word (AND) search
-│   ├── word_frequency.py       # Word frequency statistics
-│   ├── tfidf.py                # TF-IDF ranking and phrase search
-│   ├── persistence.py          # JSON save/load for generated local files
-│   └── utils.py                # Shared utilities
+│   ├── crawler.py              # Single-page and multi-page crawling
+│   ├── indexer.py              # Tokenization, inverted index, persistence, word stats
+│   ├── search.py               # Search, multi-word logic, TF-IDF, phrase search
+│   └── main.py                 # CLI and entry point
 ├── tests/
 │   ├── conftest.py             # Shared pytest fixtures
 │   ├── test_crawler.py         # 16 tests

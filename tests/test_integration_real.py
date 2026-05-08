@@ -15,13 +15,9 @@ Usage:
 
 import pytest
 import time
-from src.crawler import Crawler
-from src.indexer import Indexer
-from src.search import Search
-from src.multi_page_crawler import MultiPageCrawler
-from src.multiword_search import MultiwordSearch
-from src.word_frequency import WordFrequency
-from src.persistence import Persistence
+from src.crawler import Crawler, MultiPageCrawler
+from src.indexer import Indexer, Persistence, WordFrequency
+from src.search import MultiwordSearch, Search
 
 # ============================================================
 # Fixtures - shared setup for real website tests
