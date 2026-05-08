@@ -24,17 +24,9 @@ WebScaper/
 │   └── main.py                 # CLI and entry point
 ├── tests/
 │   ├── conftest.py             # Shared pytest fixtures
-│   ├── test_crawler.py         # 16 tests
-│   ├── test_multi_page_crawler.py  # 28 tests
-│   ├── test_indexer.py         # 21 tests
-│   ├── test_search.py          # 29 tests
-│   ├── test_multiword_search.py    # 39 tests
-│   ├── test_word_frequency.py  # 24 tests
-│   ├── test_tfidf.py           # 49 tests
-│   ├── test_persistence.py     # 26 tests
-│   ├── test_cli.py             # 36 tests
-│   ├── test_main.py            # 1 test
-│   └── test_integration_real.py    # 35 integration tests (live site)
+│   ├── test_crawler.py         # 44 crawler and pagination tests
+│   ├── test_indexer.py         # 71 indexer, persistence, and word stats tests
+│   └── test_search.py          # 196 search, TF-IDF, CLI, and integration tests
 ├── data/
 │   ├── index.json              # Compiled inverted index
 │   └── documents.json          # Stored document text and URLs for load/search snippets
@@ -167,14 +159,14 @@ Found 1 result(s) for exact phrase 'good friends' (ranked by relevance):
 
 ## Testing
 
-The project has **304 tests** across 11 test files: 269 local tests and 35 live integration tests.
+The project has **311 tests** across 3 brief-aligned test files: 276 local tests and 35 live integration tests. Each file uses test classes to group subsections such as pagination, persistence, TF-IDF, phrase search, and CLI behaviour.
 
 **All test commands must be run from the project root directory** (`WebScaper/`).
 
 ### Run all unit tests
 
 ```bash
-python -m pytest --ignore=tests/test_integration_real.py -v
+python -m pytest -m "not integration" -v
 ```
 
 ### Run all tests including live integration tests
@@ -183,25 +175,25 @@ python -m pytest --ignore=tests/test_integration_real.py -v
 python -m pytest -v
 ```
 
-> **Note:** Integration tests (`test_integration_real.py`) make real HTTP requests to quotes.toscrape.com. The application code enforces the 6-second politeness delay during real CLI builds; the test suite mocks `time.sleep` so tests run quickly while still checking that the delay is called.
+> **Note:** Integration tests are grouped in `tests/test_search.py` and marked with `@pytest.mark.integration`. They make real HTTP requests to quotes.toscrape.com. The application code enforces the 6-second politeness delay during real CLI builds; the test suite mocks `time.sleep` so tests run quickly while still checking that the delay is called.
 
 ### Run tests with coverage report
 
 ```bash
-python -m pytest --ignore=tests/test_integration_real.py --cov=src --cov-report=term-missing
+python -m pytest -m "not integration" --cov=src --cov-report=term-missing
 ```
 
 ### Run a specific test file
 
 ```bash
-python -m pytest tests/test_tfidf.py -v
+python -m pytest tests/test_search.py::TestRankPhrase -v
 ```
 
 ## Design Decisions
 
 - **Smoothed IDF** — Uses `log(1 + N/df)` instead of the standard `log(N/df)` so that words appearing in every document still receive a small non-zero score. This is essential for small corpora like quotes.toscrape.com (~10 pages) where common words would otherwise score exactly zero.
 - **Positional phrase search** — The index stores each word's positions, so quoted queries can verify that words appear consecutively in the correct order.
-- **Modular architecture** — Each component (crawler, indexer, search, TF-IDF, persistence) is a separate class with its own test file, following single-responsibility principle.
+- **Brief-aligned structure** — Source is grouped into the required crawler, indexer, search, and main files. Tests mirror the brief layout with classes for subsections such as pagination, persistence, TF-IDF, and CLI behaviour.
 - **JSON persistence** — The inverted index and document store are serialised as JSON for simplicity and human readability. `index.json` is the compiled index file required for submission, while `documents.json` supports loading snippets and URLs.
 - **Incremental workflow** — Features were developed incrementally with focused tests, semantic commits, and regression checks after each major change.
 

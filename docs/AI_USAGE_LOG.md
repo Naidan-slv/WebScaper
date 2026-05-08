@@ -660,11 +660,41 @@ feat(cli): wire TF-IDF into find command for ranked search results - 28 tests pa
 **Test Coverage**: 304 tests passing after the change
 - 269 local tests
 - 35 live integration tests
-- Added phrase-search tests in `tests/test_tfidf.py` and `tests/test_cli.py`
+- Added phrase-search tests, now grouped in `tests/test_search.py`
 
 **Commits Made**:
 ```
 feat(search): add exact phrase search
+```
+
+
+### Entry 16: Brief-Aligned Source and Test Refactor
+
+**Date**: 2026-05-08  
+**Task**: Refactor the repository layout to match the coursework brief more closely  
+**AI Tool**: GitHub Copilot (University of Leeds Secure Copilot Access)  
+**Purpose**: Reduce submission risk by keeping the visible source and test structure close to the example layout in the brief
+
+**What AI Generated/Suggested**:
+- Consolidated source into `src/crawler.py`, `src/indexer.py`, `src/search.py`, and `src/main.py`
+- Consolidated tests into `tests/test_crawler.py`, `tests/test_indexer.py`, and `tests/test_search.py`
+- Used test classes to keep subsections clear after combining files
+- Added an `integration` pytest marker so live tests can still be excluded with `-m "not integration"`
+
+**Did It Help?**: Yes, but required careful checking  
+**Details**:
+  - What worked well: The refactor kept the same classes and behaviours while making the folder structure easier to compare with the brief.
+  - What didn't work: One persistence test exposed a mock-object JSON serialisation issue after moving code into `src/indexer.py`.
+  - What you had to fix/modify: Added a small type check around saved URL metadata, then reran local and full test suites.
+  - Learning insights: Refactoring for structure should not change behaviour. Keeping all tests passing is the main safeguard.
+
+**Test Coverage**: 311 tests passing after the layout refactor
+- 276 local tests with `python -m pytest -m "not integration" -q`
+- 35 live integration tests included in the full suite
+
+**Commits Made**:
+```
+refactor: collapse source into brief structure
 ```
 
 
@@ -683,11 +713,11 @@ Use this section to prepare the 30-second GenAI reflection in the video:
 | Aspect | Details |
 |--------|---------|
 | AI Tool Used | GitHub Copilot (University of Leeds Secure Access) |
-| Total AI Usage Entries | 15 entries across all phases |
+| Total AI Usage Entries | 16 entries across all phases |
 | Most Helpful For | Test case generation, known CS patterns, error handling, boolean logic, TF-IDF, phrase-search scaffolding |
 | Most Problematic For | Mock details, integration assumptions, doc_id indexing, TF-IDF test fixture design, CLI output details |
-| Current Test Result | 304 passing tests |
-| Local Tests | 269 passing tests |
+| Current Test Result | 311 passing tests |
+| Local Tests | 276 passing tests |
 | Live Integration Tests | 35 passing tests |
 | Coverage | 90% line coverage on local tests |
 | Advanced Features | TF-IDF ranking and exact phrase search |

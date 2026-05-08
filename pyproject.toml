@@ -4,3 +4,6 @@ version = "1.0.0"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
+markers = [
+	"integration: tests that call the live quotes.toscrape.com site",
+]
